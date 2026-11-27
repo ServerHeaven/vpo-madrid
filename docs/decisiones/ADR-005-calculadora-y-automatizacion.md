@@ -31,7 +31,11 @@
 4. **Año de ingresos por defecto.** §6.1 dice «año actual − 1»; de enero a junio suele corresponder año − 2. Se explica en la ayuda y en la metodología.
 
 ## 3. Alcance y criterios de «hecho» (§8)
-- **Adaptadores nuevos:** §8 pide uno por PR, así que van en ramas aparte, no en `main`.
+- **Adaptadores nuevos:** §8 pide uno por PR, así que van en ramas aparte, no en `main`:
+  - `fase5/adaptador-emsv-getafe` y, apilada sobre ella, `fase5/adaptador-emvialsa-alcobendas`.
+  - Avalon, ConVive (Sogeviso) y DistritoVive quedaron a medias, sin tests ni fixtures: no se han subido.
+  - Culmia, otros municipios y cooperativas: sin adaptador y sin informe de viabilidad.
 - **OCR:** opcional, no hecho.
-- **No comprobado:** `actionlint` no se ha ejecutado y `scrape.yml` no se ha lanzado nunca en GitHub. Se ha comprobado la estructura YAML, la sintaxis de los scripts y, en un repositorio local desechable, el paso de commit.
+- **Comprobado en GitHub** (2026-11-27, commit `c99b970`): `ci` y `deploy` terminan bien y la calculadora está publicada.
+- **No comprobado:** `actionlint` no se ha ejecutado y `scrape.yml` no se ha lanzado nunca. De él se ha comprobado que GitHub lo registra, la estructura YAML, la sintaxis de los scripts, sus órdenes de `vpo` con `uv` y, en un repositorio local desechable, el paso de commit.
 - **Siete días de cron:** pendiente, requiere activarlo.
