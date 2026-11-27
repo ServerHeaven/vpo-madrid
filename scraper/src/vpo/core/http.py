@@ -21,7 +21,7 @@ import httpx
 
 from ..sources.base import DeadlineExceeded, FetchError, HttpStatusError, Response, RobotsDisallowed
 
-USER_AGENT = "vpo-madrid-bot/1.0 (+https://tu-usuario.github.io/vpo-madrid/metodologia)"
+USER_AGENT = "vpo-madrid-bot/1.0 (+https://serverheaven.github.io/vpo-madrid/metodologia)"
 ROBOTS_TOKEN = "vpo-madrid-bot"
 
 _REDIRECT_STATUSES = frozenset({301, 302, 303, 307, 308})

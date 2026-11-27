@@ -1047,7 +1047,7 @@ HTML semántico, formularios etiquetados, contraste AA y la página funciona sin
 ## 10. Decisiones validadas (2026-11-27)
 
 1. **Astro + Preact.**
-2. **Repositorio `vpo-madrid`**, usuario de GitHub `tu-usuario` (marcador de posición: confirmar antes de publicar). GitHub Pages sin dominio propio: `base = /vpo-madrid/`.
+2. **Repositorio `vpo-madrid`**, usuario de GitHub `ServerHeaven` (confirmado). GitHub Pages sin dominio propio: `base = /vpo-madrid/`.
 3. **Calculadora:** base imponible IRPF como dato principal; bruto como estimación orientativa.
 4. **Fixtures reales.** Nunca documentos con datos personales (listados de admitidos o adjudicatarios) y fuera de la licencia del código.
 5. **Primeras fuentes:** EMVS Madrid y Plan Vive.

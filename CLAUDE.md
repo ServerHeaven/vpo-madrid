@@ -3,9 +3,9 @@
 Agregador estático de alquiler protegido en la Comunidad de Madrid. El diseño está en [ARCHITECTURE.md](ARCHITECTURE.md): léelo antes de empezar una fase y no implementes nada fuera de su alcance.
 
 ## Configuración del proyecto
-- Repositorio: `vpo-madrid`. Usuario de GitHub: `tu-usuario` (marcador de posición: confirmar antes de publicar).
-- Sitio: GitHub Pages sin dominio propio, `site = https://tu-usuario.github.io`, `base = /vpo-madrid/`.
-- User-Agent del scraper: `vpo-madrid-bot/1.0 (+https://tu-usuario.github.io/vpo-madrid/metodologia)`. Sin datos personales.
+- Repositorio: `vpo-madrid`. Usuario de GitHub: `ServerHeaven`.
+- Sitio: GitHub Pages sin dominio propio, `site = https://serverheaven.github.io`, `base = /vpo-madrid/`.
+- User-Agent del scraper: `vpo-madrid-bot/1.0 (+https://serverheaven.github.io/vpo-madrid/metodologia)`. Sin datos personales.
 - Web: Astro + Preact. Calculadora: base imponible IRPF como dato principal; el bruto es una estimación orientativa y marcada.
 - Primeras fuentes: EMVS Madrid y Plan Vive.
 
