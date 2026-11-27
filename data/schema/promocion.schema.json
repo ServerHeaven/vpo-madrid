@@ -145,7 +145,7 @@
     "requisitos": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["ingresos_min_iprem", "ingresos_max_iprem", "ingresos_por_miembros", "iprem_pagas", "iprem_ejercicio", "tasa_esfuerzo_max", "empadronamiento", "edad", "no_titular_vivienda", "otros"],
+      "required": ["ingresos_min_iprem", "ingresos_max_iprem", "ingresos_por_miembros", "iprem_pagas", "iprem_ejercicio", "tasa_esfuerzo_max", "empadronamiento", "edad", "no_titular_vivienda", "no_exigidos", "otros"],
       "properties": {
         "ingresos_min_iprem": { "$ref": "#/$defs/vecesIprem" },
         "ingresos_max_iprem": { "$ref": "#/$defs/vecesIprem" },
@@ -156,6 +156,12 @@
         "empadronamiento": { "$ref": "#/$defs/empadronamiento" },
         "edad": { "$ref": "#/$defs/edad" },
         "no_titular_vivienda": { "$ref": "#/$defs/nullableBool" },
+        "no_exigidos": {
+          "description": "Requisitos que consta que no se exigen. Un null que no figura aquí significa desconocido",
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "enum": ["ingresos_min_iprem", "ingresos_max_iprem", "tasa_esfuerzo_max", "empadronamiento", "edad", "no_titular_vivienda"] }
+        },
         "otros": { "type": "array", "items": { "type": "string", "maxLength": 300 } }
       }
     },

@@ -84,6 +84,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -230,6 +231,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -376,6 +378,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -538,6 +541,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -700,6 +704,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -862,6 +867,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -1024,6 +1030,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -1180,6 +1187,7 @@
           "tipo": "requisito"
         },
         "no_titular_vivienda": true,
+        "no_exigidos": [],
         "otros": [
           "Ser español o residente legal en España",
           "No haber sido ninguno de los miembros de la unidad familiar condenado por delitos de allanamiento de morada o por usurpación de vivienda",
@@ -1410,6 +1418,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -1572,6 +1581,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -1718,6 +1728,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -1832,6 +1843,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -1978,6 +1990,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -2140,6 +2153,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -2286,6 +2300,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -2416,6 +2431,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -2554,6 +2570,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {
@@ -2692,6 +2709,7 @@
         "empadronamiento": null,
         "edad": null,
         "no_titular_vivienda": null,
+        "no_exigidos": [],
         "otros": []
       },
       "fechas": {

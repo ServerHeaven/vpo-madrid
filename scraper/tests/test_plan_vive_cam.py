@@ -128,6 +128,7 @@ def test_requisitos_come_from_the_faq(adapter):
     requisitos = dict(result.datos["requisitos"])
     otros = requisitos.pop("otros")
     assert requisitos.pop("no_titular_vivienda") is True
+    assert requisitos.pop("no_exigidos") == []
     assert all(value is None for value in requisitos.values())  # includes empadronamiento
     assert otros[:3] == [
         "Mayoría de edad o ser menor emancipado.",

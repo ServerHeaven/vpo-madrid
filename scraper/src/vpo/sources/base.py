@@ -125,7 +125,7 @@ def requisitos_desconocidos() -> dict[str, Any]:
         "edad",
         "no_titular_vivienda",
     )
-    return dict.fromkeys(keys) | {"otros": []}
+    return dict.fromkeys(keys) | {"no_exigidos": [], "otros": []}
 
 
 def fechas_desconocidas() -> dict[str, Any]:

@@ -78,6 +78,12 @@ def _cross_checks(data: dict[str, Any]) -> list[str]:
         for promo in promos:
             if promo["ubicacion"]["municipio_ine"] not in codes:
                 errors.append(f"{label}: {promo['id']}: municipio_ine inexistente")
+            requisitos = promo["requisitos"]
+            errors += [
+                f"{label}: {promo['id']}: {name} tiene valor y figura en no_exigidos"
+                for name in requisitos["no_exigidos"]
+                if requisitos[name] is not None
+            ]
     return errors
 
 

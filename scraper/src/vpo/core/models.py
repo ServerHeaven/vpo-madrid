@@ -90,6 +90,16 @@ class Edad(_Strict):
     tipo: Literal["requisito", "cupo"]
 
 
+NoExigido = Literal[
+    "ingresos_min_iprem",
+    "ingresos_max_iprem",
+    "tasa_esfuerzo_max",
+    "empadronamiento",
+    "edad",
+    "no_titular_vivienda",
+]
+
+
 class Requisitos(_Strict):
     ingresos_min_iprem: VecesIprem | None
     ingresos_max_iprem: VecesIprem | None
@@ -100,6 +110,7 @@ class Requisitos(_Strict):
     empadronamiento: Empadronamiento | None
     edad: Edad | None
     no_titular_vivienda: bool | None
+    no_exigidos: list[NoExigido]
     otros: list[Annotated[str, Field(max_length=300)]]
 
 

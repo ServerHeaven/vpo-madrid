@@ -1,6 +1,6 @@
 # ADR-001: huecos del diseño detectados en la Fase 1
 
-**Estado:** propuesto, pendiente de decisión. La Fase 1 implementa el diseño tal como está.
+**Estado:** puntos 1 y 2 decididos (2026-11-27); 3 y 4 pendientes.
 
 ## 1. `null` significa a la vez "desconocido" y "no se exige"
 §3.1 define `null` como "no lo sabemos". §6.3 (R2, R4, R5) trata `empadronamiento`, `edad` o ingresos mínimos en `null` como "no se exige", es decir, cumplido.
@@ -9,7 +9,7 @@
 
 **Propuesta:** añadir `requisitos.no_exigidos: string[]` (por ejemplo `["empadronamiento", "edad"]`). `null` pasa a significar siempre "desconocido" → `DESCONOCIDO` en la calculadora. Solo lo listado en `no_exigidos` cuenta como cumplido. El cambio es barato ahora porque no hay datos reales.
 
-**Decidir antes de la Fase 3.**
+**Decidido (2026-11-27, al empezar la Fase 3): aceptado.** El campo existe en el schema y en `models.py`. Un requisito listado debe estar en `null`; la validación lo comprueba. El extractor solo lo rellena con una negación explícita; en el resto de casos se pone con un override.
 
 ## 2. El empadronamiento del Plan Vive es preferencia, no requisito
 Desde abril de 2026 ordena la adjudicación sin excluir. `requisitos.empadronamiento` solo expresa requisitos excluyentes.

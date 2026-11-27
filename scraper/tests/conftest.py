@@ -56,6 +56,7 @@ def build_promo(promo_id: str = "demo-madrid-uno", *, fuente_id: str = "demo", *
             "empadronamiento": None,
             "edad": None,
             "no_titular_vivienda": None,
+            "no_exigidos": [],
             "otros": [],
         },
         "fechas": {

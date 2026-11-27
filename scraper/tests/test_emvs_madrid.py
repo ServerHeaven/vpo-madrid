@@ -246,6 +246,7 @@ def test_lottery_promotion(adapter):
         },
         "edad": {"min": 18, "max": 50, "tipo": "requisito"},
         "no_titular_vivienda": True,
+        "no_exigidos": [],
         "otros": [
             "Ser español o residente legal en España",
             "No haber sido ninguno de los miembros de la unidad familiar condenado por delitos de "

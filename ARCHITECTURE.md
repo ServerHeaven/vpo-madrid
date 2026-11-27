@@ -340,7 +340,7 @@
       "required": [
         "ingresos_min_iprem", "ingresos_max_iprem", "ingresos_por_miembros",
         "iprem_pagas", "iprem_ejercicio", "tasa_esfuerzo_max",
-        "empadronamiento", "edad", "no_titular_vivienda", "otros"
+        "empadronamiento", "edad", "no_titular_vivienda", "no_exigidos", "otros"
       ],
       "properties": {
         "ingresos_min_iprem": { "$ref": "#/$defs/ivecesIprem" },
@@ -385,6 +385,12 @@
           }
         },
         "no_titular_vivienda": { "$ref": "#/$defs/nullableBool" },
+        "no_exigidos": {
+          "description": "Requisitos que consta que no se exigen (ADR-001 §1)",
+          "type": "array", "uniqueItems": true,
+          "items": { "enum": ["ingresos_min_iprem", "ingresos_max_iprem", "tasa_esfuerzo_max",
+                              "empadronamiento", "edad", "no_titular_vivienda"] }
+        },
         "otros": { "type": "array", "items": { "type": "string", "maxLength": 300 } }
       }
     },
@@ -897,14 +903,16 @@ Cada regla devuelve `CUMPLE | NO_CUMPLE | DESCONOCIDO | INFORMATIVO` con una exp
 | # | Regla | Lógica |
 |---|---|---|
 | R1 | Ingresos máximos | Si `ingresos_por_miembros` ≠ null → fila donde `miembros_desde ≤ miembros ≤ (miembros_hasta ?? ∞)`. Si no, `max_iprem`. `veces_iprem ≤ max` → CUMPLE. |
-| R2 | Ingresos mínimos | Ídem con `min`. `veces_iprem ≥ min` → CUMPLE. Si no hay mínimo definido → CUMPLE (no aplica). |
+| R2 | Ingresos mínimos | Ídem con `min`. `veces_iprem ≥ min` → CUMPLE. Si `ingresos_min_iprem` está en `no_exigidos` → CUMPLE; si es `null` y no está → DESCONOCIDO. |
 | R3 | Tasa de esfuerzo | Por **tipología**: `renta_mensual_eur × 12 / ingresos_anuales ≤ tasa_esfuerzo_max`. La promoción CUMPLE si **al menos una tipología** cumple, y la UI indica cuáles. Si la renta es `null` → DESCONOCIDO. Equivale a un ingreso mínimo implícito: `ingreso_min = renta × 12 / tasa`, que se muestra como "necesitas al menos X €/año para la vivienda de N dormitorios". |
-| R4 | Empadronamiento | Si `empadronamiento = null` → CUMPLE (no exigido). `ambito = comunidad` → basta cualquier municipio `28xxx` con `anios ≥ anios_min`. `ambito = municipio` → `municipio_empadronamiento == municipio_ine ∧ anios ≥ anios_min`, **o** (si `alternativa_trabajo`) `municipio_trabajo == municipio_ine ∧ anios_trabajo ≥ anios_min`. `anios_min = null` → DESCONOCIDO. |
+| R4 | Empadronamiento | En `no_exigidos` → CUMPLE. `empadronamiento = null` y no listado → DESCONOCIDO. `ambito = comunidad` → basta cualquier municipio `28xxx` con `anios ≥ anios_min`. `ambito = municipio` → `municipio_empadronamiento == municipio_ine ∧ anios ≥ anios_min`, **o** (si `alternativa_trabajo`) `municipio_trabajo == municipio_ine ∧ anios_trabajo ≥ anios_min`. `anios_min = null` → DESCONOCIDO. |
 | R5 | Edad | `tipo = requisito`: `min ≤ edad ≤ max` → CUMPLE/NO_CUMPLE. `tipo = cupo`: siempre INFORMATIVO ("optas al cupo de jóvenes" o "optas al cupo general"). |
 | R6 | No titularidad | `no_titular_vivienda ≠ false ∧ usuario.titular` → NO_CUMPLE con matiz "salvo excepciones de las bases (separación, vivienda inadecuada…)". |
 | R7 | Estado | `finalizada` → la promoción se excluye del resultado por defecto (con conmutador "mostrar finalizadas"). `proxima` → INFORMATIVO "aún no abre". |
 | R8 | Adecuación tipología/miembros | Solo si el programa define `adecuacion` (p. ej. máximo de miembros por dormitorio). Si no, no se evalúa. |
 | R9 | Requisitos no comprobables | `requisitos.otros` + `requisitos_no_comprobables` del programa → lista "también debes cumplir". |
+
+**`null` y `no_exigidos` (ADR-001 §1):** un requisito en `null` es siempre *desconocido* y da DESCONOCIDO. Solo lo que figura en `requisitos.no_exigidos` cuenta como no exigido. Esto vale también para R5, R6 y la tasa de esfuerzo.
 
 **Resultado agregado por promoción:**
 - **Elegible:** todas las reglas en CUMPLE o INFORMATIVO.
