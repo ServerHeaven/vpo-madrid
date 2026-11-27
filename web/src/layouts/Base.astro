@@ -1,0 +1,73 @@
+---
+import AvisoLegal from '../components/AvisoLegal.astro';
+import { REPO_URL } from '../lib/repo';
+import { url } from '../lib/rutas';
+import '../styles/global.css';
+
+interface Props {
+  titulo: string;
+  descripcion: string;
+  /** Marks the current entry of the navigation. */
+  pagina?: 'buscador' | 'fuentes' | 'metodologia' | 'aviso-legal';
+}
+
+const { titulo, descripcion, pagina } = Astro.props;
+const menu = [
+  { id: 'buscador', texto: 'Buscador', href: url() },
+  { id: 'fuentes', texto: 'Fuentes', href: url('fuentes/') },
+  { id: 'metodologia', texto: 'Metodología', href: url('metodologia/') },
+  { id: 'aviso-legal', texto: 'Aviso legal', href: url('aviso-legal/') },
+];
+const canonica = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo} · Alquiler protegido en Madrid</title>
+    <meta name="description" content={descripcion} />
+    <link rel="canonical" href={canonica} />
+    <link rel="icon" type="image/svg+xml" href={url('favicon.svg')} />
+  </head>
+  <body class="flex min-h-screen flex-col bg-slate-50 text-slate-900">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:bg-white focus:p-3">
+      Saltar al contenido
+    </a>
+    <header class="border-b border-slate-200 bg-white">
+      <div class="contenedor flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-3">
+        <a href={url()} class="py-2 text-lg font-bold">Alquiler protegido · Madrid</a>
+        <nav aria-label="Principal">
+          <ul class="flex flex-wrap gap-x-3 text-sm sm:gap-x-4 sm:text-base">
+            {
+              menu.map((m) => (
+                <li>
+                  <a
+                    href={m.href}
+                    aria-current={pagina === m.id ? 'page' : undefined}
+                    class="inline-block py-3 text-slate-700 hover:underline aria-[current=page]:font-bold aria-[current=page]:text-slate-950"
+                  >
+                    {m.texto}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="contenido" class="contenedor flex-1 py-6">
+      <slot />
+    </main>
+    <footer class="border-t border-slate-200 bg-white py-6 text-sm text-slate-700">
+      <div class="contenedor space-y-2">
+        <AvisoLegal />
+        <p>
+          Sin cookies ni analítica. Código y datos en
+          <a class="enlace" href={REPO_URL}>GitHub</a>.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

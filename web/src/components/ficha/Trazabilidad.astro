@@ -1,0 +1,123 @@
+---
+// "Where does this come from?" block (ARCHITECTURE.md §7.1).
+import { enlaceSeguro, ultimaComprobacion } from '../../lib/comprobacion';
+import { formatFecha, formatMarcaTiempo } from '../../lib/format';
+import { urlCorreccion } from '../../lib/repo';
+import { url } from '../../lib/rutas';
+import type { OverridesFile, Promocion, State } from '../../lib/types';
+
+interface Props {
+  promo: Promocion;
+  state: State;
+  overrides: OverridesFile;
+}
+
+const { promo, state, overrides } = Astro.props;
+const { meta, enlaces } = promo;
+const oficial = enlaceSeguro(enlaces.oficial);
+const comprobacion = ultimaComprobacion(promo, state, overrides);
+const fuente = state.fuentes[promo.fuente_id];
+
+const texto =
+  comprobacion.tipo === 'ficha'
+    ? formatFecha(comprobacion.fecha)
+    : comprobacion.tipo === 'fuente'
+      ? `${formatMarcaTiempo(comprobacion.fecha)} (última lectura correcta de la fuente; no consta la de esta ficha)`
+      : comprobacion.tipo === 'manual'
+        ? 'Promoción añadida a mano: no se comprueba automáticamente'
+        : 'Sin comprobación registrada';
+
+const correcciones = meta.campos_override.map((puntero) => ({
+  puntero,
+  motivo: meta.procedencia[puntero]?.evidencia ?? null,
+}));
+---
+
+<section aria-labelledby="titulo-trazabilidad" class="tarjeta">
+  <h2 id="titulo-trazabilidad" class="mb-3 text-xl font-bold">Trazabilidad</h2>
+
+  {
+    oficial ? (
+      <p>
+        <a class="boton" href={oficial}>
+          Ver la fuente oficial
+        </a>
+      </p>
+    ) : (
+      <p>Enlace oficial no disponible.</p>
+    )
+  }
+
+  <h3 class="mt-4 mb-1 text-lg font-semibold">Bases en PDF</h3>
+  {
+    enlaces.bases.length === 0 ? (
+      <p class="text-slate-700">No hay ningún PDF de bases enlazado para esta promoción.</p>
+    ) : (
+      <ul class="space-y-2">
+        {enlaces.bases.map((doc) => {
+          const href = enlaceSeguro(doc.url);
+          return (
+            <li class="break-words">
+              {href ? (
+                <a class="enlace inline-block py-1" href={href}>
+                  {doc.titulo} (PDF)
+                </a>
+              ) : (
+                <span>{doc.titulo} (enlace no válido)</span>
+              )}
+              <span class="block text-sm text-slate-600">
+                {doc.es_principal ? 'Documento principal · ' : ''}Detectado el {formatFecha(doc.detectado_en)} ·
+                SHA-256 <code>{doc.sha256.slice(0, 8)}</code>
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    )
+  }
+
+  <dl class="mt-4 space-y-2">
+    <div>
+      <dt class="text-sm text-slate-600">Última comprobación</dt>
+      <dd>{texto}</dd>
+    </div>
+    <div>
+      <dt class="text-sm text-slate-600">Datos modificados por última vez</dt>
+      <dd>{formatFecha(meta.ultima_modificacion)}</dd>
+    </div>
+  </dl>
+
+  {
+    comprobacion.tipo !== 'manual' && fuente && fuente.estado !== 'ok' && (
+      <p class="mt-2 rounded-md bg-amber-100 p-3 text-amber-900">
+        La última lectura de esta fuente tuvo problemas: los datos pueden estar desactualizados.{' '}
+        <a class="underline" href={url('fuentes/')}>
+          Estado de las fuentes
+        </a>
+      </p>
+    )
+  }
+
+  {
+    correcciones.length > 0 && (
+      <>
+        <h3 class="mt-4 mb-1 text-lg font-semibold">Campos corregidos a mano</h3>
+        <ul class="list-disc pl-5">
+          {correcciones.map((c) => (
+            <li class="break-words">
+              <code>{c.puntero}</code>
+              {c.motivo ? `: ${c.motivo}` : ''}
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+
+  <p class="mt-4">
+    <a class="boton-secundario" href={urlCorreccion(promo.id, promo.nombre)}> ¿Ves un error? </a>
+  </p>
+  <p class="mt-1 text-sm text-slate-600">
+    Abre una incidencia pública en GitHub. No incluyas datos personales.
+  </p>
+</section>

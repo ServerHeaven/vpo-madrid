@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import { REPO_URL, urlArchivo } from '../lib/repo';
+import { url } from '../lib/rutas';
+---
+
+<Base
+  titulo="Aviso legal"
+  descripcion="Información orientativa, sin vínculo con administraciones ni operadoras. Uso de datos, privacidad y licencia."
+  pagina="aviso-legal"
+>
+  <article class="prosa max-w-3xl">
+    <h1 class="text-2xl font-bold">Aviso legal</h1>
+
+    <h2>Información orientativa</h2>
+    <p>
+      El contenido de esta web es orientativo. Puede estar incompleto, desactualizado o contener errores,
+      porque se obtiene de forma automática a partir de webs y documentos ajenos. No sustituye a las bases ni
+      a la convocatoria oficial, <strong>que prevalecen siempre</strong>. Antes de decidir o de presentar una
+      solicitud, comprueba los plazos, requisitos y rentas en la fuente oficial enlazada en cada ficha.
+    </p>
+    <p>Que una promoción aparezca o no aquí no dice nada sobre tu derecho a optar a ella.</p>
+
+    <h2>Sin vínculo con administraciones ni operadoras</h2>
+    <p>
+      Este es un proyecto independiente. No tiene relación con la Comunidad de Madrid, los ayuntamientos, las
+      empresas municipales de vivienda ni las operadoras privadas, y no tramita solicitudes. Sus nombres se
+      usan solo para identificar las promociones y sus fuentes.
+    </p>
+
+    <h2>Datos y enlaces</h2>
+    <p>
+      La web publica datos de las promociones (como rentas, requisitos y fechas) y enlaces a las fuentes. Para
+      mostrar de dónde sale un dato se guardan fragmentos cortos del texto original. La web no aloja copias de
+      las bases en PDF: enlaza a su dirección original. El repositorio del código sí conserva copias de algunas
+      páginas y documentos como material de prueba, que pertenecen a sus autores.
+    </p>
+    <p>
+      Si representas a una de las fuentes y quieres pedir una corrección o una retirada,
+      <a href={`${REPO_URL}/issues/new`}>abre una issue en GitHub</a>. Es pública: no incluyas datos personales.
+    </p>
+
+    <h2>Privacidad y cookies</h2>
+    <p>
+      Esta web no usa cookies ni analítica, no tiene cuentas de usuario ni formularios que envíen datos. Está
+      alojada en GitHub Pages, y GitHub puede registrar la dirección IP de quienes la visitan según su
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+        >declaración de privacidad</a
+      >. Este proyecto no controla esos registros. Los enlaces externos llevan a webs con sus propias
+      condiciones.
+    </p>
+
+    <h2>Licencia</h2>
+    <p>
+      El código se distribuye bajo <a href={urlArchivo('LICENSE')}>licencia MIT</a>. Esa licencia
+      <strong>no cubre</strong> los documentos y páginas de terceros usados como material de prueba. La relación
+      de municipios procede del INE.
+    </p>
+
+    <p><a href={url('metodologia/')}>Cómo se obtienen los datos y cómo corregirlos</a></p>
+  </article>
+</Base>

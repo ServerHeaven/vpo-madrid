@@ -1,0 +1,19 @@
+---
+// Marks a manually corrected field. The reason is visible text, so no hover is needed.
+import type { Correccion } from '../../lib/requisitos';
+
+interface Props {
+  correcciones: Correccion[];
+}
+
+const { correcciones } = Astro.props;
+---
+
+{
+  correcciones.map(({ motivo }) => (
+    <span class="mt-1 block text-sm text-amber-900" title={motivo ?? undefined}>
+      <span aria-hidden="true">✎ </span>
+      Corregido a mano{motivo ? `: ${motivo}` : ''}
+    </span>
+  ))
+}

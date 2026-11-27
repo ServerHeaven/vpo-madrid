@@ -176,7 +176,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -1520,7 +1520,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -1667,7 +1667,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -1814,7 +1814,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -2092,7 +2092,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -2239,7 +2239,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -2386,7 +2386,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -2509,7 +2509,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",

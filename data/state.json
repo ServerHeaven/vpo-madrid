@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "ultima_ejecucion": "2026-11-27T14:14:30Z",
+  "ultima_ejecucion": "2026-11-27T15:32:15Z",
   "fuentes": {
     "emvs-madrid": {
       "estado": "ok",
-      "ultima_ejecucion": "2026-11-27T14:14:30Z",
-      "ultimo_exito": "2026-11-27T14:14:30Z",
+      "ultima_ejecucion": "2026-11-27T15:32:15Z",
+      "ultimo_exito": "2026-11-27T15:32:15Z",
       "fallos_consecutivos": 0,
       "ultimo_error": null,
       "promociones_vistas": 18,
-      "duracion_s": 124.3
+      "duracion_s": 126.4
     },
     "plan-vive-cam": {
       "estado": "ok",

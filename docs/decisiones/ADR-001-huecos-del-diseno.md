@@ -1,6 +1,6 @@
 # ADR-001: huecos del diseño detectados en la Fase 1
 
-**Estado:** puntos 1 y 2 decididos (2026-11-27); 3 y 4 pendientes.
+**Estado:** puntos 1 a 3 decididos (2026-11-27); 4 pendiente.
 
 ## 1. `null` significa a la vez "desconocido" y "no se exige"
 §3.1 define `null` como "no lo sabemos". §6.3 (R2, R4, R5) trata `empadronamiento`, `edad` o ingresos mínimos en `null` como "no se exige", es decir, cumplido.
@@ -22,6 +22,8 @@ Desde abril de 2026 ordena la adjudicación sin excluir. `requisitos.empadronami
 §3.3 dice que tras corregir `overrides.json` actúa `deploy.yml`, pero `deploy.yml` (§4.2) no ejecuta la fusión: publicaría el `promociones.json` antiguo.
 
 **Propuesta:** ejecutar `vpo merge` en `deploy.yml` antes del build (sin commit). Resolver en la Fase 4.
+
+**Decidido (2026-11-27, Fase 4): aceptado.** El job `build` ejecuta `vpo merge` y `vpo validate` antes de construir la web; si una corrección no se puede aplicar, no se publica. No hay commit: `data/promociones.json` del repositorio no recoge la corrección hasta el siguiente scrape.
 
 ## 4. Tasa de esfuerzo: base de cálculo
 §6.3 R3 divide la renta entre los ingresos introducidos (base imponible). Las convocatorias del Plan Vive citadas en prensa hablan de ingresos **netos** y de renta con gastos incluidos. Confirmar con las bases antes de la Fase 5.

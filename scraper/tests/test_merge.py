@@ -155,3 +155,10 @@ def test_corrected_deadline_drives_derived_state():
     )
     result = run([build_promo()], overrides, today=date(2027, 1, 1))
     assert result.promociones[0]["estado"] == "inscripcion_abierta"
+
+
+def test_correction_fills_an_unknown_modalidad():
+    result = corrected({"/modalidad": build_field("alquiler_opcion_compra")}, build_promo(modalidad=None))
+    assert result.promociones[0]["modalidad"] == "alquiler_opcion_compra"
+    assert result.avisos == []
+

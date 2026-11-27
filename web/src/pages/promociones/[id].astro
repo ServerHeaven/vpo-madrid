@@ -1,0 +1,138 @@
+---
+import BadgeEstado from '../../components/BadgeEstado';
+import Correccion from '../../components/ficha/Correccion.astro';
+import Dato from '../../components/ficha/Dato.astro';
+import Requisitos from '../../components/ficha/Requisitos.astro';
+import Tipologias from '../../components/ficha/Tipologias.astro';
+import Trazabilidad from '../../components/ficha/Trazabilidad.astro';
+import Base from '../../layouts/Base.astro';
+import { enlaceSeguro } from '../../lib/comprobacion';
+import { cargarDatos } from '../../lib/data';
+import { MODALIDADES, PROGRAMAS, REGIMENES, TIPOS_OPERADOR } from '../../lib/etiquetas';
+import { formatEntrega, formatFecha } from '../../lib/format';
+import { correccionesDe } from '../../lib/requisitos';
+import { url } from '../../lib/rutas';
+import type { Promocion } from '../../lib/types';
+
+export function getStaticPaths() {
+  return cargarDatos().promociones.map((promo) => ({ params: { id: promo.id }, props: { promo } }));
+}
+
+interface Props {
+  promo: Promocion;
+}
+
+const { promo } = Astro.props;
+const { state, programas, overrides } = cargarDatos();
+const { meta, ubicacion, fechas } = promo;
+const solicitud = enlaceSeguro(promo.enlaces.solicitud);
+const nota = Object.hasOwn(overrides.overrides, promo.id) ? overrides.overrides[promo.id]!.nota_publica : null;
+const fecha = (valor: string | null) => (valor === null ? null : formatFecha(valor));
+---
+
+<Base
+  titulo={promo.nombre}
+  descripcion={`${promo.nombre}, ${ubicacion.municipio}: requisitos, rentas, fechas y fuente oficial.`}
+>
+  <p>
+    <a class="enlace inline-block py-2" href={url()}>← Volver al buscador</a>
+  </p>
+
+  <div class="mb-4">
+    <h1 class="mb-2 text-2xl font-bold break-words sm:text-3xl">{promo.nombre}</h1>
+    <Correccion correcciones={correccionesDe(meta, '/nombre')} />
+    <BadgeEstado estado={promo.estado} />
+    <Correccion correcciones={correccionesDe(meta, '/estado')} />
+  </div>
+
+  {
+    !meta.activa_en_fuente && (
+      <p class="mb-4 rounded-md bg-amber-100 p-3 text-amber-900">
+        <strong>Esta promoción ya no aparece en la fuente.</strong> Se muestran los últimos datos conocidos.
+      </p>
+    )
+  }
+  {
+    nota && (
+      <p class="mb-4 rounded-md border border-blue-300 bg-blue-50 p-3 break-words">
+        <strong>Nota:</strong> {nota}
+      </p>
+    )
+  }
+
+  <div class="space-y-4">
+    {
+      solicitud && (
+        <p>
+          <a class="boton" href={solicitud}>
+            Ir a la solicitud
+          </a>
+        </p>
+      )
+    }
+
+    <section aria-labelledby="titulo-datos" class="tarjeta">
+      <h2 id="titulo-datos" class="mb-3 text-xl font-bold">Datos de la promoción</h2>
+      <dl class="grid gap-3 sm:grid-cols-2">
+        <Dato
+          etiqueta="Operador"
+          valor={`${promo.operador.nombre} (${TIPOS_OPERADOR[promo.operador.tipo].toLowerCase()})`}
+          {meta}
+          puntero="/operador"
+        />
+        <Dato
+          etiqueta="Programa"
+          valor={promo.programa && PROGRAMAS[promo.programa]}
+          {meta}
+          puntero="/programa"
+        />
+        <Dato
+          etiqueta="Régimen"
+          valor={promo.regimen === 'DESCONOCIDO' ? null : REGIMENES[promo.regimen]}
+          {meta}
+          puntero="/regimen"
+        />
+        <Dato
+          etiqueta="Modalidad"
+          valor={promo.modalidad && MODALIDADES[promo.modalidad]}
+          {meta}
+          puntero="/modalidad"
+        />
+        <Dato etiqueta="Municipio" valor={ubicacion.municipio} {meta} puntero="/ubicacion/municipio" />
+        <Dato etiqueta="Distrito" valor={ubicacion.distrito} {meta} puntero="/ubicacion/distrito" />
+        <Dato etiqueta="Dirección" valor={ubicacion.direccion} {meta} puntero="/ubicacion/direccion" />
+        <Dato etiqueta="Viviendas" valor={promo.viviendas_total} {meta} puntero="/viviendas_total" />
+      </dl>
+    </section>
+
+    <Tipologias {promo} />
+    <Requisitos {promo} {programas} />
+
+    <section aria-labelledby="titulo-fechas" class="tarjeta">
+      <h2 id="titulo-fechas" class="mb-3 text-xl font-bold">Fechas</h2>
+      <dl class="grid gap-3 sm:grid-cols-2">
+        <Dato
+          etiqueta="Inicio de la inscripción"
+          valor={fecha(fechas.inscripcion_inicio)}
+          {meta}
+          puntero="/fechas/inscripcion_inicio"
+        />
+        <Dato
+          etiqueta="Fin de la inscripción"
+          valor={fecha(fechas.inscripcion_fin)}
+          {meta}
+          puntero="/fechas/inscripcion_fin"
+        />
+        <Dato etiqueta="Sorteo" valor={fecha(fechas.sorteo)} {meta} puntero="/fechas/sorteo" />
+        <Dato
+          etiqueta="Entrega prevista"
+          valor={fechas.entrega_prevista && formatEntrega(fechas.entrega_prevista)}
+          {meta}
+          puntero="/fechas/entrega_prevista"
+        />
+      </dl>
+    </section>
+
+    <Trazabilidad {promo} {state} {overrides} />
+  </div>
+</Base>

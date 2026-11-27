@@ -92,6 +92,14 @@ def test_changed_data_or_provenance_updates_modification_date():
         assert validate_promo(promo) == []
 
 
+def test_a_value_that_becomes_unknown_replaces_the_stored_one():
+    first = build(parsed(modalidad="alquiler"))
+    second = build(parsed(modalidad=None), first, DAY_1 + timedelta(days=5))
+    assert second["modalidad"] is None
+    assert second["meta"]["ultima_modificacion"] == "2026-11-06"
+    assert validate_promo(second) == []
+
+
 def test_first_miss_deactivates_and_records_the_date():
     active = build(parsed())
     original = copy.deepcopy(active)

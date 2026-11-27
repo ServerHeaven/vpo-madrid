@@ -1,0 +1,70 @@
+---
+import { DISPONIBILIDADES, etiquetaDormitorios, SIN_DATO } from '../../lib/etiquetas';
+import { formatEur, formatNumero, formatRenta } from '../../lib/format';
+import { correccionesDe, estaPendiente } from '../../lib/requisitos';
+import type { Anejo, Promocion } from '../../lib/types';
+import Correccion from './Correccion.astro';
+
+interface Props {
+  promo: Promocion;
+}
+
+const { promo } = Astro.props;
+const { tipologias, meta } = promo;
+const NO_CONSTA = 'No consta';
+
+const anejo = ({ disponibilidad, precio_mensual_eur: precio }: Anejo): string =>
+  precio === null
+    ? DISPONIBILIDADES[disponibilidad]
+    : `${DISPONIBILIDADES[disponibilidad]} · ${formatEur(precio)}/mes`;
+---
+
+<section aria-labelledby="titulo-tipologias" class="tarjeta">
+  <h2 id="titulo-tipologias" class="mb-2 text-xl font-bold">Viviendas y rentas</h2>
+  <Correccion correcciones={correccionesDe(meta, '/tipologias')} />
+  {
+    estaPendiente(meta, '/tipologias') && (
+      <p class="mb-2 text-slate-700">
+        {tipologias.length === 0 ? SIN_DATO : 'Faltan datos de estas viviendas: consulta las bases.'}
+      </p>
+    )
+  }
+  {
+    tipologias.length === 0 ? (
+      !estaPendiente(meta, '/tipologias') && <p class="text-slate-700">{SIN_DATO}</p>
+    ) : (
+      <div class="overflow-x-auto" role="region" aria-labelledby="titulo-tipologias" tabindex="0">
+        <table class="w-full min-w-[40rem] border-collapse text-left text-sm">
+          <thead>
+            <tr class="border-b border-slate-300">
+              {['Dormitorios', 'Renta', 'Superficie útil', 'Viviendas', 'Garaje', 'Trastero', 'Adaptada PMR'].map(
+                (columna) => (
+                  <th scope="col" class="py-2 pr-3 font-semibold">
+                    {columna}
+                  </th>
+                ),
+              )}
+            </tr>
+          </thead>
+          <tbody>
+            {tipologias.map((t) => (
+              <tr class="border-b border-slate-200 align-top">
+                <th scope="row" class="py-2 pr-3 font-medium">
+                  {t.dormitorios === null ? NO_CONSTA : etiquetaDormitorios(t.dormitorios)}
+                </th>
+                <td class="py-2 pr-3">{formatRenta(t.renta_mensual_eur, t.renta_mensual_max_eur) ?? SIN_DATO}</td>
+                <td class="py-2 pr-3">
+                  {t.superficie_util_m2 === null ? NO_CONSTA : `${formatNumero(t.superficie_util_m2)} m²`}
+                </td>
+                <td class="py-2 pr-3">{t.num_viviendas ?? NO_CONSTA}</td>
+                <td class="py-2 pr-3">{anejo(t.garaje)}</td>
+                <td class="py-2 pr-3">{anejo(t.trastero)}</td>
+                <td class="py-2">{t.adaptada_pmr === null ? NO_CONSTA : t.adaptada_pmr ? 'Sí' : 'No'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+</section>

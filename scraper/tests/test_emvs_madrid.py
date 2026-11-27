@@ -173,7 +173,8 @@ def test_unknown_category_and_area_that_is_not_a_district(adapter):
     assert parsed.datos["ubicacion"]["distrito"] is None
     assert parsed.datos["ubicacion"]["direccion"] == "C/ José Gutiérrez Maroto, 2"
     assert types(parsed.datos) == [(2, 26), (3, 20)]
-    assert "/modalidad" not in parsed.procedencia  # the page never says it is for rent
+    assert parsed.datos["modalidad"] is None  # the page never says it is for rent
+    assert "/modalidad" not in parsed.procedencia
     assert "/regimen" not in parsed.procedencia
 
 

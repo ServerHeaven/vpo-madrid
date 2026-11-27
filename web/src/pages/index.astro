@@ -1,0 +1,33 @@
+---
+import Buscador from '../islands/Buscador';
+import Base from '../layouts/Base.astro';
+import { cargarDatos } from '../lib/data';
+import { formatMarcaTiempo } from '../lib/format';
+import { construirIndice } from '../lib/indice';
+
+const datos = cargarDatos();
+const { promociones } = construirIndice(datos.promociones, datos.generado_en);
+---
+
+<Base
+  titulo="Buscador de promociones"
+  descripcion="Promociones de alquiler protegido y asequible en la Comunidad de Madrid, con enlace a la fuente oficial."
+  pagina="buscador"
+>
+  <h1 class="text-2xl font-bold">Alquiler protegido en la Comunidad de Madrid</h1>
+  <p class="mt-1 mb-4 text-slate-700">
+    Cada ficha enlaza a su fuente oficial. Datos modificados por última vez el{' '}
+    {formatMarcaTiempo(datos.generado_en)}.
+  </p>
+  <noscript>
+    <style>
+      .solo-js {
+        display: none !important;
+      }
+    </style>
+    <p class="tarjeta mb-4">
+      Sin JavaScript no se puede filtrar ni ordenar: a continuación aparecen todas las promociones.
+    </p>
+  </noscript>
+  <Buscador client:load promociones={promociones} />
+</Base>

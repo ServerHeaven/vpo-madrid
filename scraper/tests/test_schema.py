@@ -15,6 +15,11 @@ def test_synthetic_promotion_is_valid():
     assert validate_promo(build_promo()) == []
 
 
+@pytest.mark.parametrize(("modalidad", "valid"), [(None, True), ("venta", False), ("", False)])
+def test_modalidad_may_be_unknown_but_not_free_text(modalidad, valid):
+    assert (validate_promo(build_promo(modalidad=modalidad)) == []) is valid
+
+
 def test_missing_key_is_an_error_even_if_nullable():
     promo = build_promo()
     del promo["viviendas_total"]

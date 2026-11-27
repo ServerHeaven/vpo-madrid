@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generado_en": "2026-11-27T14:14:13Z",
+  "generado_en": "2026-11-27T15:34:23Z",
   "promociones": [
     {
       "id": "comunidad-de-madrid-alcala-de-henares-plan-vive-alcala-de-henares",
@@ -4272,7 +4272,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -5616,7 +5616,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -5763,7 +5763,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -5910,7 +5910,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -6188,7 +6188,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -6335,7 +6335,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -6482,7 +6482,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",
@@ -6605,7 +6605,7 @@
       "fuente_id": "emvs-madrid",
       "regimen": "DESCONOCIDO",
       "programa": "EMVS_MADRID",
-      "modalidad": "alquiler",
+      "modalidad": null,
       "estado": "proxima",
       "ubicacion": {
         "municipio_ine": "28079",

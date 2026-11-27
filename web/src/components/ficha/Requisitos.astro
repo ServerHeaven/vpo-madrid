@@ -1,0 +1,127 @@
+---
+import { enlaceSeguro } from '../../lib/comprobacion';
+import { SIN_DATO } from '../../lib/etiquetas';
+import { formatNumero } from '../../lib/format';
+import {
+  resolverRequisitos,
+  textoEdad,
+  textoEmpadronamiento,
+  textoIngresosMax,
+  textoIngresosMin,
+  textoMiembros,
+  textoTasa,
+  textoTitularidad,
+  type Resuelto,
+} from '../../lib/requisitos';
+import type { Promocion, ReglaPrograma } from '../../lib/types';
+import Correccion from './Correccion.astro';
+import Origen from './Origen.astro';
+
+interface Props {
+  promo: Promocion;
+  programas: ReglaPrograma[];
+}
+
+const { promo, programas } = Astro.props;
+const r = resolverRequisitos(promo, programas);
+
+function fila<T>(etiqueta: string, resuelto: Resuelto<T>, describir: (valor: T) => string | null) {
+  const texto =
+    resuelto.origen === 'no_exigido'
+      ? 'No se exige'
+      : resuelto.valor === null
+        ? null
+        : describir(resuelto.valor);
+  const { origen, regla, correcciones, procedencia } = resuelto;
+  // Only the link and page of the source: operator texts are not reproduced (§7.4).
+  const documento = origen === 'convocatoria' ? enlaceSeguro(procedencia?.documento) : null;
+  return { etiqueta, texto, origen, regla, correcciones, documento, pagina: procedencia?.pagina ?? null };
+}
+
+const filas = [
+  r.ingresos_min_iprem && fila('Ingresos mínimos', r.ingresos_min_iprem, textoIngresosMin),
+  r.ingresos_max_iprem && fila('Ingresos máximos', r.ingresos_max_iprem, textoIngresosMax),
+  r.ingresos_por_miembros &&
+    fila('Ingresos según miembros', r.ingresos_por_miembros, () => 'Ver la tabla por número de miembros'),
+  fila('Pagas del IPREM', r.iprem_pagas, (pagas) => `${pagas} pagas`),
+  fila('Ejercicio de los ingresos', r.iprem_ejercicio, (anio) => String(anio)),
+  fila('Esfuerzo máximo de la renta', r.tasa_esfuerzo_max, textoTasa),
+  fila('Empadronamiento', r.empadronamiento, (padron) => textoEmpadronamiento(padron, promo)),
+  fila('Edad', r.edad, textoEdad),
+  fila('Otra vivienda', r.no_titular_vivienda, textoTitularidad),
+].filter((f) => f !== null);
+
+const tabla = r.ingresos_por_miembros?.valor ?? null;
+const sinMinimo = promo.requisitos.no_exigidos.includes('ingresos_min_iprem');
+const sinMaximo = promo.requisitos.no_exigidos.includes('ingresos_max_iprem');
+const limite = (veces: number | null, noExigido: boolean): string =>
+  veces !== null ? `${formatNumero(veces)} × IPREM` : noExigido ? 'No se exige' : 'No consta';
+---
+
+<section aria-labelledby="titulo-requisitos" class="tarjeta">
+  <h2 id="titulo-requisitos" class="mb-2 text-xl font-bold">Requisitos</h2>
+  <dl class="divide-y divide-slate-200">
+    {
+      filas.map((f) => (
+        <div class="grid gap-x-4 py-3 sm:grid-cols-[14rem_1fr]">
+          <dt class="font-semibold">{f.etiqueta}</dt>
+          <dd class="min-w-0 break-words">
+            <span class={f.texto === null ? 'text-slate-600' : undefined}>{f.texto ?? SIN_DATO}</span>
+            <Origen origen={f.origen} regla={f.regla} />
+            {f.documento && (
+              <a class="enlace mt-1 inline-block py-1 text-sm" href={f.documento}>
+                Ver la fuente de «{f.etiqueta}»{f.pagina ? ` (página ${f.pagina})` : ''}
+              </a>
+            )}
+            <Correccion correcciones={f.correcciones} />
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
+
+  {
+    tabla && (
+      <div class="overflow-x-auto" role="region" aria-label="Ingresos por número de miembros" tabindex="0">
+        <table class="mt-3 w-full border-collapse text-left text-sm">
+          <caption class="mb-1 text-left font-semibold">Ingresos según el número de miembros</caption>
+          <thead>
+            <tr class="border-b border-slate-300">
+              <th scope="col" class="py-2 pr-3">Miembros</th>
+              <th scope="col" class="py-2 pr-3">Mínimo</th>
+              <th scope="col" class="py-2">Máximo</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tabla.map((t) => (
+              <tr class="border-b border-slate-200">
+                <th scope="row" class="py-2 pr-3 font-medium">
+                  {textoMiembros(t)}
+                </th>
+                <td class="py-2 pr-3">{limite(t.min_iprem, sinMinimo)}</td>
+                <td class="py-2">{limite(t.max_iprem, sinMaximo)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
+  {
+    (r.condiciones.length > 0 || r.correccionesCondiciones.length > 0) && (
+      <>
+        <h3 class="mt-4 mb-1 text-lg font-semibold">También debes cumplir o tener en cuenta</h3>
+        <Correccion correcciones={r.correccionesCondiciones} />
+        <ul class="list-disc space-y-2 pl-5">
+          {r.condiciones.map((c) => (
+            <li>
+              {c.texto}
+              {c.origen !== 'convocatoria' && <Origen origen={c.origen} regla={c.regla} />}
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+</section>

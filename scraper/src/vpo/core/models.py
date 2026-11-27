@@ -161,7 +161,7 @@ class Promocion(_Strict):
     fuente_id: SimpleId
     regimen: Regimen
     programa: Programa | None
-    modalidad: Literal["alquiler", "alquiler_opcion_compra"]
+    modalidad: Literal["alquiler", "alquiler_opcion_compra"] | None
     estado: Estado
     ubicacion: Ubicacion
     viviendas_total: Annotated[int, Field(ge=1, le=5000)] | None

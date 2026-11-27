@@ -1,0 +1,24 @@
+---
+// One term of a <dl>. `valor` null renders the "not available" text.
+import { SIN_DATO } from '../../lib/etiquetas';
+import { correccionesDe } from '../../lib/requisitos';
+import type { Promocion } from '../../lib/types';
+import Correccion from './Correccion.astro';
+
+interface Props {
+  etiqueta: string;
+  valor: string | number | null;
+  meta: Promocion['meta'];
+  puntero: string;
+}
+
+const { etiqueta, valor, meta, puntero } = Astro.props;
+---
+
+<div class="min-w-0">
+  <dt class="text-sm text-slate-600">{etiqueta}</dt>
+  <dd class="break-words">
+    {valor === null || valor === '' ? <span class="text-slate-600">{SIN_DATO}</span> : valor}
+    <Correccion correcciones={correccionesDe(meta, puntero)} />
+  </dd>
+</div>

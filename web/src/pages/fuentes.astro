@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+import { cargarDatos } from '../lib/data';
+import { ESTADOS_FUENTE, TIPOS_OPERADOR } from '../lib/etiquetas';
+import { formatMarcaTiempo } from '../lib/format';
+import { resumirFuentes, type Situacion } from '../lib/fuentes';
+import { url } from '../lib/rutas';
+
+const datos = cargarDatos();
+const filas = resumirFuentes(datos.fuentes, datos.state, datos.promociones);
+const activas = filas.filter((f) => f.fuente.activa);
+const inactivas = filas.filter((f) => !f.fuente.activa);
+
+const SITUACIONES: Record<Situacion, { texto: string; color: string }> = {
+  ok: { texto: ESTADOS_FUENTE.ok, color: 'bg-green-100 text-green-900' },
+  degradado: { texto: ESTADOS_FUENTE.degradado, color: 'bg-amber-100 text-amber-900' },
+  error: { texto: ESTADOS_FUENTE.error, color: 'bg-red-100 text-red-900' },
+  sin_ejecutar: { texto: 'Sin leer todavía', color: 'bg-slate-200 text-slate-900' },
+  pendiente: { texto: 'Todavía no se recoge', color: 'bg-slate-200 text-slate-900' },
+  desactivada: { texto: 'Ya no se recoge', color: 'bg-slate-200 text-slate-900' },
+};
+---
+
+<Base
+  titulo="Fuentes"
+  descripcion="De dónde salen los datos y cómo fue la última lectura de cada fuente."
+  pagina="fuentes"
+>
+  <h1 class="text-2xl font-bold">Fuentes</h1>
+  <p class="mt-2 max-w-3xl">
+    De dónde salen los datos y cómo fue la última lectura de cada web. Las lecturas todavía no están
+    automatizadas, así que pueden pasar días entre una y otra: mira las fechas.
+    {
+      datos.state.ultima_ejecucion && (
+        <>
+          La última fue el{' '}
+          <time datetime={datos.state.ultima_ejecucion}>{formatMarcaTiempo(datos.state.ultima_ejecucion)}</time>.
+        </>
+      )
+    }
+  </p>
+  <ul class="mt-3 max-w-3xl list-disc space-y-1 pl-6 text-sm text-slate-700">
+    <li><strong>{ESTADOS_FUENTE.ok}</strong>: la fuente se pudo leer.</li>
+    <li>
+      <strong>{ESTADOS_FUENTE.degradado}</strong>: falló más de la mitad de las fichas; de las que ya
+      se conocían se conservan los datos anteriores.
+    </li>
+    <li>
+      <strong>{ESTADOS_FUENTE.error}</strong>: no se pudo leer la fuente; se conservan los datos de la
+      última lectura correcta.
+    </li>
+  </ul>
+  <p class="mt-3">
+    <a class="enlace" href={url('metodologia/')}>Cómo se obtienen los datos</a>
+  </p>
+
+  <h2 class="mt-8 text-xl font-bold">Fuentes que se leen</h2>
+  {activas.length === 0 && <p class="mt-3">Ahora mismo no hay ninguna fuente activa.</p>}
+  <ul class="mt-3 grid gap-4 sm:grid-cols-2">
+    {
+      activas.map(({ fuente, situacion, registro, publicadas }) => (
+        <li class="tarjeta">
+          <div class="flex flex-wrap items-start justify-between gap-2">
+            <h3 class="text-lg font-semibold">{fuente.nombre}</h3>
+            <span class={`etiqueta ${SITUACIONES[situacion].color}`}>{SITUACIONES[situacion].texto}</span>
+          </div>
+          <p class="text-sm text-slate-700">
+            {fuente.operador.nombre} · {TIPOS_OPERADOR[fuente.operador.tipo]}
+          </p>
+          <dl class="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
+            <dt class="text-slate-700">Última lectura</dt>
+            <dd class="text-right font-medium">
+              {registro ? (
+                <time datetime={registro.ultima_ejecucion}>{formatMarcaTiempo(registro.ultima_ejecucion)}</time>
+              ) : (
+                'Ninguna'
+              )}
+            </dd>
+            <dt class="text-slate-700">Última lectura correcta</dt>
+            <dd class="text-right font-medium">
+              {registro?.ultimo_exito ? (
+                <time datetime={registro.ultimo_exito}>{formatMarcaTiempo(registro.ultimo_exito)}</time>
+              ) : (
+                'Ninguna'
+              )}
+            </dd>
+            <dt class="text-slate-700">Vistas en la última lectura</dt>
+            <dd class="text-right font-medium">{registro?.promociones_vistas ?? 'No disponible'}</dd>
+            <dt class="text-slate-700">Publicadas en esta web</dt>
+            <dd class="text-right font-medium">{publicadas}</dd>
+            {registro && registro.fallos_consecutivos > 0 && (
+              <>
+                <dt class="text-slate-700">Fallos seguidos</dt>
+                <dd class="text-right font-medium">{registro.fallos_consecutivos}</dd>
+              </>
+            )}
+          </dl>
+          {fuente.url && (
+            <p class="mt-2">
+              <a class="enlace inline-block py-2" href={fuente.url} rel="noopener">
+                Página oficial<span class="sr-only"> de {fuente.nombre}</span>
+              </a>
+            </p>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+
+  {
+    inactivas.length > 0 && (
+      <>
+        <h2 class="mt-8 text-xl font-bold">Fuentes que no se recogen</h2>
+        <p class="mt-2 max-w-3xl">Sus promociones no se leen automáticamente. Consulta su web directamente.</p>
+        <ul class="mt-3 grid gap-4 sm:grid-cols-2">
+          {inactivas.map(({ fuente, situacion, registro, publicadas }) => (
+            <li class="tarjeta">
+              <div class="flex flex-wrap items-start justify-between gap-2">
+                <h3 class="text-lg font-semibold">{fuente.nombre}</h3>
+                <span class={`etiqueta ${SITUACIONES[situacion].color}`}>{SITUACIONES[situacion].texto}</span>
+              </div>
+              <p class="text-sm text-slate-700">
+                {fuente.operador.nombre} · {TIPOS_OPERADOR[fuente.operador.tipo]}
+              </p>
+              {registro?.ultimo_exito && (
+                <p class="mt-2 text-sm">
+                  Última lectura correcta:{' '}
+                  <time datetime={registro.ultimo_exito}>{formatMarcaTiempo(registro.ultimo_exito)}</time>
+                </p>
+              )}
+              {publicadas > 0 && <p class="mt-1 text-sm">Publicadas en esta web: {publicadas}</p>}
+              {fuente.url && (
+                <p class="mt-2">
+                  <a class="enlace inline-block py-2" href={fuente.url} rel="noopener">
+                    Web de {fuente.nombre}
+                  </a>
+                  {!fuente.url_verificada && <span class="text-sm text-slate-700"> (dirección sin confirmar)</span>}
+                </p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+</Base>

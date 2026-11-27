@@ -242,7 +242,7 @@ class EmvsMadridAdapter(SourceAdapter):
             "fuente_id": self.id,
             "regimen": regimen,
             "programa": "EMVS_MADRID",
-            "modalidad": "alquiler",
+            "modalidad": "alquiler" if "/modalidad" in procedencia else None,
             "estado": estado,
             "ubicacion": {
                 "municipio_ine": "28079",

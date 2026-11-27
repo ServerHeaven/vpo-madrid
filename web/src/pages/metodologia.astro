@@ -1,0 +1,232 @@
+---
+import Base from '../layouts/Base.astro';
+import { cargarDatos } from '../lib/data';
+import { formatMarcaTiempo } from '../lib/format';
+import { REPO_URL, urlArchivo } from '../lib/repo';
+import { url } from '../lib/rutas';
+
+const { promociones, fuentes, state } = cargarDatos();
+const activas = fuentes.filter((f) => f.activa);
+const conBases = promociones.filter((p) => p.enlaces.bases.length > 0).length;
+const conRenta = promociones.filter((p) => p.tipologias.some((t) => t.renta_mensual_eur !== null)).length;
+
+// Must match USER_AGENT and ROBOTS_TOKEN in scraper/src/vpo/core/http.py.
+const userAgent = 'vpo-madrid-bot/1.0 (+https://serverheaven.github.io/vpo-madrid/metodologia)';
+const bloqueo = 'User-agent: vpo-madrid-bot\nDisallow: /';
+const formularioCorreccion = `${REPO_URL}/issues/new?template=correccion-dato.yml`;
+---
+
+<Base
+  titulo="Metodología"
+  descripcion="Cómo se obtienen los datos, qué límites tienen, cómo corregirlos y cómo se comporta el robot que los lee."
+  pagina="metodologia"
+>
+  <article class="prosa max-w-3xl">
+    <h1 class="text-2xl font-bold">Metodología</h1>
+    <p>
+      Esta web reúne promociones de alquiler protegido o asequible de la Comunidad de Madrid a partir de
+      webs oficiales. Es orientativa y está en construcción: comprueba siempre la convocatoria oficial.
+    </p>
+    <nav aria-label="En esta página">
+      <ul>
+        <li><a href="#estado">Qué cubre hoy</a></li>
+        <li><a href="#obtencion">Cómo se obtienen los datos</a></li>
+        <li><a href="#sin-dato">Mejor sin dato que un dato inventado</a></li>
+        <li><a href="#procedencia">De dónde sale cada dato</a></li>
+        <li><a href="#limites">Límites conocidos</a></li>
+        <li><a href="#corregir">Cómo corregir un dato</a></li>
+        <li><a href="#privacidad">Privacidad</a></li>
+        <li><a href="#bot">El robot que lee las webs</a></li>
+      </ul>
+    </nav>
+
+    <h2 id="estado">Qué cubre hoy</h2>
+    <ul>
+      <li>
+        Se leen dos fuentes: <strong>EMVS Madrid</strong> (promociones en proyecto y obra y la página del
+        sorteo; las finalizadas quedan fuera) y el <strong>Plan Vive</strong> de la Comunidad de Madrid.
+        Hay otras operadoras que todavía no se recogen. Consulta el
+        <a href={url('fuentes/')}>estado de las fuentes</a>.
+      </li>
+      <li>
+        <strong>No hay actualización automática diaria todavía.</strong> Las lecturas se lanzan a mano.
+        {
+          state.ultima_ejecucion && (
+            <>
+              La última fue el{' '}
+              <time datetime={state.ultima_ejecucion}>{formatMarcaTiempo(state.ultima_ejecucion)}</time>.
+            </>
+          )
+        }
+      </li>
+      <li><strong>No hay calculadora de requisitos.</strong> La web no te dice si puedes optar a una vivienda.</li>
+      <li>
+        Promociones publicadas: {promociones.length}. Con bases en PDF enlazadas: {conBases}. Con alguna
+        renta conocida: {conRenta}.
+      </li>
+    </ul>
+
+    <h2 id="obtencion">Cómo se obtienen los datos</h2>
+    <ol>
+      <li>Un programa pide las páginas públicas de cada fuente y lee de ellas los datos de cada promoción.</li>
+      <li>
+        Si la ficha enlaza unas bases en PDF, las descarga y busca en ellas requisitos, rentas y fechas
+        con reglas fijas. No se usa inteligencia artificial para extraer datos.
+      </li>
+      <li>
+        Cuando la página web y el PDF hablan de lo mismo, manda la página web: el PDF solo rellena lo que
+        falta.
+      </li>
+      <li>Después se aplican las correcciones hechas a mano, que ganan siempre.</li>
+      <li>
+        El resultado son ficheros de datos públicos y versionados en
+        <a href={urlArchivo('data/promociones.json')}>el repositorio del proyecto</a>, donde queda el
+        historial de cambios publicados.
+      </li>
+    </ol>
+    <p>
+      Si una fuente falla, las demás siguen y la que falla conserva sus últimos datos. Si una promoción
+      deja de aparecer en su fuente, se marca como tal y no se borra; si sigue sin aparecer 30 días,
+      pasa a «Finalizada». Una inscripción abierta cuya fecha límite ya ha pasado se muestra como cerrada.
+    </p>
+
+    <h2 id="sin-dato">Mejor sin dato que un dato inventado</h2>
+    <p>
+      Si un dato no aparece, si dos lecturas se contradicen, si el valor está fuera de un rango razonable
+      o si no hay seguridad suficiente, queda vacío. En la web lo verás como dato no disponible. Un vacío
+      significa <strong>«no lo sabemos»</strong>, no que el requisito no exista: solo se indica que algo no
+      se exige cuando consta expresamente.
+    </p>
+
+    <h2 id="procedencia">De dónde sale cada dato</h2>
+    <ul>
+      <li>
+        Cada ficha enlaza la página oficial y, cuando las hay, las bases en su dirección original, con la
+        fecha en que se detectaron.
+      </li>
+      <li>
+        De los datos extraídos se guarda cómo se obtuvieron (página web, texto o tabla del PDF, o
+        corrección manual), el documento, la página del PDF si la hay y un fragmento corto del texto.
+      </li>
+      <li>
+        «Última comprobación» es el último día en que se leyó la fuente; «datos modificados» es el último
+        día en que cambió algo.
+      </li>
+      <li>
+        Si una convocatoria no trae un requisito, la ficha puede mostrar el valor general de su régimen o
+        programa. Va marcado como general (y como sin verificar cuando no se ha confirmado), y las bases
+        prevalecen. A las promociones «VPPA» de alquiler sin opción de compra no se les aplica el valor
+        general de VPPA, porque ese corresponde al alquiler con opción de compra para jóvenes.
+      </li>
+      <li>
+        Las rentas se muestran como figuran en la fuente: no se calculan ni se les suman o restan
+        impuestos o gastos.
+      </li>
+    </ul>
+
+    <h2 id="limites">Límites conocidos</h2>
+    <ul>
+      <li>
+        El Plan Vive se muestra con <strong>un registro por municipio</strong>, no por promoción, porque la
+        página oficial agrupa así las viviendas. Cada operadora gestiona su propia inscripción.
+      </li>
+      <li>
+        En el Plan Vive el empadronamiento da preferencia, pero no excluye: se describe entre los otros
+        requisitos.
+      </li>
+      <li>
+        Algunas bases admiten varias formas de cumplir un requisito y aquí solo cabe una. En Iberia Loreto
+        1 se publican 5 años ininterrumpidos de empadronamiento, pero las bases también admiten 8 años
+        dentro de los últimos 10.
+      </li>
+      <li>Si el PDF dice algo distinto de la página web, el valor del PDF se descarta sin avisar.</li>
+      <li>Los PDF escaneados (imágenes sin texto) no se leen: no se hace reconocimiento de caracteres.</li>
+      <li>
+        <strong>La extracción de los PDF puede equivocarse.</strong> En la medición del 27/11/2026, sobre 10
+        documentos de prueba (9 realmente distintos), acertó los 50 valores que extrajo y encontró un 71 %
+        de los esperados. No es una medida independiente, porque las reglas se escribieron mirando esos
+        mismos documentos: con documentos nuevos cabe esperar errores. Esas pruebas tampoco cubren PDF
+        escaneados, ingresos por número de miembros, fecha de sorteo, entrega prevista ni requisitos que no
+        se exigen.
+        <a href={urlArchivo('docs/decisiones/ADR-003-extraccion-pdf.md')}>Detalle de la medición</a>.
+      </li>
+    </ul>
+
+    <h2 id="corregir">Cómo corregir un dato</h2>
+    <p>Hace falta una fuente oficial que respalde la corrección. Tienes dos caminos:</p>
+    <ol>
+      <li>
+        <strong>Avisar:</strong> usa el enlace «¿Ves un error?» de la ficha o
+        <a href={formularioCorreccion}>abre el formulario de corrección</a> en GitHub (necesitas una cuenta).
+      </li>
+      <li>
+        <strong>Proponer el cambio:</strong> edita
+        <a href={urlArchivo('data/overrides.json')}>data/overrides.json</a> y envía una <em>pull request</em>.
+        Cada corrección indica el campo, el valor, el motivo (documento y página), tu usuario de GitHub, la
+        fecha y la huella del PDF revisado, si lo hay. El formato está explicado en el
+        <a href={urlArchivo('README.md')}>README</a>.
+      </li>
+    </ol>
+    <p>
+      Una corrección gana siempre a lo que lea el programa. Si después cambia el PDF que se revisó, se sigue
+      aplicando y queda señalada para volver a revisarla. También permite ocultar una ficha duplicada o
+      errónea.
+    </p>
+    <p>
+      <strong>Las issues y las pull requests son públicas.</strong> No incluyas datos personales tuyos ni de
+      otras personas, ni listados de solicitantes, admitidos o adjudicatarios.
+    </p>
+    <p>
+      ¿Falta una fuente? <a href={`${REPO_URL}/issues/new?template=nueva-fuente.yml`}>Propón una nueva</a>.
+    </p>
+
+    <h2 id="privacidad">Privacidad</h2>
+    <ul>
+      <li>La web no usa cookies ni analítica, no tiene cuentas ni formularios que envíen datos.</li>
+      <li>
+        Los filtros del buscador se aplican en tu navegador y quedan reflejados en la dirección de la página;
+        si compartes ese enlace, compartes los filtros.
+      </li>
+      <li>
+        El alojamiento es GitHub Pages: GitHub recibe la dirección que abres y puede registrar tu dirección IP
+        según su
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+          >declaración de privacidad</a
+        >. Este proyecto no controla esos registros.
+      </li>
+    </ul>
+
+    <h2 id="bot">El robot que lee las webs</h2>
+    <p>
+      Si has llegado aquí desde los registros de un servidor, esto es lo que has visto. El programa se
+      identifica con este <em>User-Agent</em>:
+    </p>
+    <p><code class="break-all">{userAgent}</code></p>
+    <ul>
+      <li>Solo hace peticiones de lectura (GET): no envía formularios ni inicia sesión, y no ejecuta JavaScript.</li>
+      <li>Pide las páginas de las promociones de cada fuente y los PDF de bases que enlazan.</li>
+      <li>
+        Respeta <code>robots.txt</code>, incluido <code>Crawl-delay</code>. Si el servidor falla al entregar
+        ese fichero, no pide nada más a ese sitio en esa lectura.
+      </li>
+      <li>
+        Espera entre peticiones a un mismo servidor, como mínimo:
+        {activas.map((f) => `${f.nombre}, ${f.intervalo_s} segundos`).join('; ')}.
+      </li>
+      <li>
+        Usa peticiones condicionales (<code>If-None-Match</code>, <code>If-Modified-Since</code>) cuando el
+        servidor lo permite.
+      </li>
+      <li>
+        Ante errores de red, 429 o 5xx reintenta como máximo 3 veces, con esperas crecientes, y atiende a
+        <code>Retry-After</code> hasta un máximo de 2 minutos.
+      </li>
+    </ul>
+    <p>Para impedir el acceso, añade a tu <code>robots.txt</code>:</p>
+    <pre class="overflow-x-auto rounded-md bg-slate-200 p-3 text-sm"><code>{bloqueo}</code></pre>
+    <p>
+      Para cualquier queja o petición, <a href={`${REPO_URL}/issues/new`}>abre una issue en GitHub</a> (es
+      pública: no incluyas datos personales).
+    </p>
+  </article>
+</Base>

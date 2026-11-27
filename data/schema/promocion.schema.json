@@ -31,7 +31,7 @@
         "fuente_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
         "regimen": { "enum": ["VPPB", "VPPL", "VPPA", "VPO", "ASEQUIBLE_NO_CALIFICADA", "DESCONOCIDO"] },
         "programa": { "enum": ["PLAN_VIVE", "EMVS_MADRID", "EMV_MUNICIPAL", "AVS_CAM", "COOPERATIVA", "PROMOTOR_PRIVADO", "OTRO", null] },
-        "modalidad": { "enum": ["alquiler", "alquiler_opcion_compra"] },
+        "modalidad": { "enum": ["alquiler", "alquiler_opcion_compra", null] },
         "estado": { "enum": ["proxima", "inscripcion_abierta", "inscripcion_cerrada", "sorteo_adjudicacion", "lista_espera_abierta", "finalizada", "desconocido"] },
         "ubicacion": {
           "type": "object",

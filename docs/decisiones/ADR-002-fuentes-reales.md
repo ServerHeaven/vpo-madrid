@@ -1,6 +1,6 @@
 # ADR-002: ajustes del diseño a las webs reales (Fase 2)
 
-**Estado:** puntos 1 a 3 aceptados (2026-11-27); puntos de «Abierto» pendientes de decisión.
+**Estado:** puntos 1 a 3 aceptados (2026-11-27). De «Abierto»: B decidido; A tiene una solución provisional y queda pendiente; C son notas.
 
 ## 1. Plan Vive: un registro por municipio
 `comunidad.madrid/plan-vive` no tiene fichas por promoción, sino un bloque por municipio (26 el 2026-11-27) con totales agregados.
@@ -38,10 +38,14 @@ EMVS usa «VPPA» como vivienda con protección pública para **arrendamiento** 
 
 **Propuesta:** revisar el Decreto 74/2009 y separar ambos conceptos antes de la Fase 5. No se ha modificado `programas.json`.
 
+**Provisional (2026-11-27, Fase 4):** la web no aplica los valores generales de `VPPA` salvo que la modalidad sea `alquiler_opcion_compra`; en el resto, esos requisitos salen como desconocidos. `programas.json` sigue igual. **Hay que resolverlo antes de la Fase 5** (calculadora).
+
 ### B. Modalidad supuesta en 8 promociones de EMVS
 Barrio del Aeropuerto 1, Mahou Calderón, Ntra. Sra. de los Ángeles 3, Ofelia Nieto 3, Paseo de la Dirección 4 y 5, y Vallecas 71 y 72 no indican régimen de tenencia en su ficha. `modalidad` es obligatoria y no admite `null`, así que figuran como `alquiler` sin `procedencia`. Choca con «`null` antes que adivinar».
 
 **Propuesta:** permitir `modalidad: null`. **Decidir antes de la Fase 4.**
+
+**Decidido (2026-11-27): aceptado.** El schema y `models.py` admiten `null`, y el adaptador de EMVS solo rellena `modalidad` cuando una página lo dice (el texto de alquiler o la calificación VPPA). Las 8 promociones citadas quedan en `null`. Plan Vive mantiene `alquiler`, porque su página se titula «Viviendas para alquiler a precio asequible», aunque sin entrada en `procedencia`.
 
 ### C. Para la Fase 3
 - El hash de una página se registra aunque el análisis de su ficha haya fallado. Si se usa el hash para saltarse trabajo, habrá que excluir esas páginas.

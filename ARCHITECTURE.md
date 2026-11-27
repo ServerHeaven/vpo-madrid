@@ -23,7 +23,7 @@
 
 | Capa | Elección | Motivo |
 |---|---|---|
-| **Sitio estático** | **Astro 5** (`output: 'static'`) | Genera HTML puro por defecto y solo envía JS a las "islas" interactivas (buscador y calculadora). Crea una página por promoción en build (`getStaticPaths`), con buen SEO, y lee JSON locales sin capa de API. Es más ligero que el `output: export` de Next.js, que en Pages da problemas con `basePath`, imágenes y rutas dinámicas. |
+| **Sitio estático** | **Astro 7** (`output: 'static'`, [ADR-004](docs/decisiones/ADR-004-web.md)) | Genera HTML puro por defecto y solo envía JS a las "islas" interactivas (buscador y calculadora). Crea una página por promoción en build (`getStaticPaths`), con buen SEO, y lee JSON locales sin capa de API. Es más ligero que el `output: export` de Next.js, que en Pages da problemas con `basePath`, imágenes y rutas dinámicas. |
 | Islas interactivas | **Preact** (`@astrojs/preact`) | API de React en ~4 KB. Basta para filtros y formulario. |
 | Estilos | **Tailwind CSS 4** (plugin Vite) | Sin runtime y con purgado automático. |
 | Validación de datos en build | **Ajv** (JSON Schema 2020-12) | Se usa el mismo schema que en Python, así que hay **una sola fuente de verdad**. |
@@ -234,7 +234,7 @@
           "description": "Programa o canal de adjudicación",
           "enum": ["PLAN_VIVE", "EMVS_MADRID", "EMV_MUNICIPAL", "AVS_CAM", "COOPERATIVA", "PROMOTOR_PRIVADO", "OTRO", null]
         },
-        "modalidad": { "enum": ["alquiler", "alquiler_opcion_compra"] },
+        "modalidad": { "enum": ["alquiler", "alquiler_opcion_compra", null] },
         "estado": {
           "enum": [
             "proxima",
@@ -718,7 +718,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # checkout → setup-node 22 (cache npm, working-directory web)
+      # checkout → setup-uv (Python 3.12) → python -m vpo merge && validate (sin commit, ADR-001 §3)
+      # setup-node 22 (cache npm, working-directory web)
       # npm ci
       # npm run validate-data   (Ajv contra data/schema/*; falla el build si no cuadra)
       # npm test                (vitest: eligibility.ts, filters.ts)
