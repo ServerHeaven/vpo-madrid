@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/promociones.schema.json",
+  "title": "Promociones de alquiler protegido – Comunidad de Madrid",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generado_en", "promociones"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "generado_en": { "type": "string", "format": "date-time" },
+    "promociones": { "type": "array", "items": { "$ref": "promocion.schema.json" } }
+  }
+}

@@ -1,0 +1,903 @@
+{
+  "$schema": "./schema/municipios.schema.json",
+  "schema_version": 1,
+  "fuente": "INE, relación de municipios y códigos (https://www.ine.es/daco/daco42/codmun/)",
+  "fecha_referencia": "2026-01-01",
+  "municipios": [
+    {
+      "ine": "28001",
+      "nombre": "La Acebeda",
+      "nombre_ine": "Acebeda, La"
+    },
+    {
+      "ine": "28002",
+      "nombre": "Ajalvir",
+      "nombre_ine": "Ajalvir"
+    },
+    {
+      "ine": "28003",
+      "nombre": "Alameda del Valle",
+      "nombre_ine": "Alameda del Valle"
+    },
+    {
+      "ine": "28004",
+      "nombre": "El Álamo",
+      "nombre_ine": "Álamo, El"
+    },
+    {
+      "ine": "28005",
+      "nombre": "Alcalá de Henares",
+      "nombre_ine": "Alcalá de Henares"
+    },
+    {
+      "ine": "28006",
+      "nombre": "Alcobendas",
+      "nombre_ine": "Alcobendas"
+    },
+    {
+      "ine": "28007",
+      "nombre": "Alcorcón",
+      "nombre_ine": "Alcorcón"
+    },
+    {
+      "ine": "28008",
+      "nombre": "Aldea del Fresno",
+      "nombre_ine": "Aldea del Fresno"
+    },
+    {
+      "ine": "28009",
+      "nombre": "Algete",
+      "nombre_ine": "Algete"
+    },
+    {
+      "ine": "28010",
+      "nombre": "Alpedrete",
+      "nombre_ine": "Alpedrete"
+    },
+    {
+      "ine": "28011",
+      "nombre": "Ambite",
+      "nombre_ine": "Ambite"
+    },
+    {
+      "ine": "28012",
+      "nombre": "Anchuelo",
+      "nombre_ine": "Anchuelo"
+    },
+    {
+      "ine": "28013",
+      "nombre": "Aranjuez",
+      "nombre_ine": "Aranjuez"
+    },
+    {
+      "ine": "28014",
+      "nombre": "Arganda del Rey",
+      "nombre_ine": "Arganda del Rey"
+    },
+    {
+      "ine": "28015",
+      "nombre": "Arroyomolinos",
+      "nombre_ine": "Arroyomolinos"
+    },
+    {
+      "ine": "28016",
+      "nombre": "El Atazar",
+      "nombre_ine": "Atazar, El"
+    },
+    {
+      "ine": "28017",
+      "nombre": "Batres",
+      "nombre_ine": "Batres"
+    },
+    {
+      "ine": "28018",
+      "nombre": "Becerril de la Sierra",
+      "nombre_ine": "Becerril de la Sierra"
+    },
+    {
+      "ine": "28019",
+      "nombre": "Belmonte de Tajo",
+      "nombre_ine": "Belmonte de Tajo"
+    },
+    {
+      "ine": "28020",
+      "nombre": "Berzosa del Lozoya",
+      "nombre_ine": "Berzosa del Lozoya"
+    },
+    {
+      "ine": "28021",
+      "nombre": "El Berrueco",
+      "nombre_ine": "Berrueco, El"
+    },
+    {
+      "ine": "28022",
+      "nombre": "Boadilla del Monte",
+      "nombre_ine": "Boadilla del Monte"
+    },
+    {
+      "ine": "28023",
+      "nombre": "El Boalo",
+      "nombre_ine": "Boalo, El"
+    },
+    {
+      "ine": "28024",
+      "nombre": "Braojos",
+      "nombre_ine": "Braojos"
+    },
+    {
+      "ine": "28025",
+      "nombre": "Brea de Tajo",
+      "nombre_ine": "Brea de Tajo"
+    },
+    {
+      "ine": "28026",
+      "nombre": "Brunete",
+      "nombre_ine": "Brunete"
+    },
+    {
+      "ine": "28027",
+      "nombre": "Buitrago del Lozoya",
+      "nombre_ine": "Buitrago del Lozoya"
+    },
+    {
+      "ine": "28028",
+      "nombre": "Bustarviejo",
+      "nombre_ine": "Bustarviejo"
+    },
+    {
+      "ine": "28029",
+      "nombre": "Cabanillas de la Sierra",
+      "nombre_ine": "Cabanillas de la Sierra"
+    },
+    {
+      "ine": "28030",
+      "nombre": "La Cabrera",
+      "nombre_ine": "Cabrera, La"
+    },
+    {
+      "ine": "28031",
+      "nombre": "Cadalso de los Vidrios",
+      "nombre_ine": "Cadalso de los Vidrios"
+    },
+    {
+      "ine": "28032",
+      "nombre": "Camarma de Esteruelas",
+      "nombre_ine": "Camarma de Esteruelas"
+    },
+    {
+      "ine": "28033",
+      "nombre": "Campo Real",
+      "nombre_ine": "Campo Real"
+    },
+    {
+      "ine": "28034",
+      "nombre": "Canencia",
+      "nombre_ine": "Canencia"
+    },
+    {
+      "ine": "28035",
+      "nombre": "Carabaña",
+      "nombre_ine": "Carabaña"
+    },
+    {
+      "ine": "28036",
+      "nombre": "Casarrubuelos",
+      "nombre_ine": "Casarrubuelos"
+    },
+    {
+      "ine": "28037",
+      "nombre": "Cenicientos",
+      "nombre_ine": "Cenicientos"
+    },
+    {
+      "ine": "28038",
+      "nombre": "Cercedilla",
+      "nombre_ine": "Cercedilla"
+    },
+    {
+      "ine": "28039",
+      "nombre": "Cervera de Buitrago",
+      "nombre_ine": "Cervera de Buitrago"
+    },
+    {
+      "ine": "28040",
+      "nombre": "Ciempozuelos",
+      "nombre_ine": "Ciempozuelos"
+    },
+    {
+      "ine": "28041",
+      "nombre": "Cobeña",
+      "nombre_ine": "Cobeña"
+    },
+    {
+      "ine": "28042",
+      "nombre": "Colmenar del Arroyo",
+      "nombre_ine": "Colmenar del Arroyo"
+    },
+    {
+      "ine": "28043",
+      "nombre": "Colmenar de Oreja",
+      "nombre_ine": "Colmenar de Oreja"
+    },
+    {
+      "ine": "28044",
+      "nombre": "Colmenarejo",
+      "nombre_ine": "Colmenarejo"
+    },
+    {
+      "ine": "28045",
+      "nombre": "Colmenar Viejo",
+      "nombre_ine": "Colmenar Viejo"
+    },
+    {
+      "ine": "28046",
+      "nombre": "Collado Mediano",
+      "nombre_ine": "Collado Mediano"
+    },
+    {
+      "ine": "28047",
+      "nombre": "Collado Villalba",
+      "nombre_ine": "Collado Villalba"
+    },
+    {
+      "ine": "28048",
+      "nombre": "Corpa",
+      "nombre_ine": "Corpa"
+    },
+    {
+      "ine": "28049",
+      "nombre": "Coslada",
+      "nombre_ine": "Coslada"
+    },
+    {
+      "ine": "28050",
+      "nombre": "Cubas de la Sagra",
+      "nombre_ine": "Cubas de la Sagra"
+    },
+    {
+      "ine": "28051",
+      "nombre": "Chapinería",
+      "nombre_ine": "Chapinería"
+    },
+    {
+      "ine": "28052",
+      "nombre": "Chinchón",
+      "nombre_ine": "Chinchón"
+    },
+    {
+      "ine": "28053",
+      "nombre": "Daganzo de Arriba",
+      "nombre_ine": "Daganzo de Arriba"
+    },
+    {
+      "ine": "28054",
+      "nombre": "El Escorial",
+      "nombre_ine": "Escorial, El"
+    },
+    {
+      "ine": "28055",
+      "nombre": "Estremera",
+      "nombre_ine": "Estremera"
+    },
+    {
+      "ine": "28056",
+      "nombre": "Fresnedillas de la Oliva",
+      "nombre_ine": "Fresnedillas de la Oliva"
+    },
+    {
+      "ine": "28057",
+      "nombre": "Fresno de Torote",
+      "nombre_ine": "Fresno de Torote"
+    },
+    {
+      "ine": "28058",
+      "nombre": "Fuenlabrada",
+      "nombre_ine": "Fuenlabrada"
+    },
+    {
+      "ine": "28059",
+      "nombre": "Fuente el Saz de Jarama",
+      "nombre_ine": "Fuente el Saz de Jarama"
+    },
+    {
+      "ine": "28060",
+      "nombre": "Fuentidueña de Tajo",
+      "nombre_ine": "Fuentidueña de Tajo"
+    },
+    {
+      "ine": "28061",
+      "nombre": "Galapagar",
+      "nombre_ine": "Galapagar"
+    },
+    {
+      "ine": "28062",
+      "nombre": "Garganta de los Montes",
+      "nombre_ine": "Garganta de los Montes"
+    },
+    {
+      "ine": "28063",
+      "nombre": "Gargantilla del Lozoya y Pinilla de Buitrago",
+      "nombre_ine": "Gargantilla del Lozoya y Pinilla de Buitrago"
+    },
+    {
+      "ine": "28064",
+      "nombre": "Gascones",
+      "nombre_ine": "Gascones"
+    },
+    {
+      "ine": "28065",
+      "nombre": "Getafe",
+      "nombre_ine": "Getafe"
+    },
+    {
+      "ine": "28066",
+      "nombre": "Griñón",
+      "nombre_ine": "Griñón"
+    },
+    {
+      "ine": "28067",
+      "nombre": "Guadalix de la Sierra",
+      "nombre_ine": "Guadalix de la Sierra"
+    },
+    {
+      "ine": "28068",
+      "nombre": "Guadarrama",
+      "nombre_ine": "Guadarrama"
+    },
+    {
+      "ine": "28069",
+      "nombre": "La Hiruela",
+      "nombre_ine": "Hiruela, La"
+    },
+    {
+      "ine": "28070",
+      "nombre": "Horcajo de la Sierra-Aoslos",
+      "nombre_ine": "Horcajo de la Sierra-Aoslos"
+    },
+    {
+      "ine": "28071",
+      "nombre": "Horcajuelo de la Sierra",
+      "nombre_ine": "Horcajuelo de la Sierra"
+    },
+    {
+      "ine": "28072",
+      "nombre": "Hoyo de Manzanares",
+      "nombre_ine": "Hoyo de Manzanares"
+    },
+    {
+      "ine": "28073",
+      "nombre": "Humanes de Madrid",
+      "nombre_ine": "Humanes de Madrid"
+    },
+    {
+      "ine": "28074",
+      "nombre": "Leganés",
+      "nombre_ine": "Leganés"
+    },
+    {
+      "ine": "28075",
+      "nombre": "Loeches",
+      "nombre_ine": "Loeches"
+    },
+    {
+      "ine": "28076",
+      "nombre": "Lozoya",
+      "nombre_ine": "Lozoya"
+    },
+    {
+      "ine": "28078",
+      "nombre": "Madarcos",
+      "nombre_ine": "Madarcos"
+    },
+    {
+      "ine": "28079",
+      "nombre": "Madrid",
+      "nombre_ine": "Madrid"
+    },
+    {
+      "ine": "28080",
+      "nombre": "Majadahonda",
+      "nombre_ine": "Majadahonda"
+    },
+    {
+      "ine": "28082",
+      "nombre": "Manzanares el Real",
+      "nombre_ine": "Manzanares el Real"
+    },
+    {
+      "ine": "28083",
+      "nombre": "Meco",
+      "nombre_ine": "Meco"
+    },
+    {
+      "ine": "28084",
+      "nombre": "Mejorada del Campo",
+      "nombre_ine": "Mejorada del Campo"
+    },
+    {
+      "ine": "28085",
+      "nombre": "Miraflores de la Sierra",
+      "nombre_ine": "Miraflores de la Sierra"
+    },
+    {
+      "ine": "28086",
+      "nombre": "El Molar",
+      "nombre_ine": "Molar, El"
+    },
+    {
+      "ine": "28087",
+      "nombre": "Los Molinos",
+      "nombre_ine": "Molinos, Los"
+    },
+    {
+      "ine": "28088",
+      "nombre": "Montejo de la Sierra",
+      "nombre_ine": "Montejo de la Sierra"
+    },
+    {
+      "ine": "28089",
+      "nombre": "Moraleja de Enmedio",
+      "nombre_ine": "Moraleja de Enmedio"
+    },
+    {
+      "ine": "28090",
+      "nombre": "Moralzarzal",
+      "nombre_ine": "Moralzarzal"
+    },
+    {
+      "ine": "28091",
+      "nombre": "Morata de Tajuña",
+      "nombre_ine": "Morata de Tajuña"
+    },
+    {
+      "ine": "28092",
+      "nombre": "Móstoles",
+      "nombre_ine": "Móstoles"
+    },
+    {
+      "ine": "28093",
+      "nombre": "Navacerrada",
+      "nombre_ine": "Navacerrada"
+    },
+    {
+      "ine": "28094",
+      "nombre": "Navalafuente",
+      "nombre_ine": "Navalafuente"
+    },
+    {
+      "ine": "28095",
+      "nombre": "Navalagamella",
+      "nombre_ine": "Navalagamella"
+    },
+    {
+      "ine": "28096",
+      "nombre": "Navalcarnero",
+      "nombre_ine": "Navalcarnero"
+    },
+    {
+      "ine": "28097",
+      "nombre": "Navarredonda y San Mamés",
+      "nombre_ine": "Navarredonda y San Mamés"
+    },
+    {
+      "ine": "28099",
+      "nombre": "Navas del Rey",
+      "nombre_ine": "Navas del Rey"
+    },
+    {
+      "ine": "28100",
+      "nombre": "Nuevo Baztán",
+      "nombre_ine": "Nuevo Baztán"
+    },
+    {
+      "ine": "28101",
+      "nombre": "Olmeda de las Fuentes",
+      "nombre_ine": "Olmeda de las Fuentes"
+    },
+    {
+      "ine": "28102",
+      "nombre": "Orusco de Tajuña",
+      "nombre_ine": "Orusco de Tajuña"
+    },
+    {
+      "ine": "28104",
+      "nombre": "Paracuellos de Jarama",
+      "nombre_ine": "Paracuellos de Jarama"
+    },
+    {
+      "ine": "28106",
+      "nombre": "Parla",
+      "nombre_ine": "Parla"
+    },
+    {
+      "ine": "28107",
+      "nombre": "Patones",
+      "nombre_ine": "Patones"
+    },
+    {
+      "ine": "28108",
+      "nombre": "Pedrezuela",
+      "nombre_ine": "Pedrezuela"
+    },
+    {
+      "ine": "28109",
+      "nombre": "Pelayos de la Presa",
+      "nombre_ine": "Pelayos de la Presa"
+    },
+    {
+      "ine": "28110",
+      "nombre": "Perales de Tajuña",
+      "nombre_ine": "Perales de Tajuña"
+    },
+    {
+      "ine": "28111",
+      "nombre": "Pezuela de las Torres",
+      "nombre_ine": "Pezuela de las Torres"
+    },
+    {
+      "ine": "28112",
+      "nombre": "Pinilla del Valle",
+      "nombre_ine": "Pinilla del Valle"
+    },
+    {
+      "ine": "28113",
+      "nombre": "Pinto",
+      "nombre_ine": "Pinto"
+    },
+    {
+      "ine": "28114",
+      "nombre": "Piñuécar-Gandullas",
+      "nombre_ine": "Piñuécar-Gandullas"
+    },
+    {
+      "ine": "28115",
+      "nombre": "Pozuelo de Alarcón",
+      "nombre_ine": "Pozuelo de Alarcón"
+    },
+    {
+      "ine": "28116",
+      "nombre": "Pozuelo del Rey",
+      "nombre_ine": "Pozuelo del Rey"
+    },
+    {
+      "ine": "28117",
+      "nombre": "Prádena del Rincón",
+      "nombre_ine": "Prádena del Rincón"
+    },
+    {
+      "ine": "28118",
+      "nombre": "Puebla de la Sierra",
+      "nombre_ine": "Puebla de la Sierra"
+    },
+    {
+      "ine": "28119",
+      "nombre": "Quijorna",
+      "nombre_ine": "Quijorna"
+    },
+    {
+      "ine": "28120",
+      "nombre": "Rascafría",
+      "nombre_ine": "Rascafría"
+    },
+    {
+      "ine": "28121",
+      "nombre": "Redueña",
+      "nombre_ine": "Redueña"
+    },
+    {
+      "ine": "28122",
+      "nombre": "Ribatejada",
+      "nombre_ine": "Ribatejada"
+    },
+    {
+      "ine": "28123",
+      "nombre": "Rivas-Vaciamadrid",
+      "nombre_ine": "Rivas-Vaciamadrid"
+    },
+    {
+      "ine": "28124",
+      "nombre": "Robledillo de la Jara",
+      "nombre_ine": "Robledillo de la Jara"
+    },
+    {
+      "ine": "28125",
+      "nombre": "Robledo de Chavela",
+      "nombre_ine": "Robledo de Chavela"
+    },
+    {
+      "ine": "28126",
+      "nombre": "Robregordo",
+      "nombre_ine": "Robregordo"
+    },
+    {
+      "ine": "28127",
+      "nombre": "Las Rozas de Madrid",
+      "nombre_ine": "Rozas de Madrid, Las"
+    },
+    {
+      "ine": "28128",
+      "nombre": "Rozas de Puerto Real",
+      "nombre_ine": "Rozas de Puerto Real"
+    },
+    {
+      "ine": "28129",
+      "nombre": "San Agustín del Guadalix",
+      "nombre_ine": "San Agustín del Guadalix"
+    },
+    {
+      "ine": "28130",
+      "nombre": "San Fernando de Henares",
+      "nombre_ine": "San Fernando de Henares"
+    },
+    {
+      "ine": "28131",
+      "nombre": "San Lorenzo de El Escorial",
+      "nombre_ine": "San Lorenzo de El Escorial"
+    },
+    {
+      "ine": "28132",
+      "nombre": "San Martín de la Vega",
+      "nombre_ine": "San Martín de la Vega"
+    },
+    {
+      "ine": "28133",
+      "nombre": "San Martín de Valdeiglesias",
+      "nombre_ine": "San Martín de Valdeiglesias"
+    },
+    {
+      "ine": "28134",
+      "nombre": "San Sebastián de los Reyes",
+      "nombre_ine": "San Sebastián de los Reyes"
+    },
+    {
+      "ine": "28135",
+      "nombre": "Santa María de la Alameda",
+      "nombre_ine": "Santa María de la Alameda"
+    },
+    {
+      "ine": "28136",
+      "nombre": "Santorcaz",
+      "nombre_ine": "Santorcaz"
+    },
+    {
+      "ine": "28137",
+      "nombre": "Los Santos de la Humosa",
+      "nombre_ine": "Santos de la Humosa, Los"
+    },
+    {
+      "ine": "28138",
+      "nombre": "La Serna del Monte",
+      "nombre_ine": "Serna del Monte, La"
+    },
+    {
+      "ine": "28140",
+      "nombre": "Serranillos del Valle",
+      "nombre_ine": "Serranillos del Valle"
+    },
+    {
+      "ine": "28141",
+      "nombre": "Sevilla la Nueva",
+      "nombre_ine": "Sevilla la Nueva"
+    },
+    {
+      "ine": "28143",
+      "nombre": "Somosierra",
+      "nombre_ine": "Somosierra"
+    },
+    {
+      "ine": "28144",
+      "nombre": "Soto del Real",
+      "nombre_ine": "Soto del Real"
+    },
+    {
+      "ine": "28145",
+      "nombre": "Talamanca de Jarama",
+      "nombre_ine": "Talamanca de Jarama"
+    },
+    {
+      "ine": "28146",
+      "nombre": "Tielmes",
+      "nombre_ine": "Tielmes"
+    },
+    {
+      "ine": "28147",
+      "nombre": "Titulcia",
+      "nombre_ine": "Titulcia"
+    },
+    {
+      "ine": "28148",
+      "nombre": "Torrejón de Ardoz",
+      "nombre_ine": "Torrejón de Ardoz"
+    },
+    {
+      "ine": "28149",
+      "nombre": "Torrejón de la Calzada",
+      "nombre_ine": "Torrejón de la Calzada"
+    },
+    {
+      "ine": "28150",
+      "nombre": "Torrejón de Velasco",
+      "nombre_ine": "Torrejón de Velasco"
+    },
+    {
+      "ine": "28151",
+      "nombre": "Torrelaguna",
+      "nombre_ine": "Torrelaguna"
+    },
+    {
+      "ine": "28152",
+      "nombre": "Torrelodones",
+      "nombre_ine": "Torrelodones"
+    },
+    {
+      "ine": "28153",
+      "nombre": "Torremocha de Jarama",
+      "nombre_ine": "Torremocha de Jarama"
+    },
+    {
+      "ine": "28154",
+      "nombre": "Torres de la Alameda",
+      "nombre_ine": "Torres de la Alameda"
+    },
+    {
+      "ine": "28155",
+      "nombre": "Valdaracete",
+      "nombre_ine": "Valdaracete"
+    },
+    {
+      "ine": "28156",
+      "nombre": "Valdeavero",
+      "nombre_ine": "Valdeavero"
+    },
+    {
+      "ine": "28157",
+      "nombre": "Valdelaguna",
+      "nombre_ine": "Valdelaguna"
+    },
+    {
+      "ine": "28158",
+      "nombre": "Valdemanco",
+      "nombre_ine": "Valdemanco"
+    },
+    {
+      "ine": "28159",
+      "nombre": "Valdemaqueda",
+      "nombre_ine": "Valdemaqueda"
+    },
+    {
+      "ine": "28160",
+      "nombre": "Valdemorillo",
+      "nombre_ine": "Valdemorillo"
+    },
+    {
+      "ine": "28161",
+      "nombre": "Valdemoro",
+      "nombre_ine": "Valdemoro"
+    },
+    {
+      "ine": "28162",
+      "nombre": "Valdeolmos-Alalpardo",
+      "nombre_ine": "Valdeolmos-Alalpardo"
+    },
+    {
+      "ine": "28163",
+      "nombre": "Valdepiélagos",
+      "nombre_ine": "Valdepiélagos"
+    },
+    {
+      "ine": "28164",
+      "nombre": "Valdetorres de Jarama",
+      "nombre_ine": "Valdetorres de Jarama"
+    },
+    {
+      "ine": "28165",
+      "nombre": "Valdilecha",
+      "nombre_ine": "Valdilecha"
+    },
+    {
+      "ine": "28166",
+      "nombre": "Valverde de Alcalá",
+      "nombre_ine": "Valverde de Alcalá"
+    },
+    {
+      "ine": "28167",
+      "nombre": "Velilla de San Antonio",
+      "nombre_ine": "Velilla de San Antonio"
+    },
+    {
+      "ine": "28168",
+      "nombre": "El Vellón",
+      "nombre_ine": "Vellón, El"
+    },
+    {
+      "ine": "28169",
+      "nombre": "Venturada",
+      "nombre_ine": "Venturada"
+    },
+    {
+      "ine": "28170",
+      "nombre": "Villaconejos",
+      "nombre_ine": "Villaconejos"
+    },
+    {
+      "ine": "28171",
+      "nombre": "Villa del Prado",
+      "nombre_ine": "Villa del Prado"
+    },
+    {
+      "ine": "28172",
+      "nombre": "Villalbilla",
+      "nombre_ine": "Villalbilla"
+    },
+    {
+      "ine": "28173",
+      "nombre": "Villamanrique de Tajo",
+      "nombre_ine": "Villamanrique de Tajo"
+    },
+    {
+      "ine": "28174",
+      "nombre": "Villamanta",
+      "nombre_ine": "Villamanta"
+    },
+    {
+      "ine": "28175",
+      "nombre": "Villamantilla",
+      "nombre_ine": "Villamantilla"
+    },
+    {
+      "ine": "28176",
+      "nombre": "Villanueva de la Cañada",
+      "nombre_ine": "Villanueva de la Cañada"
+    },
+    {
+      "ine": "28177",
+      "nombre": "Villanueva del Pardillo",
+      "nombre_ine": "Villanueva del Pardillo"
+    },
+    {
+      "ine": "28178",
+      "nombre": "Villanueva de Perales",
+      "nombre_ine": "Villanueva de Perales"
+    },
+    {
+      "ine": "28179",
+      "nombre": "Villar del Olmo",
+      "nombre_ine": "Villar del Olmo"
+    },
+    {
+      "ine": "28180",
+      "nombre": "Villarejo de Salvanés",
+      "nombre_ine": "Villarejo de Salvanés"
+    },
+    {
+      "ine": "28181",
+      "nombre": "Villaviciosa de Odón",
+      "nombre_ine": "Villaviciosa de Odón"
+    },
+    {
+      "ine": "28182",
+      "nombre": "Villavieja del Lozoya",
+      "nombre_ine": "Villavieja del Lozoya"
+    },
+    {
+      "ine": "28183",
+      "nombre": "Zarzalejo",
+      "nombre_ine": "Zarzalejo"
+    },
+    {
+      "ine": "28901",
+      "nombre": "Lozoyuela-Navas-Sieteiglesias",
+      "nombre_ine": "Lozoyuela-Navas-Sieteiglesias"
+    },
+    {
+      "ine": "28902",
+      "nombre": "Puentes Viejas",
+      "nombre_ine": "Puentes Viejas"
+    },
+    {
+      "ine": "28903",
+      "nombre": "Tres Cantos",
+      "nombre_ine": "Tres Cantos"
+    }
+  ]
+}

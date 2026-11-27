@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/programas.schema.json",
+  "title": "Reglas por defecto por régimen y programa",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "programas"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": 1 },
+    "programas": { "type": "array", "items": { "$ref": "#/$defs/programa" } }
+  },
+  "$defs": {
+    "programa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clave", "tipo", "vigente_desde", "vigente_hasta", "ingresos_min_iprem", "ingresos_max_iprem", "iprem_pagas", "tasa_esfuerzo_max", "empadronamiento", "edad", "coeficientes_ponderacion", "requisitos_no_comprobables", "fuente", "verificado", "notas"],
+      "properties": {
+        "clave": { "enum": ["VPPB", "VPPL", "VPPA", "VPO", "PLAN_VIVE", "EMVS_MADRID", "EMV_MUNICIPAL", "AVS_CAM", "COOPERATIVA", "PROMOTOR_PRIVADO", "OTRO"] },
+        "tipo": { "enum": ["regimen", "programa"] },
+        "vigente_desde": { "type": ["string", "null"], "format": "date" },
+        "vigente_hasta": { "type": ["string", "null"], "format": "date" },
+        "ingresos_min_iprem": { "$ref": "promocion.schema.json#/$defs/vecesIprem" },
+        "ingresos_max_iprem": { "$ref": "promocion.schema.json#/$defs/vecesIprem" },
+        "iprem_pagas": { "enum": [12, 14, null] },
+        "tasa_esfuerzo_max": { "type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 1 },
+        "empadronamiento": { "$ref": "promocion.schema.json#/$defs/empadronamiento" },
+        "edad": { "$ref": "promocion.schema.json#/$defs/edad" },
+        "coeficientes_ponderacion": {
+          "$comment": "número de miembros → coeficiente",
+          "type": ["object", "null"],
+          "propertyNames": { "pattern": "^[1-9][0-9]?$" },
+          "additionalProperties": { "type": "number", "exclusiveMinimum": 0 }
+        },
+        "requisitos_no_comprobables": { "type": "array", "items": { "type": "string" } },
+        "fuente": { "type": "string", "minLength": 3 },
+        "verificado": { "type": "boolean" },
+        "notas": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

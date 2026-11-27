@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/iprem.schema.json",
+  "title": "Tabla IPREM",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "nota", "valores"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": 1 },
+    "nota": { "type": "string" },
+    "valores": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["anio", "mensual", "anual_12", "anual_14", "fuente", "verificado"],
+        "properties": {
+          "anio": { "type": "integer", "minimum": 2004, "maximum": 2100 },
+          "mensual": { "type": "number", "exclusiveMinimum": 0 },
+          "anual_12": { "type": "number", "exclusiveMinimum": 0 },
+          "anual_14": { "type": "number", "exclusiveMinimum": 0 },
+          "fuente": { "type": "string" },
+          "verificado": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

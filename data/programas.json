@@ -1,0 +1,93 @@
+{
+  "$schema": "./schema/programas.schema.json",
+  "schema_version": 1,
+  "programas": [
+    {
+      "clave": "VPPB",
+      "tipo": "regimen",
+      "vigente_desde": "2013-07-23",
+      "vigente_hasta": null,
+      "ingresos_min_iprem": null,
+      "ingresos_max_iprem": 5.5,
+      "iprem_pagas": null,
+      "tasa_esfuerzo_max": null,
+      "empadronamiento": null,
+      "edad": null,
+      "coeficientes_ponderacion": null,
+      "requisitos_no_comprobables": [
+        "Ningún miembro de la unidad familiar puede ser titular del pleno dominio o de un derecho de uso o disfrute sobre otra vivienda en España (con las excepciones del art. 3.3)"
+      ],
+      "fuente": "Decreto 74/2009, arts. 3.2 y 3.3, texto revisado por el Decreto 59/2013",
+      "verificado": true,
+      "notas": [
+        "El decreto no fija ingresos mínimos, empadronamiento general ni tasa de esfuerzo: las bases de cada convocatoria pueden exigirlos.",
+        "El decreto no indica 12 o 14 pagas del IPREM."
+      ]
+    },
+    {
+      "clave": "VPPL",
+      "tipo": "regimen",
+      "vigente_desde": "2013-07-23",
+      "vigente_hasta": null,
+      "ingresos_min_iprem": null,
+      "ingresos_max_iprem": 7.5,
+      "iprem_pagas": null,
+      "tasa_esfuerzo_max": null,
+      "empadronamiento": null,
+      "edad": null,
+      "coeficientes_ponderacion": null,
+      "requisitos_no_comprobables": [
+        "Ningún miembro de la unidad familiar puede ser titular del pleno dominio o de un derecho de uso o disfrute sobre otra vivienda en España (con las excepciones del art. 3.3)"
+      ],
+      "fuente": "Decreto 74/2009, arts. 3.2 y 3.3, texto revisado por el Decreto 59/2013",
+      "verificado": true,
+      "notas": [
+        "El decreto no fija ingresos mínimos, empadronamiento general ni tasa de esfuerzo: las bases de cada convocatoria pueden exigirlos.",
+        "El decreto no indica 12 o 14 pagas del IPREM."
+      ]
+    },
+    {
+      "clave": "VPPA",
+      "tipo": "regimen",
+      "vigente_desde": "2013-07-23",
+      "vigente_hasta": null,
+      "ingresos_min_iprem": null,
+      "ingresos_max_iprem": 5.5,
+      "iprem_pagas": null,
+      "tasa_esfuerzo_max": null,
+      "empadronamiento": null,
+      "edad": { "min": null, "max": 35, "tipo": "requisito" },
+      "coeficientes_ponderacion": null,
+      "requisitos_no_comprobables": [
+        "Ningún miembro de la unidad familiar puede ser titular del pleno dominio o de un derecho de uso o disfrute sobre otra vivienda en España (con las excepciones del art. 3.3)"
+      ],
+      "fuente": "Decreto 74/2009, arts. 2, 3.2 y 3.3 (arrendamiento con opción de compra para jóvenes)",
+      "verificado": true,
+      "notas": [
+        "La edad está sujeta a las excepciones del art. 24 y la disposición adicional 8ª, que no se han revisado literalmente."
+      ]
+    },
+    {
+      "clave": "PLAN_VIVE",
+      "tipo": "programa",
+      "vigente_desde": null,
+      "vigente_hasta": null,
+      "ingresos_min_iprem": null,
+      "ingresos_max_iprem": null,
+      "iprem_pagas": null,
+      "tasa_esfuerzo_max": 0.35,
+      "empadronamiento": null,
+      "edad": null,
+      "coeficientes_ponderacion": null,
+      "requisitos_no_comprobables": [
+        "Inscripción en el Registro de Demandantes de Vivienda con Protección Pública"
+      ],
+      "fuente": "Tasa del 35 %: enunciado del proyecto y prensa sobre convocatorias concretas; sin confirmación en norma o nota oficial",
+      "verificado": false,
+      "notas": [
+        "Nota oficial de 08/04/2026 (modifica el Decreto 84/2020): para unidades de dos miembros, ingresos entre 1,5 y 5,5 IPREM (precio básico) o 1,5 y 7,5 (precio limitado). No se traslada a ingresos_min_iprem porque la nota solo lo afirma para dos miembros.",
+        "El empadronamiento ordena la preferencia (5 años en el municipio, después 10 años en la Comunidad) y no excluye."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/fuentes.schema.json",
+  "title": "Catálogo de fuentes",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fuentes"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": 1 },
+    "fuentes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "nombre", "operador", "url", "url_verificada", "metodo", "prioridad", "activa", "intervalo_s", "timeout_s", "notas"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "nombre": { "type": "string" },
+          "operador": { "$ref": "promocion.schema.json#/$defs/operador" },
+          "url": { "type": ["string", "null"], "format": "uri" },
+          "url_verificada": { "type": "boolean" },
+          "metodo": { "enum": ["httpx", "playwright", "manual", null] },
+          "prioridad": { "type": "integer", "minimum": 1 },
+          "activa": { "type": "boolean" },
+          "intervalo_s": { "type": "number", "minimum": 2 },
+          "timeout_s": { "type": "number", "minimum": 1 },
+          "notas": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

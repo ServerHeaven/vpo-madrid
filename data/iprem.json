@@ -1,0 +1,39 @@
+{
+  "$schema": "./schema/iprem.schema.json",
+  "schema_version": 1,
+  "nota": "Actualizar cada enero tras la Ley de PGE o su prórroga. Fuente: BOE.",
+  "valores": [
+    {
+      "anio": 2023,
+      "mensual": 600,
+      "anual_12": 7200,
+      "anual_14": 8400,
+      "fuente": "Ley 31/2022 de PGE 2023, disposición adicional 90ª (BOE-A-2022-22128)",
+      "verificado": true
+    },
+    {
+      "anio": 2024,
+      "mensual": 600,
+      "anual_12": 7200,
+      "anual_14": 8400,
+      "fuente": "Prórroga de la Ley 31/2022",
+      "verificado": true
+    },
+    {
+      "anio": 2025,
+      "mensual": 600,
+      "anual_12": 7200,
+      "anual_14": 8400,
+      "fuente": "Prórroga de la Ley 31/2022",
+      "verificado": true
+    },
+    {
+      "anio": 2026,
+      "mensual": 600,
+      "anual_12": 7200,
+      "anual_14": 8400,
+      "fuente": "Prórroga de la Ley 31/2022 (ver docs/verificaciones.md)",
+      "verificado": true
+    }
+  ]
+}

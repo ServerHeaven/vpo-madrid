@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/source.schema.json",
+  "title": "Salida cruda de una fuente (data/sources/<id>.json)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fuente_id", "promociones"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "fuente_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "promociones": { "type": "array", "items": { "$ref": "promocion.schema.json" } }
+  }
+}

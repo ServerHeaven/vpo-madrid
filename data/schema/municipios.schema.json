@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/municipios.schema.json",
+  "title": "Municipios de la Comunidad de Madrid",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fuente", "fecha_referencia", "municipios"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": 1 },
+    "fuente": { "type": "string" },
+    "fecha_referencia": { "type": "string", "format": "date" },
+    "municipios": {
+      "type": "array",
+      "minItems": 179,
+      "maxItems": 179,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ine", "nombre", "nombre_ine"],
+        "properties": {
+          "ine": { "type": "string", "pattern": "^28[0-9]{3}$" },
+          "nombre": { "type": "string" },
+          "nombre_ine": { "type": "string" }
+        }
+      }
+    }
+  }
+}

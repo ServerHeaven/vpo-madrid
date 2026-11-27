@@ -1,0 +1,6 @@
+{
+  "$schema": "./schema/overrides.schema.json",
+  "schema_version": 1,
+  "overrides": {},
+  "promociones_manuales": []
+}

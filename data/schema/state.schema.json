@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/state.schema.json",
+  "title": "Estado del scraper",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "ultima_ejecucion", "fuentes", "documentos", "promo_ids"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "ultima_ejecucion": { "type": ["string", "null"], "format": "date-time" },
+    "fuentes": { "type": "object", "additionalProperties": { "$ref": "#/$defs/fuente" } },
+    "documentos": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-f0-9]{40}$" },
+      "additionalProperties": { "$ref": "#/$defs/documento" }
+    },
+    "promo_ids": { "type": "object", "additionalProperties": { "$ref": "promocion.schema.json#/$defs/slug" } }
+  },
+  "$defs": {
+    "sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+    "fuente": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["estado", "ultima_ejecucion", "ultimo_exito", "fallos_consecutivos", "ultimo_error", "promociones_vistas", "duracion_s"],
+      "properties": {
+        "estado": { "enum": ["ok", "degradado", "error"] },
+        "ultima_ejecucion": { "type": "string", "format": "date-time" },
+        "ultimo_exito": { "type": ["string", "null"], "format": "date-time" },
+        "fallos_consecutivos": { "type": "integer", "minimum": 0 },
+        "ultimo_error": { "type": ["string", "null"] },
+        "promociones_vistas": { "type": ["integer", "null"], "minimum": 0 },
+        "duracion_s": { "type": "number", "minimum": 0 }
+      }
+    },
+    "documento": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "tipo", "fuente_id", "promo_ids", "etag", "last_modified", "sha256_bytes", "sha256_texto", "primera_vez", "ultimo_cambio", "ultima_comprobacion", "extractor_version", "ocr_necesario"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "tipo": { "enum": ["html", "pdf"] },
+        "fuente_id": { "type": "string" },
+        "promo_ids": { "type": "array", "items": { "$ref": "promocion.schema.json#/$defs/slug" } },
+        "etag": { "type": ["string", "null"] },
+        "last_modified": { "type": ["string", "null"] },
+        "sha256_bytes": { "$ref": "#/$defs/sha256" },
+        "sha256_texto": { "$ref": "#/$defs/sha256" },
+        "primera_vez": { "type": "string", "format": "date" },
+        "ultimo_cambio": { "type": "string", "format": "date" },
+        "ultima_comprobacion": { "type": "string", "format": "date" },
+        "extractor_version": { "type": ["string", "null"], "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "ocr_necesario": { "type": "boolean" }
+      }
+    }
+  }
+}

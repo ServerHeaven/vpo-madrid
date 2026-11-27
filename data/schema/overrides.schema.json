@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/overrides.schema.json",
+  "title": "Correcciones manuales",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "overrides", "promociones_manuales"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schema_version": { "const": 1 },
+    "overrides": {
+      "type": "object",
+      "propertyNames": { "$ref": "promocion.schema.json#/$defs/slug" },
+      "additionalProperties": { "$ref": "#/$defs/override" }
+    },
+    "promociones_manuales": { "type": "array", "items": { "$ref": "promocion.schema.json" } }
+  },
+  "$defs": {
+    "override": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["campos", "ocultar", "nota_publica"],
+      "properties": {
+        "campos": {
+          "type": "object",
+          "propertyNames": {
+            "$comment": "Sin índices de array: los segmentos nunca son numéricos ni '-'. id, fuente_id y meta no se pueden corregir.",
+            "pattern": "^/(nombre|operador|regimen|programa|modalidad|estado|ubicacion|viviendas_total|tipologias|requisitos|fechas|enlaces)(/[a-z_][a-z0-9_]*)*$"
+          },
+          "additionalProperties": { "$ref": "#/$defs/campo" }
+        },
+        "ocultar": { "type": "boolean" },
+        "nota_publica": { "type": ["string", "null"], "maxLength": 500 }
+      }
+    },
+    "campo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valor", "motivo", "autor", "fecha", "fuente_sha256"],
+      "properties": {
+        "valor": true,
+        "motivo": { "type": "string", "minLength": 3 },
+        "autor": { "type": "string", "minLength": 1 },
+        "fecha": { "type": "string", "format": "date" },
+        "fuente_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  }
+}

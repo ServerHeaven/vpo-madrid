@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schema/promocion.schema.json",
+  "title": "Promoción de alquiler protegido",
+  "$ref": "#/$defs/promocion",
+  "$defs": {
+    "nullableString": { "type": ["string", "null"] },
+    "nullableDate": { "type": ["string", "null"], "format": "date" },
+    "nullableBool": { "type": ["boolean", "null"] },
+    "eur": { "type": ["number", "null"], "minimum": 0, "maximum": 10000 },
+    "vecesIprem": { "type": ["number", "null"], "minimum": 0, "maximum": 15 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 120 },
+    "operador": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "nombre", "tipo"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "nombre": { "type": "string" },
+        "tipo": { "enum": ["publico_autonomico", "publico_municipal", "privado_concesionario", "cooperativa", "otro"] }
+      }
+    },
+    "promocion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "nombre", "operador", "fuente_id", "regimen", "programa", "modalidad", "estado", "ubicacion", "viviendas_total", "tipologias", "requisitos", "fechas", "enlaces", "meta"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "nombre": { "type": "string", "minLength": 2, "maxLength": 200 },
+        "operador": { "$ref": "#/$defs/operador" },
+        "fuente_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "regimen": { "enum": ["VPPB", "VPPL", "VPPA", "VPO", "ASEQUIBLE_NO_CALIFICADA", "DESCONOCIDO"] },
+        "programa": { "enum": ["PLAN_VIVE", "EMVS_MADRID", "EMV_MUNICIPAL", "AVS_CAM", "COOPERATIVA", "PROMOTOR_PRIVADO", "OTRO", null] },
+        "modalidad": { "enum": ["alquiler", "alquiler_opcion_compra"] },
+        "estado": { "enum": ["proxima", "inscripcion_abierta", "inscripcion_cerrada", "sorteo_adjudicacion", "lista_espera_abierta", "finalizada", "desconocido"] },
+        "ubicacion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["municipio_ine", "municipio", "distrito", "direccion", "lat", "lon"],
+          "properties": {
+            "municipio_ine": { "type": "string", "pattern": "^28[0-9]{3}$" },
+            "municipio": { "type": "string" },
+            "distrito": { "$ref": "#/$defs/nullableString" },
+            "direccion": { "$ref": "#/$defs/nullableString" },
+            "lat": { "type": ["number", "null"], "minimum": 39.8, "maximum": 41.2 },
+            "lon": { "type": ["number", "null"], "minimum": -4.6, "maximum": -3.0 }
+          }
+        },
+        "viviendas_total": { "type": ["integer", "null"], "minimum": 1, "maximum": 5000 },
+        "tipologias": { "type": "array", "items": { "$ref": "#/$defs/tipologia" } },
+        "requisitos": { "$ref": "#/$defs/requisitos" },
+        "fechas": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["inscripcion_inicio", "inscripcion_fin", "sorteo", "entrega_prevista"],
+          "properties": {
+            "inscripcion_inicio": { "$ref": "#/$defs/nullableDate" },
+            "inscripcion_fin": { "$ref": "#/$defs/nullableDate" },
+            "sorteo": { "$ref": "#/$defs/nullableDate" },
+            "entrega_prevista": { "type": ["string", "null"], "pattern": "^[0-9]{4}(-(T[1-4]|0[1-9]|1[0-2]))?$" }
+          }
+        },
+        "enlaces": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["oficial", "solicitud", "bases"],
+          "properties": {
+            "oficial": { "type": "string", "format": "uri" },
+            "solicitud": { "type": ["string", "null"], "format": "uri" },
+            "bases": { "type": "array", "items": { "$ref": "#/$defs/documentoBases" } }
+          }
+        },
+        "meta": { "$ref": "#/$defs/meta" }
+      }
+    },
+    "documentoBases": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "titulo", "sha256", "detectado_en", "es_principal"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "titulo": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "detectado_en": { "type": "string", "format": "date" },
+        "es_principal": { "type": "boolean" }
+      }
+    },
+    "tipologia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dormitorios", "superficie_util_m2", "renta_mensual_eur", "renta_mensual_max_eur", "num_viviendas", "garaje", "trastero", "adaptada_pmr"],
+      "properties": {
+        "dormitorios": { "type": ["integer", "null"], "minimum": 0, "maximum": 6 },
+        "superficie_util_m2": { "type": ["number", "null"], "minimum": 15, "maximum": 200 },
+        "renta_mensual_eur": { "$ref": "#/$defs/eur" },
+        "renta_mensual_max_eur": { "$ref": "#/$defs/eur" },
+        "num_viviendas": { "type": ["integer", "null"], "minimum": 1 },
+        "garaje": { "$ref": "#/$defs/anejo" },
+        "trastero": { "$ref": "#/$defs/anejo" },
+        "adaptada_pmr": { "$ref": "#/$defs/nullableBool" }
+      }
+    },
+    "anejo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["disponibilidad", "precio_mensual_eur"],
+      "properties": {
+        "disponibilidad": { "enum": ["incluido", "opcional", "no", "desconocido"] },
+        "precio_mensual_eur": { "$ref": "#/$defs/eur" }
+      }
+    },
+    "ingresosPorMiembros": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["miembros_desde", "miembros_hasta", "min_iprem", "max_iprem"],
+      "properties": {
+        "miembros_desde": { "type": "integer", "minimum": 1 },
+        "miembros_hasta": { "type": ["integer", "null"], "minimum": 1 },
+        "min_iprem": { "$ref": "#/$defs/vecesIprem" },
+        "max_iprem": { "$ref": "#/$defs/vecesIprem" }
+      }
+    },
+    "empadronamiento": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["ambito", "municipio_ine", "anios_min", "ininterrumpido", "alternativa_trabajo"],
+      "properties": {
+        "ambito": { "enum": ["municipio", "comunidad"] },
+        "municipio_ine": { "type": ["string", "null"], "pattern": "^28[0-9]{3}$" },
+        "anios_min": { "type": ["number", "null"], "minimum": 0, "maximum": 20 },
+        "ininterrumpido": { "$ref": "#/$defs/nullableBool" },
+        "alternativa_trabajo": { "$ref": "#/$defs/nullableBool" }
+      }
+    },
+    "edad": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["min", "max", "tipo"],
+      "properties": {
+        "min": { "type": ["integer", "null"], "minimum": 16, "maximum": 99 },
+        "max": { "type": ["integer", "null"], "minimum": 16, "maximum": 120 },
+        "tipo": { "enum": ["requisito", "cupo"] }
+      }
+    },
+    "requisitos": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ingresos_min_iprem", "ingresos_max_iprem", "ingresos_por_miembros", "iprem_pagas", "iprem_ejercicio", "tasa_esfuerzo_max", "empadronamiento", "edad", "no_titular_vivienda", "otros"],
+      "properties": {
+        "ingresos_min_iprem": { "$ref": "#/$defs/vecesIprem" },
+        "ingresos_max_iprem": { "$ref": "#/$defs/vecesIprem" },
+        "ingresos_por_miembros": { "type": ["array", "null"], "items": { "$ref": "#/$defs/ingresosPorMiembros" } },
+        "iprem_pagas": { "enum": [12, 14, null] },
+        "iprem_ejercicio": { "type": ["integer", "null"], "minimum": 2015, "maximum": 2100 },
+        "tasa_esfuerzo_max": { "type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 1 },
+        "empadronamiento": { "$ref": "#/$defs/empadronamiento" },
+        "edad": { "$ref": "#/$defs/edad" },
+        "no_titular_vivienda": { "$ref": "#/$defs/nullableBool" },
+        "otros": { "type": "array", "items": { "type": "string", "maxLength": 300 } }
+      }
+    },
+    "procedencia": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metodo", "confianza", "documento", "pagina", "evidencia", "regla"],
+      "properties": {
+        "metodo": { "enum": ["html", "pdf_texto", "pdf_tabla", "override", "default_programa", "llm"] },
+        "confianza": { "type": "number", "minimum": 0, "maximum": 1 },
+        "documento": { "type": ["string", "null"], "format": "uri" },
+        "pagina": { "type": ["integer", "null"], "minimum": 1 },
+        "evidencia": { "type": ["string", "null"], "maxLength": 400 },
+        "regla": { "$ref": "#/$defs/nullableString" }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primera_deteccion", "ultima_modificacion", "activa_en_fuente", "campos_pendientes", "campos_override", "procedencia", "extractor_version"],
+      "properties": {
+        "primera_deteccion": { "type": "string", "format": "date" },
+        "ultima_modificacion": { "type": "string", "format": "date" },
+        "activa_en_fuente": { "type": "boolean" },
+        "campos_pendientes": { "type": "array", "items": { "type": "string", "pattern": "^/" } },
+        "campos_override": { "type": "array", "items": { "type": "string", "pattern": "^/" } },
+        "procedencia": { "type": "object", "additionalProperties": { "$ref": "#/$defs/procedencia" } },
+        "extractor_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" }
+      }
+    }
+  }
+}
