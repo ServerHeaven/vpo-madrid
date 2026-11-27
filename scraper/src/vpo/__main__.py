@@ -11,8 +11,10 @@ from zoneinfo import ZoneInfo
 from .core.jsonio import read_json, write_json
 from .core.merge import MergeResult, merge
 from .core.validate import schema_errors, source_files, validate_data_dir
+from .run import SourceReport, UnknownSourceError, run
 
-NOT_YET = {"run": 2, "review": 3, "reparse": 3}  # command -> phase that implements it
+NOT_YET = {"review": 3, "reparse": 3}  # command -> phase that implements it
+SHOWN_ERRORS = 3  # per source in the run summary
 
 
 def find_data_dir(start: Path) -> Path:
@@ -88,11 +90,43 @@ def cmd_validate(data_dir: Path, today: date) -> int:
     return 1 if errors else 0
 
 
+def _summary(report: SourceReport) -> list[str]:
+    seen = "-" if report.vistas is None else report.vistas
+    lines = [
+        f"{report.fuente_id}: {report.estado} · vistas: {seen} · cambios: {report.cambios}"
+        f" · {report.duracion_s:.1f} s"
+    ]
+    lines += [f"  {error}" for error in report.errores[:SHOWN_ERRORS]]
+    if len(report.errores) > SHOWN_ERRORS:
+        lines.append(f"  (y {len(report.errores) - SHOWN_ERRORS} más)")
+    return lines
+
+
+def cmd_run(data_dir: Path, today: date, only: set[str] | None) -> int:
+    """Exit 0 even if sources fail: only a global problem makes the command fail."""
+    try:
+        result = run(data_dir, today=today, now=datetime.now(UTC), only=only)
+    except UnknownSourceError as error:
+        print(f"ERROR {error}", file=sys.stderr)
+        return 2
+    if not result.fuentes:
+        print("No hay fuentes activas en fuentes.json")
+    for report in result.fuentes:
+        print("\n".join(_summary(report)))
+    return 0
+
+
+def _source_ids(value: str) -> set[str] | None:
+    # An empty value means "all", so a workflow can always pass the option.
+    return {part.strip() for part in value.split(",") if part.strip()} or None
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="vpo")
     parser.add_argument("command", choices=["run", "merge", "validate", "review", "reparse"])
     parser.add_argument("--data-dir", type=Path)
     parser.add_argument("--hoy", type=date.fromisoformat, help="fecha de referencia (AAAA-MM-DD)")
+    parser.add_argument("--fuentes", type=_source_ids, help="run: ids separados por coma (vacío = todas)")
     args = parser.parse_args(argv)
 
     if args.command in NOT_YET:
@@ -101,6 +135,8 @@ def main(argv: list[str] | None = None) -> int:
 
     data_dir = args.data_dir or find_data_dir(Path.cwd())
     today = args.hoy or datetime.now(ZoneInfo("Europe/Madrid")).date()
+    if args.command == "run":
+        return cmd_run(data_dir, today, args.fuentes)
     handler = cmd_merge if args.command == "merge" else cmd_validate
     return handler(data_dir, today)
 

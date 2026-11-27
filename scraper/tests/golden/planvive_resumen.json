@@ -1,0 +1,362 @@
+[
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#alcala-de-henares",
+    "nombre": "Plan Vive Alcalá de Henares",
+    "municipio_ine": "28005",
+    "viviendas_total": 736,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "Espartales Norte",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#alcorcon",
+    "nombre": "Plan Vive Alcorcón",
+    "municipio_ine": "28007",
+    "viviendas_total": 822,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "Ensanche Sur",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#boadilla-del-monte",
+    "nombre": "Plan Vive Boadilla del Monte",
+    "municipio_ine": "28022",
+    "viviendas_total": 524,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Fray Junípero Sierra",
+    "solicitud": "https://www.sogevisoalquila.com/proyectos/1/promociones/13"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#colmenar-viejo",
+    "nombre": "Plan Vive Colmenar Viejo",
+    "municipio_ine": "28045",
+    "viviendas_total": 915,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "avda. Cristóbal Colón; c/ Estación de Chamartín; avda. de la Tejera; c/ Francisco Revellés; c/ Américo Vespucio.",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#getafe",
+    "nombre": "Plan Vive Getafe",
+    "municipio_ine": "28065",
+    "viviendas_total": 864,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "Buenavista y Los Molinos",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#humanes-de-madrid",
+    "nombre": "Plan Vive Humanes de Madrid",
+    "municipio_ine": "28073",
+    "viviendas_total": 50,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Don Fausto Ruiza",
+    "solicitud": "https://alasviviendaasequible.com/project/residencial-fresno-humanes-de-madrid/"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#madrid",
+    "nombre": "Plan Vive Madrid",
+    "municipio_ine": "28079",
+    "viviendas_total": 1616,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "Valdebebas y Los Ahijones",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#mostoles",
+    "nombre": "Plan Vive Móstoles",
+    "municipio_ine": "28092",
+    "viviendas_total": 738,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "Móstoles Sur",
+    "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/mostoles/"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#navalcarnero",
+    "nombre": "Plan Vive Navalcarnero",
+    "municipio_ine": "28096",
+    "viviendas_total": 425,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "avda. Mari-Martín y c/ de los Bueyes",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#pinto",
+    "nombre": "Plan Vive Pinto",
+    "municipio_ine": "28113",
+    "viviendas_total": 422,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Isaac Albéniz",
+    "solicitud": "https://www.sogevisoalquila.com/proyectos/1/promociones/7/pre-solicitud"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#san-sebastian-de-los-reyes",
+    "nombre": "Plan Vive San Sebastián de los Reyes",
+    "municipio_ine": "28134",
+    "viviendas_total": 568,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Hoces del Duratón y avda. Arribes del Duero",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#torrejon-de-ardoz",
+    "nombre": "Plan Vive Torrejón de Ardoz",
+    "municipio_ine": "28148",
+    "viviendas_total": 137,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Desmond Tutu",
+    "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/torrejon-de-ardoz/"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#tres-cantos",
+    "nombre": "Plan Vive Tres Cantos",
+    "municipio_ine": "28903",
+    "viviendas_total": 866,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "avda. de Juan Pablo II y c/ Letonia",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#alcobendas",
+    "nombre": "Plan Vive Alcobendas",
+    "municipio_ine": "28006",
+    "viviendas_total": 756,
+    "estado": "proxima",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "avda. Olímpica y avda. Camilo José Cela",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#aranjuez",
+    "nombre": "Plan Vive Aranjuez",
+    "municipio_ine": "28013",
+    "viviendas_total": 400,
+    "estado": "proxima",
+    "dormitorios": [
+      2,
+      3
+    ],
+    "direccion": "avda. Memorial Paz de Hiroshima",
+    "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/aranjuez/"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#arganda-del-rey",
+    "nombre": "Plan Vive Arganda del Rey",
+    "municipio_ine": "28014",
+    "viviendas_total": 210,
+    "estado": "desconocido",
+    "dormitorios": [
+      2,
+      3
+    ],
+    "direccion": "avda. Lisboa",
+    "solicitud": "https://distritovive.com/"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#arroyomolinos",
+    "nombre": "Plan Vive Arroyomolinos",
+    "municipio_ine": "28015",
+    "viviendas_total": 365,
+    "estado": "proxima",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "El Rellano y La Rinconada",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#daganzo-de-arriba",
+    "nombre": "Plan Vive Daganzo de Arriba",
+    "municipio_ine": "28053",
+    "viviendas_total": 174,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Carmen Amaya",
+    "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/daganzo-de-arriba/"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#loeches",
+    "nombre": "Plan Vive Loeches",
+    "municipio_ine": "28075",
+    "viviendas_total": 295,
+    "estado": "proxima",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Almendro",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#moralzarzal",
+    "nombre": "Plan Vive Moralzarzal",
+    "municipio_ine": "28090",
+    "viviendas_total": 80,
+    "estado": "proxima",
+    "dormitorios": [
+      2,
+      3
+    ],
+    "direccion": "c/ Hachazuelas y camino de Alpedrete",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#torrejon-de-la-calzada",
+    "nombre": "Plan Vive Torrejón de la Calzada",
+    "municipio_ine": "28149",
+    "viviendas_total": 143,
+    "estado": "desconocido",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Manuel Fraga Iribarne c/ Río Guadiana",
+    "solicitud": "https://alasviviendaasequible.com/project/residencial-el-pinar-torrejon-de-la-calzada/"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#torrejon-de-velasco",
+    "nombre": "Plan Vive Torrejón de Velasco",
+    "municipio_ine": "28150",
+    "viviendas_total": 41,
+    "estado": "proxima",
+    "dormitorios": [
+      1,
+      2
+    ],
+    "direccion": "c/ Carmen Tagle",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#torrelodones",
+    "nombre": "Plan Vive Torrelodones",
+    "municipio_ine": "28152",
+    "viviendas_total": 170,
+    "estado": "proxima",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Prado de la Virgen",
+    "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/torrelodones/"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#valdemoro",
+    "nombre": "Plan Vive Valdemoro",
+    "municipio_ine": "28161",
+    "viviendas_total": 150,
+    "estado": "proxima",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Agustina de Aragón",
+    "solicitud": null
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#velilla-de-san-antonio",
+    "nombre": "Plan Vive Velilla de San Antonio",
+    "municipio_ine": "28167",
+    "viviendas_total": 152,
+    "estado": "proxima",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/ Nicosia",
+    "solicitud": "https://alasviviendaasequible.com/project/residencial-los-rosales-velilla-de-san-antonio/"
+  },
+  {
+    "url": "https://www.comunidad.madrid/plan-vive#villalbilla",
+    "nombre": "Plan Vive Villalbilla",
+    "municipio_ine": "28172",
+    "viviendas_total": 226,
+    "estado": "proxima",
+    "dormitorios": [
+      1,
+      2,
+      3
+    ],
+    "direccion": "c/Infante Don Juan Manuel",
+    "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/villalbilla/"
+  }
+]

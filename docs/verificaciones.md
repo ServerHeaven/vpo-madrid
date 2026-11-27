@@ -34,6 +34,16 @@ La DA 90ª reserva los 8.400 € a normas que se refieren al salario mínimo en 
 - **Tasa de esfuerzo del 35 %: sin confirmar** en fuente oficial. Sigue como `verificado: false`.
 - Pendiente: leer el Decreto 84/2020 consolidado y su modificación.
 
-## Operadoras (fuentes secundarias, a confirmar en Fase 2)
+### Preguntas frecuentes de la página del Plan Vive
+[Página oficial](https://www.comunidad.madrid/plan-vive), apartado «Dudas frecuentes», leído el 2026-11-27:
+
+- Esfuerzo: «no se debe destinar más del 35% de los ingresos netos anuales de la Unidad de Convivencia al pago de la renta total anual». **Una fuente oficial sí afirma el 35 %**, referido a ingresos netos (ver ADR-001 §4). `programas.json` sigue con `verificado: false` hasta que se revise a mano.
+- Prioridad por empadronamiento o centro de trabajo «con una antigüedad mínima de 3 años». **Discrepa** de la nota de 08/04/2026 (5 años en el municipio). No se publica ningún número.
+- Ingresos: remite a «la tabla del IPREM» sin dar cifras.
+
+## Régimen VPPA
+Las fichas de EMVS usan VPPA para arrendamiento sin opción de compra, con edades distintas de las que recoge la entrada `VPPA` de `programas.json`. **Pendiente de revisar** (ADR-002, punto A).
+
+## Operadoras (fuentes secundarias, a confirmar en Fase 5)
 - ConVive Madrid es la marca del lote que gestiona Sogeviso, no de Avalon.
 - Cada operadora del Plan Vive gestiona su propia inscripción.

@@ -16,7 +16,7 @@ Desde abril de 2026 ordena la adjudicación sin excluir. `requisitos.empadronami
 
 **Propuesta:** añadir `tipo: "requisito" | "preferencia"`, como ya tiene `edad` con `cupo`. Mientras tanto, el adaptador de Plan Vive debe dejar `empadronamiento` en `null` y describir las prioridades en `requisitos.otros`.
 
-**Decidir antes de la Fase 2.**
+**Decidido (2026-11-27):** solución provisional, sin cambiar el schema. Ver [ADR-002](ADR-002-fuentes-reales.md) §3.
 
 ## 3. Un override no llega a la web hasta el siguiente scrape
 §3.3 dice que tras corregir `overrides.json` actúa `deploy.yml`, pero `deploy.yml` (§4.2) no ejecuta la fusión: publicaría el `promociones.json` antiguo.

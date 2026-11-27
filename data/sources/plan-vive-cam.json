@@ -1,0 +1,4076 @@
+{
+  "schema_version": 1,
+  "fuente_id": "plan-vive-cam",
+  "promociones": [
+    {
+      "id": "comunidad-de-madrid-alcala-de-henares-plan-vive-alcala-de-henares",
+      "nombre": "Plan Vive Alcalá de Henares",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28005",
+        "municipio": "Alcalá de Henares",
+        "distrito": null,
+        "direccion": "Espartales Norte",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 736,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#alcala-de-henares",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcala-de-henares",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 736",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcala-de-henares",
+            "pagina": null,
+            "evidencia": "Ubicación: Espartales Norte",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcala-de-henares",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcala-de-henares",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-alcobendas-plan-vive-alcobendas",
+      "nombre": "Plan Vive Alcobendas",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28006",
+        "municipio": "Alcobendas",
+        "distrito": null,
+        "direccion": "avda. Olímpica y avda. Camilo José Cela",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 756,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#alcobendas",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcobendas",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 756",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcobendas",
+            "pagina": null,
+            "evidencia": "Ubicación: avda. Olímpica y avda. Camilo José Cela",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcobendas",
+            "pagina": null,
+            "evidencia": "En fase de: Construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcobendas",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-alcorcon-plan-vive-alcorcon",
+      "nombre": "Plan Vive Alcorcón",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28007",
+        "municipio": "Alcorcón",
+        "distrito": null,
+        "direccion": "Ensanche Sur",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 822,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#alcorcon",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcorcon",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 822",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcorcon",
+            "pagina": null,
+            "evidencia": "Ubicación: Ensanche Sur",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcorcon",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#alcorcon",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-aranjuez-plan-vive-aranjuez",
+      "nombre": "Plan Vive Aranjuez",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28013",
+        "municipio": "Aranjuez",
+        "distrito": null,
+        "direccion": "avda. Memorial Paz de Hiroshima",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 400,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#aranjuez",
+        "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/aranjuez/",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#aranjuez",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 400",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#aranjuez",
+            "pagina": null,
+            "evidencia": "Ubicación: avda. Memorial Paz de Hiroshima",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#aranjuez",
+            "pagina": null,
+            "evidencia": "En fase de: Construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#aranjuez",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-arganda-del-rey-plan-vive-arganda-del-rey",
+      "nombre": "Plan Vive Arganda del Rey",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28014",
+        "municipio": "Arganda del Rey",
+        "distrito": null,
+        "direccion": "avda. Lisboa",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 210,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#arganda-del-rey",
+        "solicitud": "https://distritovive.com/",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#arganda-del-rey",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 210",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#arganda-del-rey",
+            "pagina": null,
+            "evidencia": "Ubicación: avda. Lisboa",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#arganda-del-rey",
+            "pagina": null,
+            "evidencia": "En fase de: Comercialización",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#arganda-del-rey",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-arroyomolinos-plan-vive-arroyomolinos",
+      "nombre": "Plan Vive Arroyomolinos",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28015",
+        "municipio": "Arroyomolinos",
+        "distrito": null,
+        "direccion": "El Rellano y La Rinconada",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 365,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#arroyomolinos",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#arroyomolinos",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 365",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#arroyomolinos",
+            "pagina": null,
+            "evidencia": "Ubicación: El Rellano y La Rinconada",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#arroyomolinos",
+            "pagina": null,
+            "evidencia": "En fase de: Construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#arroyomolinos",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-boadilla-del-monte-plan-vive-boadilla-del-monte",
+      "nombre": "Plan Vive Boadilla del Monte",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28022",
+        "municipio": "Boadilla del Monte",
+        "distrito": null,
+        "direccion": "c/ Fray Junípero Sierra",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 524,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#boadilla-del-monte",
+        "solicitud": "https://www.sogevisoalquila.com/proyectos/1/promociones/13",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#boadilla-del-monte",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 524",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#boadilla-del-monte",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Fray Junípero Sierra",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#boadilla-del-monte",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#boadilla-del-monte",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-colmenar-viejo-plan-vive-colmenar-viejo",
+      "nombre": "Plan Vive Colmenar Viejo",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28045",
+        "municipio": "Colmenar Viejo",
+        "distrito": null,
+        "direccion": "avda. Cristóbal Colón; c/ Estación de Chamartín; avda. de la Tejera; c/ Francisco Revellés; c/ Américo Vespucio.",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 915,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#colmenar-viejo",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#colmenar-viejo",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 915",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#colmenar-viejo",
+            "pagina": null,
+            "evidencia": "Ubicación: avda. Cristóbal Colón; c/ Estación de Chamartín; avda. de la Tejera; c/ Francisco Revellés; c/ Américo Vespucio.",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#colmenar-viejo",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega, comercialización y construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#colmenar-viejo",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-daganzo-de-arriba-plan-vive-daganzo-de-arriba",
+      "nombre": "Plan Vive Daganzo de Arriba",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28053",
+        "municipio": "Daganzo de Arriba",
+        "distrito": null,
+        "direccion": "c/ Carmen Amaya",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 174,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#daganzo-de-arriba",
+        "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/daganzo-de-arriba/",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#daganzo-de-arriba",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 174",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#daganzo-de-arriba",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Carmen Amaya",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#daganzo-de-arriba",
+            "pagina": null,
+            "evidencia": "En fase de: Comercialización",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#daganzo-de-arriba",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-getafe-plan-vive-getafe",
+      "nombre": "Plan Vive Getafe",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28065",
+        "municipio": "Getafe",
+        "distrito": null,
+        "direccion": "Buenavista y Los Molinos",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 864,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#getafe",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#getafe",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 864",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#getafe",
+            "pagina": null,
+            "evidencia": "Ubicación: Buenavista y Los Molinos",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#getafe",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#getafe",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-humanes-de-madrid-plan-vive-humanes-de-madrid",
+      "nombre": "Plan Vive Humanes de Madrid",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28073",
+        "municipio": "Humanes de Madrid",
+        "distrito": null,
+        "direccion": "c/ Don Fausto Ruiza",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 50,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#humanes-de-madrid",
+        "solicitud": "https://alasviviendaasequible.com/project/residencial-fresno-humanes-de-madrid/",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#humanes-de-madrid",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 50",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#humanes-de-madrid",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Don Fausto Ruiza",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#humanes-de-madrid",
+            "pagina": null,
+            "evidencia": "En fase de: Comercialización",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#humanes-de-madrid",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-loeches-plan-vive-loeches",
+      "nombre": "Plan Vive Loeches",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28075",
+        "municipio": "Loeches",
+        "distrito": null,
+        "direccion": "c/ Almendro",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 295,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#loeches",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#loeches",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 295",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#loeches",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Almendro",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#loeches",
+            "pagina": null,
+            "evidencia": "En fase de: Construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#loeches",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-madrid-plan-vive-madrid",
+      "nombre": "Plan Vive Madrid",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28079",
+        "municipio": "Madrid",
+        "distrito": null,
+        "direccion": "Valdebebas y Los Ahijones",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 1616,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#madrid",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#madrid",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 1.616",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#madrid",
+            "pagina": null,
+            "evidencia": "Ubicación: Valdebebas y Los Ahijones",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#madrid",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega y construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#madrid",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-moralzarzal-plan-vive-moralzarzal",
+      "nombre": "Plan Vive Moralzarzal",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28090",
+        "municipio": "Moralzarzal",
+        "distrito": null,
+        "direccion": "c/ Hachazuelas y camino de Alpedrete",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 80,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#moralzarzal",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#moralzarzal",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 80",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#moralzarzal",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Hachazuelas y camino de Alpedrete",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#moralzarzal",
+            "pagina": null,
+            "evidencia": "En fase de: Construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#moralzarzal",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-mostoles-plan-vive-mostoles",
+      "nombre": "Plan Vive Móstoles",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28092",
+        "municipio": "Móstoles",
+        "distrito": null,
+        "direccion": "Móstoles Sur",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 738,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#mostoles",
+        "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/mostoles/",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#mostoles",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 738",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#mostoles",
+            "pagina": null,
+            "evidencia": "Ubicación: Móstoles Sur",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#mostoles",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega y construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#mostoles",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-navalcarnero-plan-vive-navalcarnero",
+      "nombre": "Plan Vive Navalcarnero",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28096",
+        "municipio": "Navalcarnero",
+        "distrito": null,
+        "direccion": "avda. Mari-Martín y c/ de los Bueyes",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 425,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#navalcarnero",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#navalcarnero",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 425",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#navalcarnero",
+            "pagina": null,
+            "evidencia": "Ubicación: avda. Mari-Martín y c/ de los Bueyes",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#navalcarnero",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega y construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#navalcarnero",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-pinto-plan-vive-pinto",
+      "nombre": "Plan Vive Pinto",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28113",
+        "municipio": "Pinto",
+        "distrito": null,
+        "direccion": "c/ Isaac Albéniz",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 422,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#pinto",
+        "solicitud": "https://www.sogevisoalquila.com/proyectos/1/promociones/7/pre-solicitud",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#pinto",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 422",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#pinto",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Isaac Albéniz",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#pinto",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#pinto",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-san-sebastian-de-los-reyes-plan-vive-san-sebastian-de-los-reyes",
+      "nombre": "Plan Vive San Sebastián de los Reyes",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28134",
+        "municipio": "San Sebastián de los Reyes",
+        "distrito": null,
+        "direccion": "c/ Hoces del Duratón y avda. Arribes del Duero",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 568,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#san-sebastian-de-los-reyes",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#san-sebastian-de-los-reyes",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 568",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#san-sebastian-de-los-reyes",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Hoces del Duratón y avda. Arribes del Duero",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#san-sebastian-de-los-reyes",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#san-sebastian-de-los-reyes",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-torrejon-de-ardoz-plan-vive-torrejon-de-ardoz",
+      "nombre": "Plan Vive Torrejón de Ardoz",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28148",
+        "municipio": "Torrejón de Ardoz",
+        "distrito": null,
+        "direccion": "c/ Desmond Tutu",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 137,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#torrejon-de-ardoz",
+        "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/torrejon-de-ardoz/",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-ardoz",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 137",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-ardoz",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Desmond Tutu",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-ardoz",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-ardoz",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-torrejon-de-la-calzada-plan-vive-torrejon-de-la-calzada",
+      "nombre": "Plan Vive Torrejón de la Calzada",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28149",
+        "municipio": "Torrejón de la Calzada",
+        "distrito": null,
+        "direccion": "c/ Manuel Fraga Iribarne c/ Río Guadiana",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 143,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#torrejon-de-la-calzada",
+        "solicitud": "https://alasviviendaasequible.com/project/residencial-el-pinar-torrejon-de-la-calzada/",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-la-calzada",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 143 (61 de estas viviendas cuentan con financiación del PRTR)",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-la-calzada",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Manuel Fraga Iribarne c/ Río Guadiana",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-la-calzada",
+            "pagina": null,
+            "evidencia": "En fase de: Comercialización y construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-la-calzada",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-torrejon-de-velasco-plan-vive-torrejon-de-velasco",
+      "nombre": "Plan Vive Torrejón de Velasco",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28150",
+        "municipio": "Torrejón de Velasco",
+        "distrito": null,
+        "direccion": "c/ Carmen Tagle",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 41,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#torrejon-de-velasco",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-velasco",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 41",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-velasco",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Carmen Tagle",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-velasco",
+            "pagina": null,
+            "evidencia": "En fase de: Construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrejon-de-velasco",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1 o 2 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-torrelodones-plan-vive-torrelodones",
+      "nombre": "Plan Vive Torrelodones",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28152",
+        "municipio": "Torrelodones",
+        "distrito": null,
+        "direccion": "c/ Prado de la Virgen",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 170,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#torrelodones",
+        "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/torrelodones/",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrelodones",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 170",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrelodones",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Prado de la Virgen",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrelodones",
+            "pagina": null,
+            "evidencia": "En fase de: Construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#torrelodones",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-tres-cantos-plan-vive-tres-cantos",
+      "nombre": "Plan Vive Tres Cantos",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "desconocido",
+      "ubicacion": {
+        "municipio_ine": "28903",
+        "municipio": "Tres Cantos",
+        "distrito": null,
+        "direccion": "avda. de Juan Pablo II y c/ Letonia",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 866,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#tres-cantos",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#tres-cantos",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 866",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#tres-cantos",
+            "pagina": null,
+            "evidencia": "Ubicación: avda. de Juan Pablo II y c/ Letonia",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#tres-cantos",
+            "pagina": null,
+            "evidencia": "En fase de: Entrega y construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#tres-cantos",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-valdemoro-plan-vive-valdemoro",
+      "nombre": "Plan Vive Valdemoro",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28161",
+        "municipio": "Valdemoro",
+        "distrito": null,
+        "direccion": "c/ Agustina de Aragón",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 150,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#valdemoro",
+        "solicitud": null,
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#valdemoro",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 150",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#valdemoro",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Agustina de Aragón",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#valdemoro",
+            "pagina": null,
+            "evidencia": "En fase de: Construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#valdemoro",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-velilla-de-san-antonio-plan-vive-velilla-de-san-antonio",
+      "nombre": "Plan Vive Velilla de San Antonio",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28167",
+        "municipio": "Velilla de San Antonio",
+        "distrito": null,
+        "direccion": "c/ Nicosia",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 152,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#velilla-de-san-antonio",
+        "solicitud": "https://alasviviendaasequible.com/project/residencial-los-rosales-velilla-de-san-antonio/",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#velilla-de-san-antonio",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 152",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#velilla-de-san-antonio",
+            "pagina": null,
+            "evidencia": "Ubicación: c/ Nicosia",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#velilla-de-san-antonio",
+            "pagina": null,
+            "evidencia": "En fase de: Construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#velilla-de-san-antonio",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    },
+    {
+      "id": "comunidad-de-madrid-villalbilla-plan-vive-villalbilla",
+      "nombre": "Plan Vive Villalbilla",
+      "operador": {
+        "id": "comunidad-de-madrid",
+        "nombre": "Comunidad de Madrid",
+        "tipo": "publico_autonomico"
+      },
+      "fuente_id": "plan-vive-cam",
+      "regimen": "DESCONOCIDO",
+      "programa": "PLAN_VIVE",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28172",
+        "municipio": "Villalbilla",
+        "distrito": null,
+        "direccion": "c/Infante Don Juan Manuel",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 226,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": null,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": true,
+        "otros": [
+          "Mayoría de edad o ser menor emancipado.",
+          "Nacionalidad española o residencia legal en España.",
+          "Destinar la vivienda a tu domicilio permanente y habitual.",
+          "Preferencia, no requisito: tienen prioridad las personas empadronadas o con centro de trabajo en el municipio de la vivienda."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://www.comunidad.madrid/plan-vive#villalbilla",
+        "solicitud": "https://vivetuavalon.com/plan-vive-home/inscribete-en-nuestros-municipios/villalbilla/",
+        "bases": []
+      },
+      "meta": {
+        "primera_deteccion": "2026-11-27",
+        "ultima_modificacion": "2026-11-27",
+        "activa_en_fuente": true,
+        "campos_pendientes": [],
+        "campos_override": [],
+        "procedencia": {
+          "/viviendas_total": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#villalbilla",
+            "pagina": null,
+            "evidencia": "Nº viviendas: 226",
+            "regla": null
+          },
+          "/ubicacion/direccion": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#villalbilla",
+            "pagina": null,
+            "evidencia": "Ubicación: c/Infante Don Juan Manuel",
+            "regla": null
+          },
+          "/estado": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#villalbilla",
+            "pagina": null,
+            "evidencia": "En fase de: Construcción",
+            "regla": null
+          },
+          "/tipologias": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#villalbilla",
+            "pagina": null,
+            "evidencia": "Nº habitaciones: 1, 2 o 3 dormitorios",
+            "regla": null
+          },
+          "/requisitos/no_titular_vivienda": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "No tener otra vivienda en propiedad.",
+            "regla": null
+          },
+          "/requisitos/otros": {
+            "metodo": "html",
+            "confianza": 0.9,
+            "documento": "https://www.comunidad.madrid/plan-vive#dudas-frecuentes",
+            "pagina": null,
+            "evidencia": "Mayoría de edad o ser menor emancipado. Nacionalidad española o residencia legal en España. Destinar la vivienda a tu domicilio permanente y habitual. Se da prioridad a aquellos ciudadanos empadronados y/o con su centro de trabajo en el municipio al que se opta a una vivienda",
+            "regla": null
+          }
+        },
+        "extractor_version": "0.1.0"
+      }
+    }
+  ]
+}

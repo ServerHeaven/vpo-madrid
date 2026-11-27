@@ -1,7 +1,452 @@
 {
   "schema_version": 1,
-  "ultima_ejecucion": null,
-  "fuentes": {},
-  "documentos": {},
-  "promo_ids": {}
+  "ultima_ejecucion": "2026-11-27T12:41:53Z",
+  "fuentes": {
+    "emvs-madrid": {
+      "estado": "ok",
+      "ultima_ejecucion": "2026-11-27T12:41:53Z",
+      "ultimo_exito": "2026-11-27T12:41:53Z",
+      "fallos_consecutivos": 0,
+      "ultimo_error": null,
+      "promociones_vistas": 18,
+      "duracion_s": 67.8
+    },
+    "plan-vive-cam": {
+      "estado": "ok",
+      "ultima_ejecucion": "2026-11-27T12:41:53Z",
+      "ultimo_exito": "2026-11-27T12:41:53Z",
+      "fallos_consecutivos": 0,
+      "ultimo_error": null,
+      "promociones_vistas": 26,
+      "duracion_s": 10.2
+    }
+  },
+  "documentos": {
+    "036b15c515956744cf26cee52490b484b2ed735c": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/PD4.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-paseo-de-la-direccion-4"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "c9f06c5f2b198ab83c45a1edfb1d36ef169a9fece6bf808a9831f7b83a393cea",
+      "sha256_texto": "945749a6b2fdf1ee4652a36a6e35d134d53c00ef1f0e4f697d5d778c0ac89c16",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "1bc2921af0fe3653905b01afb726f2bb45cbdae3": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/NSA3.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-ntra-sra-de-los-angeles-3"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "25e87196d633008ee6260093b5eff752931255122e5a90c551a29c20bcd6be1c",
+      "sha256_texto": "5370946a74d1158979f9f2d23e86e24ac2d48c90ddf194c41c2531592652141b",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "1cd7a38d659ec0adc2e5c208dd9eb59e373616f4": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/C28.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-carabanchel-28"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "530d124de804aee63ee9e7962dbd5dd020cff1448afab20466b37c51567ebdf5",
+      "sha256_texto": "9e0a33b25e3aca23e2ac0d3ec50765ada18f894afd58ddde290bb6d06e7020eb",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "29dd4cdeaaceb29c70d2db1813086a1974daee1f": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/MCALDERON.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-mahou-calderon"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "f1136eeb08f2cd543b319ef1c9d2e52d0928d0f40cd12de7137b6acbe84e3492",
+      "sha256_texto": "592662d1466d29cb68147ee95fc1bef5d467372c65c599c0bc77383ad57155cf",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "35e1857955f7d4f71df3583ed2c02594b24f81bd": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/IL1.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-iberia-loreto-1"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "7b19a125d6b037157527c1a63dc50e93d00f16ad837f46c0356829f015d2c708",
+      "sha256_texto": "ccac3f9e2a82210a0c1ce1ea9bfff2a1d5e44224c6ec76d9ad2dfad49a1bfc07",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "4541479dbcbf2fa25ff8bb9acd5c9eb5ccc10cff": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/BA1.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-barrio-del-aeropuerto-1"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "8591919e2ec95e27942d0189cad4f5c407a247f692b094f348bb3b681eb69567",
+      "sha256_texto": "76c98903f99a5523e258c451d4339db40022f0e91a0e4b9690d0f67e1c489003",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "47885da8e64388732139fb384b1572689b9db4e5": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/V72.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-vallecas-72"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "d01bafbe0d0ae6f3d2aa5a6a47d43b45479326aedbd1acdadae065d045179df2",
+      "sha256_texto": "a2059de44a73ce593dd67ccc925af7e606e51fc3ec984962075d15d8bee84998",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "73d516a221db25b112058896ce5a9920a13dfd04": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/CANAV07.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-canaveral-7"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "2cb9044292b89f4e38f9e9b977cc09c8b35d5f2081fb65a723540cc94e9048c6",
+      "sha256_texto": "7a38554d6849ac4043d583e8545cf04e09354d9618c587358c32ad432794d04d",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "73e77a292e3e2513d2cb10a00260c3eec56cd80b": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/ON3.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-ofelia-nieto-3"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "8421deac5bc0349e7fec3e5642c5133a89290c94117e02b965d2a583e8524a37",
+      "sha256_texto": "d4105aab79713cc6c42971aa403633a0dae848f4ea3fca8af243ecc201d1a300",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "75f3592cff404e6243e88fad6dc98f199f7576b1": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/C35.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-carabanchel-35"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "8af281e651b4a27ee428b9c743f72538ed92d70a41437e1cb49de7dffddf681d",
+      "sha256_texto": "a2fbb2eefec0568497d52956deac98b55e21e3cab9f2acdb0096df5e93b9ff56",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "7d279ac7c4c9fda2b873db17652a1798f0492666": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/IL2.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-iberia-loreto-2"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "75736479842074bbd73c12d3671f45fa6a2fa574e1b39e3b16521282aad21a5d",
+      "sha256_texto": "9f2b272b51789d5b1502c2a56d852581efc0ee0515a865cf7b165356de404bbe",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "8075886f5d78b6c0b054f6c01c3d69de0a8327af": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/V71.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-vallecas-71"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "5b25b72dd5ae0370e190fbe16f405dc18e1b07c8aed1c8c2f1d21f0fcd2d3699",
+      "sha256_texto": "aa728ad2a4b58aac0fb4dc7acdf92b4e3b18b3061e920a4a64bfe7c62850498b",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "91721abbd54060675c1b31bf19142edb7ec945a8": {
+      "url": "https://www.emvs.es/nuestras-promociones/en-proyecto-y-obra",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "c6b7fb1218896ce6fc7644e5228053a46574da2af2d8b2383d8abf3924922e51",
+      "sha256_texto": "422a3f48dc8e32ca4ba65ff03f933f6b29cd14ec7ce670f8bf797cbb59e8e83e",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "9a05dfd44d7a88a6afd7baff68fe6fcc57cefe19": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/AF6.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-arroyo-fresno-6"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "5057850f5fba588ad52a76029d24a63b53b477141a686856c6546a4e0836a55d",
+      "sha256_texto": "958f18580bd077aefff73457929976f90abc9e4d949ce4a26820f497a24131ab",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "9d7b6030e4ce65714c039e221b93d5fa175583fa": {
+      "url": "https://www.emvs.es/Vivienda/SorteoPromocion",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-iberia-loreto-1"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "6c79c18844e806418410326f847a3f228dc532539f8bbdcc60737a7903f3fe46",
+      "sha256_texto": "897a153e33204a4260110376024e220e0c0cce390200cf60f5e782bac8e27571",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "a606a9dade6d14ba65b9e509ad3f231887e254c1": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/PD3.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-paseo-de-la-direccion-3"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "262e670c0a43bddbc7f8769127443122f33e96ee93261fd0312a0fa00c4e238e",
+      "sha256_texto": "bc4cbf53ed56d6c3c9f1eae495a21cdc13702b82ce780e4604beb3fcbe6b81f6",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "bb72a4424ec367ed0d38a5622c0074ecbe86da05": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/CANAV10.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-canaveral-10"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "d0c2e081fa6435a21260b4a3e26443f39e41d3e66695054411304b80eba8d933",
+      "sha256_texto": "fbe05a51913386a1018e1718f8bb191cdfee993f54363ebda9f334cf20739bb2",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "cfe035956b909c8362be92e3c5285edd0aa0f42f": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/E6.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-espinillo-6"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "983cfb2429e013c0b4283ee931f3e9a2cc3d9cd3935d5e062aca6e416b917469",
+      "sha256_texto": "9ccf6b25aef7b3563c442e5e6d584545743fbf1556f4c5f40db103a15051d534",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "db9d5bb49e2ed661b15c0a3eef734882b30a2362": {
+      "url": "https://www.comunidad.madrid/plan-vive",
+      "tipo": "html",
+      "fuente_id": "plan-vive-cam",
+      "promo_ids": [
+        "comunidad-de-madrid-alcala-de-henares-plan-vive-alcala-de-henares",
+        "comunidad-de-madrid-alcobendas-plan-vive-alcobendas",
+        "comunidad-de-madrid-alcorcon-plan-vive-alcorcon",
+        "comunidad-de-madrid-aranjuez-plan-vive-aranjuez",
+        "comunidad-de-madrid-arganda-del-rey-plan-vive-arganda-del-rey",
+        "comunidad-de-madrid-arroyomolinos-plan-vive-arroyomolinos",
+        "comunidad-de-madrid-boadilla-del-monte-plan-vive-boadilla-del-monte",
+        "comunidad-de-madrid-colmenar-viejo-plan-vive-colmenar-viejo",
+        "comunidad-de-madrid-daganzo-de-arriba-plan-vive-daganzo-de-arriba",
+        "comunidad-de-madrid-getafe-plan-vive-getafe",
+        "comunidad-de-madrid-humanes-de-madrid-plan-vive-humanes-de-madrid",
+        "comunidad-de-madrid-loeches-plan-vive-loeches",
+        "comunidad-de-madrid-madrid-plan-vive-madrid",
+        "comunidad-de-madrid-moralzarzal-plan-vive-moralzarzal",
+        "comunidad-de-madrid-mostoles-plan-vive-mostoles",
+        "comunidad-de-madrid-navalcarnero-plan-vive-navalcarnero",
+        "comunidad-de-madrid-pinto-plan-vive-pinto",
+        "comunidad-de-madrid-san-sebastian-de-los-reyes-plan-vive-san-sebastian-de-los-reyes",
+        "comunidad-de-madrid-torrejon-de-ardoz-plan-vive-torrejon-de-ardoz",
+        "comunidad-de-madrid-torrejon-de-la-calzada-plan-vive-torrejon-de-la-calzada",
+        "comunidad-de-madrid-torrejon-de-velasco-plan-vive-torrejon-de-velasco",
+        "comunidad-de-madrid-torrelodones-plan-vive-torrelodones",
+        "comunidad-de-madrid-tres-cantos-plan-vive-tres-cantos",
+        "comunidad-de-madrid-valdemoro-plan-vive-valdemoro",
+        "comunidad-de-madrid-velilla-de-san-antonio-plan-vive-velilla-de-san-antonio",
+        "comunidad-de-madrid-villalbilla-plan-vive-villalbilla"
+      ],
+      "etag": "\"1795782969:dtagent10349261020121938dISo:dtagent10349261020121938dISo\"",
+      "last_modified": "Fri, 27 Nov 2026 12:36:07 GMT",
+      "sha256_bytes": "2b5e7da17fe07fb3d2bf34a74521d1acdbc78b3465193771e032d600e47f2d96",
+      "sha256_texto": "9f90ef25bfc209f92f8aa3ba6b528978630afdecd8bf68c7c32b074c26509673",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "eb11a53b78ed26e925caec1ab40b77630b5dc7f0": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/PD5.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-paseo-de-la-direccion-5"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "3d5a62574c8f2cedb39b147354fd8c73e8cd179bde1eda47ef157e9c49993e58",
+      "sha256_texto": "ca5c4271cb7c179bd68541fedfb7cd2542f8fd0f44e5bfc73a887b250ad8322b",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "f429574d67bc8ae6612f0a3108f1a0e7b9c082d5": {
+      "url": "https://www.emvs.es/Proyectos/Promociones/Paginas/VC4.aspx",
+      "tipo": "html",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-vicalvaro-la-catalana-4"
+      ],
+      "etag": null,
+      "last_modified": null,
+      "sha256_bytes": "713cfe979ce49674fc90a178ef53e584691e1133c938c6d19d4ff2f0f6386932",
+      "sha256_texto": "e6b66b1054ea6b71295311de11c51aec015bda564babd02d429ca024f5b9123c",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": null,
+      "ocr_necesario": false
+    }
+  },
+  "promo_ids": {
+    "https://www.comunidad.madrid/plan-vive#alcala-de-henares": "comunidad-de-madrid-alcala-de-henares-plan-vive-alcala-de-henares",
+    "https://www.comunidad.madrid/plan-vive#alcobendas": "comunidad-de-madrid-alcobendas-plan-vive-alcobendas",
+    "https://www.comunidad.madrid/plan-vive#alcorcon": "comunidad-de-madrid-alcorcon-plan-vive-alcorcon",
+    "https://www.comunidad.madrid/plan-vive#aranjuez": "comunidad-de-madrid-aranjuez-plan-vive-aranjuez",
+    "https://www.comunidad.madrid/plan-vive#arganda-del-rey": "comunidad-de-madrid-arganda-del-rey-plan-vive-arganda-del-rey",
+    "https://www.comunidad.madrid/plan-vive#arroyomolinos": "comunidad-de-madrid-arroyomolinos-plan-vive-arroyomolinos",
+    "https://www.comunidad.madrid/plan-vive#boadilla-del-monte": "comunidad-de-madrid-boadilla-del-monte-plan-vive-boadilla-del-monte",
+    "https://www.comunidad.madrid/plan-vive#colmenar-viejo": "comunidad-de-madrid-colmenar-viejo-plan-vive-colmenar-viejo",
+    "https://www.comunidad.madrid/plan-vive#daganzo-de-arriba": "comunidad-de-madrid-daganzo-de-arriba-plan-vive-daganzo-de-arriba",
+    "https://www.comunidad.madrid/plan-vive#getafe": "comunidad-de-madrid-getafe-plan-vive-getafe",
+    "https://www.comunidad.madrid/plan-vive#humanes-de-madrid": "comunidad-de-madrid-humanes-de-madrid-plan-vive-humanes-de-madrid",
+    "https://www.comunidad.madrid/plan-vive#loeches": "comunidad-de-madrid-loeches-plan-vive-loeches",
+    "https://www.comunidad.madrid/plan-vive#madrid": "comunidad-de-madrid-madrid-plan-vive-madrid",
+    "https://www.comunidad.madrid/plan-vive#moralzarzal": "comunidad-de-madrid-moralzarzal-plan-vive-moralzarzal",
+    "https://www.comunidad.madrid/plan-vive#mostoles": "comunidad-de-madrid-mostoles-plan-vive-mostoles",
+    "https://www.comunidad.madrid/plan-vive#navalcarnero": "comunidad-de-madrid-navalcarnero-plan-vive-navalcarnero",
+    "https://www.comunidad.madrid/plan-vive#pinto": "comunidad-de-madrid-pinto-plan-vive-pinto",
+    "https://www.comunidad.madrid/plan-vive#san-sebastian-de-los-reyes": "comunidad-de-madrid-san-sebastian-de-los-reyes-plan-vive-san-sebastian-de-los-reyes",
+    "https://www.comunidad.madrid/plan-vive#torrejon-de-ardoz": "comunidad-de-madrid-torrejon-de-ardoz-plan-vive-torrejon-de-ardoz",
+    "https://www.comunidad.madrid/plan-vive#torrejon-de-la-calzada": "comunidad-de-madrid-torrejon-de-la-calzada-plan-vive-torrejon-de-la-calzada",
+    "https://www.comunidad.madrid/plan-vive#torrejon-de-velasco": "comunidad-de-madrid-torrejon-de-velasco-plan-vive-torrejon-de-velasco",
+    "https://www.comunidad.madrid/plan-vive#torrelodones": "comunidad-de-madrid-torrelodones-plan-vive-torrelodones",
+    "https://www.comunidad.madrid/plan-vive#tres-cantos": "comunidad-de-madrid-tres-cantos-plan-vive-tres-cantos",
+    "https://www.comunidad.madrid/plan-vive#valdemoro": "comunidad-de-madrid-valdemoro-plan-vive-valdemoro",
+    "https://www.comunidad.madrid/plan-vive#velilla-de-san-antonio": "comunidad-de-madrid-velilla-de-san-antonio-plan-vive-velilla-de-san-antonio",
+    "https://www.comunidad.madrid/plan-vive#villalbilla": "comunidad-de-madrid-villalbilla-plan-vive-villalbilla",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/AF6.aspx": "emvs-madrid-madrid-arroyo-fresno-6",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/BA1.aspx": "emvs-madrid-madrid-barrio-del-aeropuerto-1",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/C28.aspx": "emvs-madrid-madrid-carabanchel-28",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/C35.aspx": "emvs-madrid-madrid-carabanchel-35",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/CANAV07.aspx": "emvs-madrid-madrid-canaveral-7",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/CANAV10.aspx": "emvs-madrid-madrid-canaveral-10",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/E6.aspx": "emvs-madrid-madrid-espinillo-6",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/IL1.aspx": "emvs-madrid-madrid-iberia-loreto-1",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/IL2.aspx": "emvs-madrid-madrid-iberia-loreto-2",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/MCALDERON.aspx": "emvs-madrid-madrid-mahou-calderon",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/NSA3.aspx": "emvs-madrid-madrid-ntra-sra-de-los-angeles-3",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/ON3.aspx": "emvs-madrid-madrid-ofelia-nieto-3",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/PD3.aspx": "emvs-madrid-madrid-paseo-de-la-direccion-3",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/PD4.aspx": "emvs-madrid-madrid-paseo-de-la-direccion-4",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/PD5.aspx": "emvs-madrid-madrid-paseo-de-la-direccion-5",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/V71.aspx": "emvs-madrid-madrid-vallecas-71",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/V72.aspx": "emvs-madrid-madrid-vallecas-72",
+    "https://www.emvs.es/Proyectos/Promociones/Paginas/VC4.aspx": "emvs-madrid-madrid-vicalvaro-la-catalana-4"
+  }
 }

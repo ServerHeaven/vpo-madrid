@@ -8,3 +8,4 @@ dist/
 data/review-report.json
 .env
 .claude/settings.local.json
+.cache/

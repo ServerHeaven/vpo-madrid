@@ -2,7 +2,7 @@
 
 Buscador de promociones de alquiler protegido (VPPB, VPPL, Plan Vive, promociones municipales) en la Comunidad de Madrid.
 
-**Estado:** en construcción. Están los contratos de datos y la fusión con correcciones manuales; todavía no hay scrapers ni web.
+**Estado:** en construcción. Ya se leen las páginas HTML de EMVS Madrid y del Plan Vive; todavía no se extraen las bases en PDF ni hay web.
 
 La información es orientativa. No tenemos relación con las administraciones ni con las operadoras: la convocatoria oficial prevalece siempre.
 
@@ -41,6 +41,8 @@ Requiere [uv](https://docs.astral.sh/uv/).
 cd scraper
 uv sync
 uv run python -m pytest
+uv run python -m vpo run        # lee las webs; --fuentes emvs-madrid para una sola
+uv run python -m vpo merge
 uv run python -m vpo validate
 ```
 

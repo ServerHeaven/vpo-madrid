@@ -6,27 +6,27 @@
       "id": "emvs-madrid",
       "nombre": "EMVS Madrid",
       "operador": { "id": "emvs-madrid", "nombre": "EMVS Madrid", "tipo": "publico_municipal" },
-      "url": "https://www.emvs.es/",
-      "url_verificada": false,
-      "metodo": null,
+      "url": "https://www.emvs.es/nuestras-promociones/en-proyecto-y-obra",
+      "url_verificada": true,
+      "metodo": "httpx",
       "prioridad": 1,
-      "activa": false,
+      "activa": true,
       "intervalo_s": 3,
       "timeout_s": 300,
-      "notas": "Fase 2. La web responde (27/11/2026); falta localizar el listado de convocatorias."
+      "notas": "Promociones en proyecto y obra más la página del sorteo (/Vivienda/SorteoPromocion). Las finalizadas quedan fuera. Ver ADR-002."
     },
     {
       "id": "plan-vive-cam",
       "nombre": "Plan Vive (Comunidad de Madrid)",
       "operador": { "id": "comunidad-de-madrid", "nombre": "Comunidad de Madrid", "tipo": "publico_autonomico" },
       "url": "https://www.comunidad.madrid/plan-vive",
-      "url_verificada": false,
-      "metodo": null,
+      "url_verificada": true,
+      "metodo": "httpx",
       "prioridad": 1,
-      "activa": false,
-      "intervalo_s": 3,
+      "activa": true,
+      "intervalo_s": 10,
       "timeout_s": 300,
-      "notas": "Fase 2. Según fuentes secundarias, cada operadora gestiona su propia inscripción: comprobar si esta página basta o hacen falta sus portales."
+      "notas": "Un registro agregado por municipio (ADR-002). Cada operadora gestiona su inscripción. intervalo_s respeta el Crawl-delay: 10 de robots.txt."
     },
     {
       "id": "avalon",
