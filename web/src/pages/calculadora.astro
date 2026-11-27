@@ -1,0 +1,45 @@
+---
+import Calculadora from '../islands/Calculadora';
+import Base from '../layouts/Base.astro';
+import { cargarDatos } from '../lib/data';
+import { construirDatosCalculadora } from '../lib/datos-calculadora';
+import { formatMarcaTiempo } from '../lib/format';
+import { url } from '../lib/rutas';
+
+// All the data goes to the island as properties: the page requests nothing after loading.
+const datos = construirDatosCalculadora(cargarDatos());
+---
+
+<Base
+  titulo="Calculadora de requisitos"
+  descripcion="Orientación sobre los requisitos de las promociones de alquiler protegido de Madrid. Se calcula en tu navegador, sin enviar tus datos."
+  pagina="calculadora"
+>
+  <div class="mb-4 max-w-3xl">
+    <h1 class="text-2xl font-bold">Calculadora de requisitos</h1>
+    <p class="mt-1 text-slate-700">
+      Compara tus datos con los requisitos conocidos de cada promoción. Es <strong>orientativa</strong>: no es
+      una resolución y la convocatoria oficial prevalece. Datos modificados por última vez el{' '}
+      {formatMarcaTiempo(datos.generado_en)}.
+    </p>
+    <p class="mt-2 text-slate-700">
+      <strong>Lo que escribes no sale de tu navegador:</strong> no se envía, no se guarda y desaparece al
+      cerrar o recargar la página.
+    </p>
+  </div>
+  <noscript>
+    <style>
+      .solo-js {
+        display: none !important;
+      }
+    </style>
+    <p class="tarjeta">
+      La calculadora necesita JavaScript, porque hace las cuentas en tu propio navegador para que tus datos no
+      lleguen a ningún servidor. Sin él puedes consultar los requisitos de cada promoción en su ficha, desde el{' '}
+      <a class="enlace" href={url()}>buscador</a>.
+    </p>
+  </noscript>
+  <div class="solo-js">
+    <Calculadora client:load datos={datos} />
+  </div>
+</Base>

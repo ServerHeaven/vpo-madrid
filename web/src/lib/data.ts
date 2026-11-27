@@ -2,7 +2,15 @@
 import { resolve } from 'node:path';
 import { encontrarDataDir as buscarDataDir, validarDatos } from '../../scripts/validar.mjs';
 import type { Datos } from './contratos';
-import type { FuentesFile, OverridesFile, ProgramasFile, PromocionesFile, State } from './types';
+import type {
+  FuentesFile,
+  IpremFile,
+  MunicipiosFile,
+  OverridesFile,
+  ProgramasFile,
+  PromocionesFile,
+  State,
+} from './types';
 
 const ERRORES_MOSTRADOS = 20;
 const cache = new Map<string, Datos>();
@@ -35,6 +43,8 @@ export function cargarDatos(dataDir?: string): Datos {
     fuentes: (contenidos['fuentes.json'] as FuentesFile).fuentes,
     programas: (contenidos['programas.json'] as ProgramasFile).programas,
     overrides: contenidos['overrides.json'] as OverridesFile,
+    iprem: (contenidos['iprem.json'] as IpremFile).valores,
+    municipios: (contenidos['municipios.json'] as MunicipiosFile).municipios,
   };
   cache.set(carpeta, datos);
   return datos;

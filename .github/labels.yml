@@ -9,6 +9,9 @@
 - name: scraper-broken
   color: "B60205"
   description: "Una fuente del scraper lleva varios días fallando"
+- name: infra
+  color: "5319E7"
+  description: "El proceso diario no se está ejecutando"
 - name: correccion-dato
   color: "0E8A16"
   description: "Aviso de un dato erróneo enviado por una persona"

@@ -3,7 +3,6 @@
 Every issue is identified by a hidden marker in its body. Bodies are deterministic (no dates),
 so an unchanged situation produces no edit. Text coming from documents or web pages is
 untrusted and always goes through ``_texto``, which also makes forging a marker impossible.
-The "infra" heartbeat belongs to Phase 5.
 """
 
 from __future__ import annotations
@@ -14,7 +13,7 @@ import re
 import subprocess
 from collections.abc import Callable
 from dataclasses import dataclass, field
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from typing import Any
 from urllib.parse import quote
 
@@ -23,20 +22,24 @@ MAX_NUEVOS = 20
 MAX_CUERPO = 60_000  # GitHub rejects bodies over 65536 characters
 FALLOS_PARA_AVISAR = 3
 DIAS_DEGRADADA = 3
+DIAS_SIN_EJECUCION = 3
 
 REVISION = "needs-review"
 DESFASADO = "override-stale"
 ROTA = "scraper-broken"
+INFRA = "infra"
 # name -> (colour, description); mirrored in .github/labels.yml
 ETIQUETAS = {
     REVISION: ("FBCA04", "Datos de una promoción pendientes de revisión manual"),
     DESFASADO: ("D93F0B", "La fuente cambió después de una corrección manual"),
     ROTA: ("B60205", "Una fuente del scraper lleva varios días fallando"),
+    INFRA: ("5319E7", "El proceso diario no se está ejecutando"),
     "correccion-dato": ("0E8A16", "Aviso de un dato erróneo enviado por una persona"),
     "nueva-fuente": ("1D76DB", "Propuesta de una nueva fuente de promociones"),
 }
 
 MARCADOR_RESUMEN = "<!-- vpo:summary -->"
+MARCADOR_LATIDO = "<!-- vpo:heartbeat -->"
 _CAMPOS = re.compile(r"<!-- vpo:campos:([^ ]*) -->")
 _POINTER = re.compile(r"^/[a-z0-9_*]+(?:/[a-z0-9_*]+)*$")
 _ZWSP = chr(0x200B)  # zero width space
@@ -403,6 +406,23 @@ def cuerpo_fuente(fuente_id: str, info: dict[str, Any]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def cuerpo_latido(ultima: str | None) -> str:
+    lines = [
+        MARCADOR_LATIDO,
+        "",
+        f"Hace más de {DIAS_SIN_EJECUCION} días que no se completa una lectura de las fuentes. "
+        "Los datos de la web pueden estar desactualizados.",
+        "",
+        f"- **Última ejecución:** {_texto(ultima or 'ninguna')}",
+        "",
+        "Revisa en la pestaña *Actions* que el workflow `scrape` esté activado, que su programación "
+        "(`schedule`) no esté comentada y que sus últimas ejecuciones no hayan fallado.",
+        "",
+        "Este aviso se cierra solo en la siguiente ejecución completa.",
+    ]
+    return "\n".join(lines) + "\n"
+
+
 def _cuerpo_resumen(excess: list[tuple[str, str]]) -> str:
     lines = [
         MARCADOR_RESUMEN,
@@ -606,9 +626,45 @@ def _rota(fuente_id: str, info: dict[str, Any], state: dict[str, Any], today: da
     return (today - since).days >= DIAS_DEGRADADA
 
 
-def sync_health(state: dict[str, Any], gh: GhClient, *, now: datetime) -> Resumen:
-    """One scraper-broken issue per failing source, closed on its first ok run."""
+def _parado(state: dict[str, Any], now: datetime) -> bool:
+    """True if no run has finished in the last DIAS_SIN_EJECUCION days."""
+    last = state.get("ultima_ejecucion")
+    return last is None or now - datetime.fromisoformat(last) > timedelta(days=DIAS_SIN_EJECUCION)
+
+
+def _latidos_abiertos(gh: GhClient, resumen: Resumen) -> list[Issue] | None:
+    color, description = ETIQUETAS[INFRA]
+    _intentar(resumen, INFRA, lambda: gh.ensure_label(INFRA, color, description))
+    issues = _listar(gh, INFRA, resumen)
+    return None if issues is None else [issue for issue in issues if MARCADOR_LATIDO in issue.cuerpo]
+
+
+def sync_heartbeat(state: dict[str, Any], gh: GhClient, *, now: datetime) -> Resumen:
+    """The weekly check: one "infra" issue while the daily run is not happening."""
     resumen = Resumen()
+    existing = _latidos_abiertos(gh, resumen)
+    if existing is None:
+        return resumen
+    if not _parado(state, now):
+        _cerrar(gh, existing, "heartbeat", "Las fuentes vuelven a leerse.", resumen)
+        return resumen
+    title = "El proceso diario no se está ejecutando"
+    wanted = _Deseado("heartbeat", title, cuerpo_latido(state.get("ultima_ejecucion")))
+    if existing:
+        _actualizar(gh, existing[0], wanted, resumen)
+    elif _intentar(resumen, "heartbeat", lambda: gh.create(title, wanted.cuerpo, INFRA)):
+        resumen.creados.append("heartbeat")
+    return resumen
+
+
+def sync_health(state: dict[str, Any], gh: GhClient, *, now: datetime) -> Resumen:
+    """One scraper-broken issue per failing source, closed on its first ok run.
+
+    It also closes the heartbeat issue after a recent run; only the weekly check opens it.
+    """
+    resumen = Resumen()
+    if not _parado(state, now) and (stalled := _latidos_abiertos(gh, resumen)):
+        _cerrar(gh, stalled, "heartbeat", "Las fuentes vuelven a leerse.", resumen)
     color, description = ETIQUETAS[ROTA]
     _intentar(resumen, ROTA, lambda: gh.ensure_label(ROTA, color, description))
     issues = _listar(gh, ROTA, resumen)

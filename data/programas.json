@@ -9,19 +9,30 @@
       "vigente_hasta": null,
       "ingresos_min_iprem": null,
       "ingresos_max_iprem": 5.5,
-      "iprem_pagas": null,
+      "iprem_pagas": 14,
       "tasa_esfuerzo_max": null,
       "empadronamiento": null,
       "edad": null,
-      "coeficientes_ponderacion": null,
+      "coeficientes_ponderacion": {
+        "1": 0.8,
+        "2": 0.8,
+        "3": 0.776,
+        "4": 0.744,
+        "5": 0.704,
+        "6": 0.7,
+        "7": 0.7,
+        "8": 0.7,
+        "9": 0.7,
+        "10": 0.7
+      },
       "requisitos_no_comprobables": [
         "Ningún miembro de la unidad familiar puede ser titular del pleno dominio o de un derecho de uso o disfrute sobre otra vivienda en España (con las excepciones del art. 3.3)"
       ],
-      "fuente": "Decreto 74/2009, arts. 3.2 y 3.3, texto revisado por el Decreto 59/2013",
+      "fuente": "Decreto 74/2009, arts. 3.2 y 3.3, texto revisado por el Decreto 59/2013; coeficientes e IPREM anual: Manual de la calculadora de Base Imponible máxima de la Comunidad de Madrid, junio 2026",
       "verificado": true,
       "notas": [
         "El decreto no fija ingresos mínimos, empadronamiento general ni tasa de esfuerzo: las bases de cada convocatoria pueden exigirlos.",
-        "El decreto no indica 12 o 14 pagas del IPREM."
+        "14 pagas: el manual de la calculadora usa 8.400 € de IPREM anual. Los coeficientes por número de miembros son los que publica ese manual (art. 6 de la Orden 5042/2009, no leído directamente)."
       ]
     },
     {
@@ -31,19 +42,30 @@
       "vigente_hasta": null,
       "ingresos_min_iprem": null,
       "ingresos_max_iprem": 7.5,
-      "iprem_pagas": null,
+      "iprem_pagas": 14,
       "tasa_esfuerzo_max": null,
       "empadronamiento": null,
       "edad": null,
-      "coeficientes_ponderacion": null,
+      "coeficientes_ponderacion": {
+        "1": 0.8,
+        "2": 0.8,
+        "3": 0.776,
+        "4": 0.744,
+        "5": 0.704,
+        "6": 0.7,
+        "7": 0.7,
+        "8": 0.7,
+        "9": 0.7,
+        "10": 0.7
+      },
       "requisitos_no_comprobables": [
         "Ningún miembro de la unidad familiar puede ser titular del pleno dominio o de un derecho de uso o disfrute sobre otra vivienda en España (con las excepciones del art. 3.3)"
       ],
-      "fuente": "Decreto 74/2009, arts. 3.2 y 3.3, texto revisado por el Decreto 59/2013",
+      "fuente": "Decreto 74/2009, arts. 3.2 y 3.3, texto revisado por el Decreto 59/2013; coeficientes e IPREM anual: Manual de la calculadora de Base Imponible máxima de la Comunidad de Madrid, junio 2026",
       "verificado": true,
       "notas": [
         "El decreto no fija ingresos mínimos, empadronamiento general ni tasa de esfuerzo: las bases de cada convocatoria pueden exigirlos.",
-        "El decreto no indica 12 o 14 pagas del IPREM."
+        "14 pagas: el manual de la calculadora usa 8.400 € de IPREM anual. Los coeficientes por número de miembros son los que publica ese manual (art. 6 de la Orden 5042/2009, no leído directamente)."
       ]
     },
     {
@@ -53,18 +75,34 @@
       "vigente_hasta": null,
       "ingresos_min_iprem": null,
       "ingresos_max_iprem": 5.5,
-      "iprem_pagas": null,
+      "iprem_pagas": 14,
       "tasa_esfuerzo_max": null,
       "empadronamiento": null,
-      "edad": { "min": null, "max": 35, "tipo": "requisito" },
-      "coeficientes_ponderacion": null,
+      "edad": {
+        "min": null,
+        "max": 35,
+        "tipo": "requisito"
+      },
+      "coeficientes_ponderacion": {
+        "1": 0.8,
+        "2": 0.8,
+        "3": 0.776,
+        "4": 0.744,
+        "5": 0.704,
+        "6": 0.7,
+        "7": 0.7,
+        "8": 0.7,
+        "9": 0.7,
+        "10": 0.7
+      },
       "requisitos_no_comprobables": [
         "Ningún miembro de la unidad familiar puede ser titular del pleno dominio o de un derecho de uso o disfrute sobre otra vivienda en España (con las excepciones del art. 3.3)"
       ],
-      "fuente": "Decreto 74/2009, arts. 2, 3.2 y 3.3 (arrendamiento con opción de compra para jóvenes)",
+      "fuente": "Decreto 74/2009, arts. 2, 3.2 y 3.3 (arrendamiento con opción de compra para jóvenes); coeficientes e IPREM anual: Manual de la calculadora de Base Imponible máxima de la Comunidad de Madrid, junio 2026",
       "verificado": true,
       "notas": [
-        "La edad está sujeta a las excepciones del art. 24 y la disposición adicional 8ª, que no se han revisado literalmente."
+        "La edad está sujeta a las excepciones del art. 24 y la disposición adicional 8ª, que no se han revisado literalmente.",
+        "14 pagas: el manual de la calculadora usa 8.400 € de IPREM anual. Los coeficientes por número de miembros son los que publica ese manual (art. 6 de la Orden 5042/2009, no leído directamente)."
       ]
     },
     {
@@ -72,21 +110,33 @@
       "tipo": "programa",
       "vigente_desde": null,
       "vigente_hasta": null,
-      "ingresos_min_iprem": null,
+      "ingresos_min_iprem": 1.5,
       "ingresos_max_iprem": null,
-      "iprem_pagas": null,
+      "iprem_pagas": 14,
       "tasa_esfuerzo_max": 0.35,
       "empadronamiento": null,
       "edad": null,
-      "coeficientes_ponderacion": null,
+      "coeficientes_ponderacion": {
+        "1": 0.8,
+        "2": 0.776,
+        "3": 0.776,
+        "4": 0.744,
+        "5": 0.704,
+        "6": 0.7,
+        "7": 0.7,
+        "8": 0.7,
+        "9": 0.7,
+        "10": 0.7
+      },
       "requisitos_no_comprobables": [
-        "Inscripción en el Registro de Demandantes de Vivienda con Protección Pública"
+        "Ningún miembro de la unidad de convivencia puede ser titular del pleno dominio o de un derecho real de uso y disfrute sobre otra vivienda en España (salvo cuota de hasta el 50 % recibida por herencia, donación o legado, o vivienda familiar no adjudicada tras separación o divorcio)"
       ],
-      "fuente": "Tasa del 35 %: enunciado del proyecto y prensa sobre convocatorias concretas; sin confirmación en norma o nota oficial",
-      "verificado": false,
+      "fuente": "Decreto 84/2020, art. 7.1 c), d) y e), con la redacción del Decreto 31/2026 (BOCM núm. 83, 09/04/2026)",
+      "verificado": true,
       "notas": [
-        "Nota oficial de 08/04/2026 (modifica el Decreto 84/2020): para unidades de dos miembros, ingresos entre 1,5 y 5,5 IPREM (precio básico) o 1,5 y 7,5 (precio limitado). No se traslada a ingresos_min_iprem porque la nota solo lo afirma para dos miembros.",
-        "El empadronamiento ordena la preferencia (5 años en el municipio, después 10 años en la Comunidad) y no excluye."
+        "Ingresos máximos: 5,5 IPREM (precio básico) o 7,5 (precio limitado); no se fijan aquí porque dependen del régimen de cada vivienda.",
+        "La tasa del 35 % se refiere a ingresos netos (art. 7.1 d), que el decreto no define; tampoco dice si la renta incluye gastos. La calculadora la aplica sobre la cifra introducida.",
+        "El empadronamiento o centro de trabajo ordena la preferencia y no excluye (art. 7.1 f)."
       ]
     }
   ]

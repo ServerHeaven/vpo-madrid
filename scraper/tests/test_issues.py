@@ -23,7 +23,15 @@ from vpo.core.normalize import Municipios
 from vpo.core.validate import schema_errors
 from vpo.extraction import cache
 from vpo.extraction.base import FieldResult
-from vpo.review.issues import ETIQUETAS, MAX_CUERPO, GhClient, cuerpo_revision, sync_health, sync_issues
+from vpo.review.issues import (
+    ETIQUETAS,
+    MAX_CUERPO,
+    GhClient,
+    cuerpo_revision,
+    sync_health,
+    sync_heartbeat,
+    sync_issues,
+)
 from vpo.review.report import construir_informe
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -480,3 +488,53 @@ def test_labels_file_and_templates_match_the_code():
         assert f'labels: ["{template}"]' in text and "datos personales" in text
     form = (ROOT / ".github" / "ISSUE_TEMPLATE" / "correccion-dato.yml").read_text(encoding="utf-8")
     assert "id: id\n" in form
+
+
+# -- heartbeat ------------------------------------------------------------------------------
+
+
+LATER = datetime(2026, 11, 30, 5, 0, tzinfo=UTC)
+
+
+def last_run(moment):
+    return {"ultima_ejecucion": moment, "fuentes": {}, "documentos": {}}
+
+
+def open_issues(github):
+    return [issue for issue in github.issues.values() if issue["open"]]
+
+
+@pytest.mark.parametrize(
+    "moment, stalled",
+    [
+        (None, True),
+        ("2026-11-26T04:59:59Z", True),
+        ("2026-11-27T05:00:00Z", False),  # exactly three days is not "more than"
+        ("2026-11-30T04:00:00Z", False),
+    ],
+)
+def test_the_heartbeat_opens_only_after_three_days_without_runs(github, client, moment, stalled):
+    summary = sync_heartbeat(last_run(moment), client, now=LATER)
+    assert summary.ok
+    assert len(open_issues(github)) == int(stalled)
+
+
+def test_the_heartbeat_issue_is_not_duplicated(github, client):
+    stale = last_run("2026-11-20T05:00:00Z")
+    sync_heartbeat(stale, client, now=LATER)
+    again = sync_heartbeat(stale, client, now=LATER)
+    assert not again.creados and not again.actualizados
+    assert len(open_issues(github)) == 1
+
+
+@pytest.mark.parametrize("check", [sync_health, sync_heartbeat])
+def test_a_recent_run_closes_the_heartbeat_issue(github, client, check):
+    sync_heartbeat(last_run("2026-11-20T05:00:00Z"), client, now=LATER)
+    summary = check(last_run("2026-11-30T04:00:00Z"), client, now=LATER)
+    assert summary.cerrados == ["heartbeat"]
+    assert not open_issues(github)
+
+
+def test_health_never_opens_the_heartbeat_issue(github, client):
+    sync_health(last_run("2026-11-20T05:00:00Z"), client, now=LATER)
+    assert not open_issues(github)

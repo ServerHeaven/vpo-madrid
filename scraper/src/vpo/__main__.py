@@ -1,4 +1,4 @@
-"""CLI: python -m vpo run|reparse|merge|validate|review [report|sync-issues|health]"""
+"""CLI: python -m vpo run|reparse|merge|validate|review [report|sync-issues|health|heartbeat]"""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ from .core.jsonio import read_json, write_json
 from .core.merge import MergeResult, merge
 from .core.normalize import Municipios
 from .core.validate import schema_errors, source_files, validate_data_dir
-from .review.issues import GhClient, sync_health, sync_issues
+from .review.issues import GhClient, sync_health, sync_heartbeat, sync_issues
 from .review.report import construir_informe, escribir_informe
 from .run import SourceReport, UnknownSourceError, run
 
@@ -140,7 +140,7 @@ def build_report(data_dir: Path, today: date) -> dict:
 
 
 def cmd_review(data_dir: Path, today: date, action: str) -> int:
-    """report only writes the file; sync-issues and health talk to GitHub through `gh`."""
+    """report only writes the file; the other actions talk to GitHub through `gh`."""
     if action == "report":
         build_report(data_dir, today)
         print(f"Informe escrito en {data_dir / REPORT_NAME}")
@@ -150,7 +150,8 @@ def cmd_review(data_dir: Path, today: date, action: str) -> int:
     if action == "sync-issues":
         summary = sync_issues(build_report(data_dir, today), gh)
     else:
-        summary = sync_health(read_json(data_dir / "state.json"), gh, now=datetime.now(UTC))
+        check = sync_health if action == "health" else sync_heartbeat
+        summary = check(read_json(data_dir / "state.json"), gh, now=datetime.now(UTC))
     print(summary)
     return 1 if summary.errores else 0
 
@@ -164,7 +165,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="vpo")
     parser.add_argument("command", choices=["run", "merge", "validate", "review", "reparse"])
     parser.add_argument(
-        "action", nargs="?", choices=["report", "sync-issues", "health"], help="review: qué hacer"
+        "action", nargs="?", choices=["report", "sync-issues", "health", "heartbeat"], help="review: qué hacer"
     )
     parser.add_argument("--data-dir", type=Path)
     parser.add_argument("--hoy", type=date.fromisoformat, help="fecha de referencia (AAAA-MM-DD)")
@@ -173,7 +174,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if (args.command == "review") != (args.action is not None):
-        parser.error("'review' necesita una acción (report, sync-issues o health) y las demás órdenes ninguna")
+        parser.error("'review' necesita una acción (report, sync-issues, health o heartbeat) y las demás órdenes ninguna")
 
     data_dir = args.data_dir or find_data_dir(Path.cwd())
     today = args.hoy or datetime.now(ZoneInfo("Europe/Madrid")).date()

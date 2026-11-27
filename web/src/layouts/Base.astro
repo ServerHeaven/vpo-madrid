@@ -8,12 +8,13 @@ interface Props {
   titulo: string;
   descripcion: string;
   /** Marks the current entry of the navigation. */
-  pagina?: 'buscador' | 'fuentes' | 'metodologia' | 'aviso-legal';
+  pagina?: 'buscador' | 'calculadora' | 'fuentes' | 'metodologia' | 'aviso-legal';
 }
 
 const { titulo, descripcion, pagina } = Astro.props;
 const menu = [
   { id: 'buscador', texto: 'Buscador', href: url() },
+  { id: 'calculadora', texto: 'Calculadora', href: url('calculadora/') },
   { id: 'fuentes', texto: 'Fuentes', href: url('fuentes/') },
   { id: 'metodologia', texto: 'Metodología', href: url('metodologia/') },
   { id: 'aviso-legal', texto: 'Aviso legal', href: url('aviso-legal/') },

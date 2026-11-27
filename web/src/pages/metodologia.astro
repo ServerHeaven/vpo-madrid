@@ -18,7 +18,7 @@ const formularioCorreccion = `${REPO_URL}/issues/new?template=correccion-dato.ym
 
 <Base
   titulo="Metodología"
-  descripcion="Cómo se obtienen los datos, qué límites tienen, cómo corregirlos y cómo se comporta el robot que los lee."
+  descripcion="Cómo se obtienen los datos, cómo calcula la calculadora, sus límites, cómo corregirlos y el robot que los lee."
   pagina="metodologia"
 >
   <article class="prosa max-w-3xl">
@@ -33,6 +33,7 @@ const formularioCorreccion = `${REPO_URL}/issues/new?template=correccion-dato.ym
         <li><a href="#obtencion">Cómo se obtienen los datos</a></li>
         <li><a href="#sin-dato">Mejor sin dato que un dato inventado</a></li>
         <li><a href="#procedencia">De dónde sale cada dato</a></li>
+        <li><a href="#calculadora">Cómo funciona la calculadora</a></li>
         <li><a href="#limites">Límites conocidos</a></li>
         <li><a href="#corregir">Cómo corregir un dato</a></li>
         <li><a href="#privacidad">Privacidad</a></li>
@@ -49,7 +50,8 @@ const formularioCorreccion = `${REPO_URL}/issues/new?template=correccion-dato.ym
         <a href={url('fuentes/')}>estado de las fuentes</a>.
       </li>
       <li>
-        <strong>No hay actualización automática diaria todavía.</strong> Las lecturas se lanzan a mano.
+        <strong>La actualización diaria automática todavía no está activada.</strong> Las lecturas se lanzan
+        a mano.
         {
           state.ultima_ejecucion && (
             <>
@@ -59,7 +61,10 @@ const formularioCorreccion = `${REPO_URL}/issues/new?template=correccion-dato.ym
           )
         }
       </li>
-      <li><strong>No hay calculadora de requisitos.</strong> La web no te dice si puedes optar a una vivienda.</li>
+      <li>
+        Hay una <a href={url('calculadora/')}>calculadora de requisitos</a> orientativa. Como faltan muchos
+        datos, la mayoría de promociones salen como «posiblemente elegible».
+      </li>
       <li>
         Promociones publicadas: {promociones.length}. Con bases en PDF enlazadas: {conBases}. Con alguna
         renta conocida: {conRenta}.
@@ -124,6 +129,38 @@ const formularioCorreccion = `${REPO_URL}/issues/new?template=correccion-dato.ym
       </li>
     </ul>
 
+    <h2 id="calculadora">Cómo funciona la calculadora</h2>
+    <ul>
+      <li>
+        Para cada requisito usa, por este orden, lo que dice la convocatoria, el valor general de su programa y
+        el de su régimen. Cada comprobación indica de dónde sale.
+      </li>
+      <li>
+        <strong>No elegible</strong> si algún requisito conocido no se cumple. <strong>Posiblemente
+        elegible</strong> si ninguno falla pero alguno no se puede comprobar o depende de un valor sin
+        verificar. <strong>Elegible</strong> si se cumple todo lo comprobable, lo que no incluye las demás
+        condiciones de las bases.
+      </li>
+      <li>
+        Los ingresos se miden en veces el IPREM, con 14 pagas si la convocatoria no dice otra cosa. Cuando
+        consta, se multiplican antes por el coeficiente que corresponde al número de miembros.
+      </li>
+      <li>
+        <strong>Límites:</strong> el peso máximo de la renta (35 % en el Plan Vive) se mide en la norma sobre
+        los ingresos <strong>netos</strong>, y algunas bases incluyen gastos; aquí se usa la cifra que escribes
+        y la renta publicada, así que el resultado puede ser optimista. Si hay una horquilla de rentas, se
+        compara la más baja. A las promociones sin coeficiente conocido no se les aplica ninguno.
+      </li>
+      <li>
+        Con el sueldo bruto, la base imponible se <strong>estima</strong> restando un 6,35 % de cotizaciones y
+        una sola deducción de 2.000 €. Es una aproximación.
+      </li>
+      <li>
+        El año de ingresos propuesto es el anterior al actual. Hasta que acaba el plazo de la declaración de la
+        renta (finales de junio) suele corresponder el de dos años antes: cámbialo.
+      </li>
+    </ul>
+
     <h2 id="limites">Límites conocidos</h2>
     <ul>
       <li>
@@ -183,6 +220,10 @@ const formularioCorreccion = `${REPO_URL}/issues/new?template=correccion-dato.ym
     <h2 id="privacidad">Privacidad</h2>
     <ul>
       <li>La web no usa cookies ni analítica, no tiene cuentas ni formularios que envíen datos.</li>
+      <li>
+        Lo que escribes en la calculadora se procesa en tu navegador: no se envía, no se guarda y no aparece en
+        la dirección de la página.
+      </li>
       <li>
         Los filtros del buscador se aplican en tu navegador y quedan reflejados en la dirección de la página;
         si compartes ese enlace, compartes los filtros.

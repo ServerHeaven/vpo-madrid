@@ -1,5 +1,13 @@
 // Shared contracts between modules. Domain names in Spanish, as in data/schema.
-import type { FuentesFile, OverridesFile, Promocion, ReglaPrograma, State } from './types';
+import type {
+  FuentesFile,
+  IpremFile,
+  MunicipiosFile,
+  OverridesFile,
+  Promocion,
+  ReglaPrograma,
+  State,
+} from './types';
 
 export type Regimen = Promocion['regimen'];
 export type Programa = Promocion['programa'];
@@ -16,6 +24,8 @@ export interface Datos {
   fuentes: Fuente[];
   programas: ReglaPrograma[];
   overrides: OverridesFile;
+  iprem: IpremFile['valores'];
+  municipios: MunicipiosFile['municipios'];
 }
 
 /** Slim view of a promotion: only what the search page needs (ARCHITECTURE.md §7.2). */

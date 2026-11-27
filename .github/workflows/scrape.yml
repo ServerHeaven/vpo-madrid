@@ -1,0 +1,143 @@
+name: scrape
+
+on:
+  # Programación diaria DESACTIVADA a propósito (ARCHITECTURE.md §8, Fase 5): primero hay que lanzar
+  # el workflow a mano (Actions → scrape → Run workflow). Cuando esa ejecución termine bien,
+  # descomenta estas dos líneas y actualiza la frase sobre la actualización diaria en /metodologia.
+  # schedule:
+  #   - cron: "23 4 * * *" # 05:23 / 06:23 en Madrid
+  workflow_dispatch:
+    inputs:
+      fuentes:
+        description: "IDs separados por coma (vacío = todas)"
+        required: false
+        type: string
+      forzar_reparse:
+        description: "Volver a extraer todos los PDF"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write # commit of data/
+  issues: write # review issues
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    # The data only lives on main: a run started from another branch does nothing.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    env:
+      UV_PROJECT: scraper
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v10.4.0
+        with:
+          python-version: "3.12"
+          enable-cache: true
+          cache-dependency-glob: scraper/uv.lock
+
+      # No source needs Playwright, so there is no browser to install or cache.
+
+      # Downloaded PDFs, extraction results and HTTP validators. Disposable: a miss only re-downloads.
+      - uses: actions/cache@v6
+        with:
+          path: .cache
+          key: vpo-cache-${{ hashFiles('data/state.json') }}
+          restore-keys: vpo-cache-
+
+      - name: Install
+        run: |
+          uv sync --locked --no-dev
+          git show HEAD:data/promociones.json > "$RUNNER_TEMP/anterior.json"
+
+      # A failing source does not fail this step; a broken schema or a bug does.
+      - name: Read the sources
+        env:
+          FUENTES: ${{ inputs.fuentes }}
+          FORZAR: ${{ inputs.forzar_reparse }}
+        run: |
+          args=("--fuentes=$FUENTES")
+          if [ "$FORZAR" = "true" ]; then args+=(--forzar-reparse); fi
+          uv run --no-sync python -m vpo run "${args[@]}"
+
+      - name: Merge
+        run: uv run --no-sync python -m vpo merge
+
+      - name: Validate
+        run: uv run --no-sync python -m vpo validate
+
+      # A GitHub API problem must not lose the data that was just read.
+      - name: Review issues
+        id: revision
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: uv run --no-sync python -m vpo review sync-issues
+
+      - name: Source health issues
+        id: salud
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: uv run --no-sync python -m vpo review health
+
+      - name: Warn about issues not synchronised
+        if: steps.revision.outcome == 'failure' || steps.salud.outcome == 'failure'
+        run: echo "::warning title=Issues sin sincronizar::Falló la sincronización de issues; los datos se publican igual."
+
+      # Pushes made with GITHUB_TOKEN do not trigger ci.yml, so the ownership guard runs here too.
+      - name: Commit
+        id: commit
+        run: |
+          uv run --no-sync python -m vpo.guardia trabajo
+          git add -- data/promociones.json data/state.json data/sources
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          mensaje="$(uv run --no-sync python -m vpo.resumen mensaje --anterior "$RUNNER_TEMP/anterior.json")"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "$mensaje"
+          for intento in 1 2 3 4; do
+            if git push origin "HEAD:$GITHUB_REF_NAME"; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            if [ "$intento" = 4 ]; then break; fi
+            sleep $((intento * 5))
+            # A conflict stops the run: never push data that nobody has checked.
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            # The new commits may bring corrections or schema changes: merge and validate again.
+            uv run --no-sync python -m vpo merge
+            uv run --no-sync python -m vpo validate
+            git add -- data/promociones.json
+            if ! git diff --cached --quiet; then git commit --amend --no-edit; fi
+          done
+          echo "::error::No se pudo subir el commit de datos."
+          exit 1
+
+      - name: Job summary
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/anterior.json" ]; then
+            uv run --no-sync python -m vpo.resumen tabla --anterior "$RUNNER_TEMP/anterior.json" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+  # A push made with GITHUB_TOKEN triggers no workflow, so the deployment is called from here.
+  deploy:
+    needs: scrape
+    if: needs.scrape.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml

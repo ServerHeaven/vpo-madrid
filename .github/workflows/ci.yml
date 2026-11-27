@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    - cron: "17 6 * * 1" # Mondays: heartbeat of the daily run, nothing else
   workflow_dispatch:
 
 permissions:
@@ -11,6 +13,7 @@ permissions:
 
 jobs:
   python:
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     defaults:
@@ -18,16 +21,26 @@ jobs:
         working-directory: scraper
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # the guard below walks the pushed commits
       - uses: astral-sh/setup-uv@v10.4.0
         with:
           python-version: "3.12"
           enable-cache: true
           cache-dependency-glob: scraper/uv.lock
       - run: uv sync --locked
+      # ARCHITECTURE.md §2: the bot may only write generated files in data/.
+      - name: File ownership guard
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
+        env:
+          BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: uv run python -m vpo.guardia rango "$BASE" "$HEAD"
       - run: uv run python -m pytest
       - run: uv run python -m vpo validate
 
   web:
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     defaults:
@@ -46,3 +59,26 @@ jobs:
       - run: npm test
       - run: npm run check
       - run: npm run build
+
+  # Opens the "infra" issue if no scrape has finished in the last 3 days.
+  heartbeat:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+    defaults:
+      run:
+        working-directory: scraper
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.4.0
+        with:
+          python-version: "3.12"
+          enable-cache: true
+          cache-dependency-glob: scraper/uv.lock
+      - run: uv sync --locked --no-dev
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: uv run --no-sync python -m vpo review heartbeat
