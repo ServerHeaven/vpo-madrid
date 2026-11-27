@@ -1,0 +1,14 @@
+{
+  "fixture": "bocm_morata_tajuna.pdf",
+  "fuente_id": "bocm",
+  "municipio_ine": "28091",
+  "fecha_ref": "2016-08-01",
+  "necesita_ocr": false,
+  "esperado": [
+    {"campo": "/requisitos/empadronamiento", "valor": {"ambito": "municipio", "municipio_ine": "28091", "anios_min": 5, "ininterrumpido": true, "alternativa_trabajo": null}, "pagina": 1, "cita": "Estar empadronado en el municipio de Morata de Tajuña durante un período no inferior a 5 años ininterrumpidos previos a la fecha de publicación del presente pliego."},
+    {"campo": "/requisitos/iprem_pagas", "valor": 12, "pagina": 3, "cita": "Cociente por miembro del IPREM de 2015 (anual en doce mensualidades)."},
+    {"campo": "/requisitos/otros", "valor": "Renta de 45 euros más 20 de agua y 35 de electricidad (100 euros al mes), con gastos generales incluidos.", "pagina": 5, "cita": "se fija como renta mensual la cantidad de cuarenta y cinco euros (45 euros) mensuales"}
+  ],
+  "conflictos": [],
+  "notas": "Pliego municipal sin límite de ingresos: las veces IPREM (0,20 a 0,90) y los porcentajes del IPREM son tramos de baremo, no requisitos ni tasa de esfuerzo. iprem_ejercicio no se recoge: aparecen 2014 y 2015 en dos criterios de puntuación distintos. La renta (45 euros) está fuera del rango plausible y la tabla de la p. 1 solo da direcciones, sin dormitorios ni superficie: no hay tipologías. La edad solo es 'mayores de edad o emancipados'; los 35 años de la p. 2 definen quién integra la unidad familiar. Plazo de solicitudes relativo (un mes)."
+}

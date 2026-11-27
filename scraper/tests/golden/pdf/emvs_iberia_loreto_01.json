@@ -1,0 +1,22 @@
+{
+  "fixture": "emvs_iberia_loreto_01.pdf",
+  "fuente_id": "emvs-madrid",
+  "municipio_ine": "28079",
+  "fecha_ref": "2026-05-05",
+  "necesita_ocr": false,
+  "esperado": [
+    {"campo": "/requisitos/edad", "valor": {"min": 18, "max": 50, "tipo": "requisito"}, "pagina": 2, "cita": "Tener entre 18 y 50 años y no encontrarse incapacitado para obligarse contractualmente"},
+    {"campo": "/requisitos/empadronamiento", "valor": {"ambito": "municipio", "municipio_ine": "28079", "anios_min": 5, "ininterrumpido": true, "alternativa_trabajo": null}, "pagina": 2, "cita": "estar empadronado en el municipio de Madrid con una antigüedad mínima de 5 años ininterrumpidamente o 8 años dentro de los últimos 10 años"},
+    {"campo": "/requisitos/ingresos_min_iprem", "valor": 3.5, "pagina": 2, "cita": "Tener unos ingresos familiares superiores a 3,5 veces el Indicador Público de Renta de Efectos Múltiples (IPREM) en el ejercicio fiscal 2025."},
+    {"campo": "/requisitos/ingresos_max_iprem", "valor": 5.5, "pagina": 2, "cita": "Tener unos ingresos familiares que no excedan de 5,5 veces el Indicador Público de Renta de Efectos Múltiples (IPREM) en el ejercicio fiscal 2025."},
+    {"campo": "/requisitos/iprem_ejercicio", "valor": 2025, "pagina": 2, "cita": "(IPREM) en el ejercicio fiscal 2025."},
+    {"campo": "/tipologias", "valor": [
+      {"dormitorios": 2, "superficie_util_m2": null, "renta_mensual_eur": null, "renta_mensual_max_eur": null, "num_viviendas": 16, "garaje": {"disponibilidad": "desconocido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "desconocido", "precio_mensual_eur": null}, "adaptada_pmr": null},
+      {"dormitorios": 3, "superficie_util_m2": null, "renta_mensual_eur": null, "renta_mensual_max_eur": null, "num_viviendas": 36, "garaje": {"disponibilidad": "desconocido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "desconocido", "precio_mensual_eur": null}, "adaptada_pmr": null}
+    ], "pagina": 1, "cita": "16 viviendas de 2 dormitorios. [p. 2] 36 viviendas de 3 dormitorios."},
+    {"campo": "/fechas/inscripcion_inicio", "valor": "2026-05-11", "pagina": 3, "cita": "apertura del plazo de inscripción establecido el 11 de mayo"},
+    {"campo": "/fechas/inscripcion_fin", "valor": "2026-06-11", "pagina": 3, "cita": "finalizando el 11 de junio"}
+  ],
+  "conflictos": [],
+  "notas": "Empadronamiento: 5 años ininterrumpidos o, como alternativa, 8 de los últimos 10; se recoge la vía principal (5, ininterrumpido). Las fechas del plazo se imprimen sin año; el 2026 se deduce de la firma del documento (05/05/2026) y del acuerdo de 16/04/2026, así que un extractor que no las emita no comete un error de valor. El anexo I (p. 6-7) lista 52 viviendas: 16 de 2D y 36 de 3D, igual que el texto. No fija rentas, garaje, trastero ni fecha de sorteo."
+}

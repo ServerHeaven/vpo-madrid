@@ -1,0 +1,20 @@
+{
+  "fixture": "bocm_majadahonda_ro8.pdf",
+  "fuente_id": "bocm",
+  "municipio_ine": "28080",
+  "fecha_ref": "2025-10-22",
+  "necesita_ocr": false,
+  "esperado": [
+    {"campo": "/requisitos/ingresos_min_iprem", "valor": 1.5, "pagina": 2, "cita": "Acreditar unos ingresos anuales mínimos de la unidad familiar de 1,5 veces el Indicador Público de Renta de Efectos Múltiples"},
+    {"campo": "/requisitos/ingresos_max_iprem", "valor": 3.5, "pagina": 2, "cita": "y máximos de 3,5 veces del mismo indicador."},
+    {"campo": "/requisitos/empadronamiento", "valor": {"ambito": "municipio", "municipio_ine": "28080", "anios_min": 10, "ininterrumpido": true, "alternativa_trabajo": null}, "pagina": 2, "cita": "Estar empadronado en el municipio de Majadahonda a fecha de inicio del plazo de presentación de solicitudes, habiéndolo estado, además, durante los últimos 10 años ininterrumpidos."},
+    {"campo": "/requisitos/edad", "valor": {"min": null, "max": 40, "tipo": "cupo"}, "pagina": 3, "cita": "Cupo de menores de 40 años: se incluirán en él los/las solicitantes que cumplan con los requisitos de acceso y tengan una edad de hasta 40 años el día de la fecha de inicio del plazo"},
+    {"campo": "/tipologias", "valor": [
+      {"dormitorios": 2, "superficie_util_m2": null, "renta_mensual_eur": null, "renta_mensual_max_eur": null, "num_viviendas": 180, "garaje": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "adaptada_pmr": null}
+    ], "pagina": 1, "cita": "sorteo, de 180 viviendas de dos dormitorios, con trasteros y garajes"},
+    {"campo": "/tipologias/*/garaje", "valor": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "pagina": 1, "cita": "180 viviendas de dos dormitorios, con trasteros y garajes"},
+    {"campo": "/tipologias/*/trastero", "valor": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "pagina": 1, "cita": "180 viviendas de dos dormitorios, con trasteros y garajes"}
+  ],
+  "conflictos": [],
+  "notas": "Edad: el requisito general es 'mayor de edad o menor emancipado' (sin cifra); la única cifra es la del cupo. El cupo se titula 'menores de 40 años' pero se define como 'hasta 40 años': se recoge 40, la definición. Garaje y trastero 'incluido' es una interpretación de 'con trasteros y garajes' (el texto no dice vinculados ni incluidos). Plazo de solicitudes relativo (15 días hábiles): sin fechas. Sorteo sin fecha. No indica rentas, superficies, pagas ni ejercicio del IPREM. El anexo (p. 7-11) lista direcciones de viviendas, no personas."
+}

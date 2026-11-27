@@ -1,0 +1,16 @@
+{
+  "fixture": "emvs_reviva_madrid.pdf",
+  "fuente_id": "emvs-madrid",
+  "municipio_ine": "28079",
+  "fecha_ref": "2023-12-20",
+  "necesita_ocr": false,
+  "esperado": [
+    {"campo": "/requisitos/empadronamiento", "valor": {"ambito": "municipio", "municipio_ine": "28079", "anios_min": 1, "ininterrumpido": null, "alternativa_trabajo": null}, "pagina": 20, "cita": "El demandante de vivienda deberá estar empadronado por un período de, al menos, un año, en la ciudad de Madrid."},
+    {"campo": "/requisitos/ingresos_min_iprem", "valor": 3, "pagina": 21, "cita": "Tener unos ingresos ponderados entre 3 y 5,5 veces el IPREM."},
+    {"campo": "/requisitos/ingresos_max_iprem", "valor": 5.5, "pagina": 21, "cita": "Tener unos ingresos ponderados entre 3 y 5,5 veces el IPREM."},
+    {"campo": "/requisitos/tasa_esfuerzo_max", "valor": 0.3, "pagina": 25, "cita": "Los arrendatarios destinarán hasta un máximo del 30% de sus ingresos netos familiares para abonar el importe de la renta y la cuota ordinaria de la comunidad de propietarios"},
+    {"campo": "/requisitos/otros", "valor": "Renta mínima de 450 euros mensuales; los suministros corren a cargo del arrendatario.", "pagina": 25, "cita": "siendo el importe mínimo de la renta a abonar de, al menos, 450 euros mensuales."}
+  ],
+  "conflictos": [],
+  "notas": "Programa de captación de viviendas vacías: sin tipologías, rentas por tipología, anejos concretos ni fechas. La tabla del anexo VI (p. 46, ingresos por miembros: 3,0-3,5 con 1; 3,0-4,0 con 2; 3,5-5,5 con 3 o más) regula la ayuda al alquiler, no el acceso (contradiría la base 19ª, 3 a 5,5), por lo que no se recoge como ingresos_por_miembros; es un juicio revisable. Los 5 años de empadronamiento y las edades (menores de 35, mayores de 65) son condiciones de la ayuda, no requisitos de acceso ni cupos. La base 19ª d) admite excepcionalmente ingresos inferiores a 3 IPREM. Los 25 % y 20 % de esfuerzo del anexo VI son con ayuda. La tabla de la p. 9 son importes de obras por tipología, no rentas. Los formularios de los anexos están en blanco."
+}

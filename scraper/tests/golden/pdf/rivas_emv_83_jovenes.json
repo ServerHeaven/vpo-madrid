@@ -1,0 +1,29 @@
+{
+  "fixture": "rivas_emv_83_jovenes.pdf",
+  "fuente_id": "emv-rivas",
+  "municipio_ine": "28123",
+  "fecha_ref": "2025-05-07",
+  "necesita_ocr": false,
+  "esperado": [
+    {"campo": "/requisitos/edad", "valor": {"min": null, "max": 35, "tipo": "requisito"}, "pagina": 2, "cita": "Ser solicitante mayor de edad, no haber cumplido 36 años a la finalización del plazo de presentación de solicitudes o ser menor emancipado"},
+    {"campo": "/requisitos/empadronamiento", "valor": {"ambito": "municipio", "municipio_ine": "28123", "anios_min": 10, "ininterrumpido": null, "alternativa_trabajo": true}, "pagina": 2, "cita": "Estar empadronado o empadronada en el municipio de Rivas Vaciamadrid durante diez años (consecutivos o no) anteriores a la fecha de la aprobación de las presentes Bases [p. 3] o desempeñar su actividad laboral principal en un centro de trabajo ubicado en el mismo"},
+    {"campo": "/requisitos/ingresos_min_iprem", "valor": 2.5, "pagina": 3, "cita": "Ingresos mínimos de la unidad familiar o de convivencia superiores a 2,5 veces el Indicador Público de Renta a Efectos Múltiples (IPREM) vigente"},
+    {"campo": "/requisitos/ingresos_max_iprem", "valor": 4.5, "pagina": 3, "cita": "Ingresos máximos que no excedan de 4,5 veces el IPREM. El umbral superior podrá ser de 5 veces el IPREM cuando se trate de personas con discapacidad."},
+    {"campo": "/requisitos/iprem_pagas", "valor": 14, "pagina": 3, "cita": "(el IPREM anual en 2025 es de 8.400€)"},
+    {"campo": "/requisitos/iprem_ejercicio", "valor": 2025, "pagina": 3, "cita": "IPREM) vigente (el IPREM anual en 2025 es de 8.400€)"},
+    {"campo": "/requisitos/tasa_esfuerzo_max", "valor": 0.3, "pagina": 3, "cita": "garantizando que los gastos de la vivienda (renta, comunidad y suministros) no supongan más del 30% de los ingresos netos mensuales."},
+    {"campo": "/tipologias", "valor": [
+      {"dormitorios": 1, "superficie_util_m2": 45, "renta_mensual_eur": null, "renta_mensual_max_eur": null, "num_viviendas": 10, "garaje": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "adaptada_pmr": null},
+      {"dormitorios": 2, "superficie_util_m2": null, "renta_mensual_eur": null, "renta_mensual_max_eur": null, "num_viviendas": 43, "garaje": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "adaptada_pmr": null},
+      {"dormitorios": 2, "superficie_util_m2": null, "renta_mensual_eur": null, "renta_mensual_max_eur": null, "num_viviendas": 27, "garaje": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "adaptada_pmr": null},
+      {"dormitorios": 2, "superficie_util_m2": 62, "renta_mensual_eur": null, "renta_mensual_max_eur": null, "num_viviendas": 3, "garaje": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "adaptada_pmr": true}
+    ], "pagina": 1, "cita": "10 viviendas de 1 dormitorio, de 45 m2 útiles con trastero y plaza de aparcamiento, 43 viviendas de 2 dormitorios, de 55-56 m2 útiles [...], 27 viviendas de 2 dormitorios, de entre 59 y 65 m2 útiles [...] y 3 viviendas destinadas a personas con movilidad reducida con 2 dormitorios, de 62 m2 útiles"},
+    {"campo": "/tipologias/*/garaje", "valor": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "pagina": 1, "cita": "con trastero y plaza de aparcamiento (VER ANEXO DE CARACTERÍSTICAS Y PRECIOS INICIALES). [p. 2] viviendas y anejos vinculados"},
+    {"campo": "/tipologias/*/trastero", "valor": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "pagina": 1, "cita": "con trastero y plaza de aparcamiento (VER ANEXO DE CARACTERÍSTICAS Y PRECIOS INICIALES). [p. 2] viviendas y anejos vinculados"},
+    {"campo": "/fechas/inscripcion_inicio", "valor": "2025-05-08", "pagina": 5, "cita": "El plazo de presentación de solicitudes será desde el día 8 de mayo a las 00 horas"},
+    {"campo": "/fechas/inscripcion_fin", "valor": "2025-06-08", "pagina": 5, "cita": "hasta el día 8 de junio a las 23.59 horas."},
+    {"campo": "/requisitos/otros", "valor": "Suministros, tributos y gastos generales de mantenimiento a cargo de los arrendatarios.", "pagina": 2, "cita": "Serán de cuenta de las personas arrendatarias los gastos de suministros individualizados, tributos en su caso y gastos generales de mantenimiento del inmueble"}
+  ],
+  "conflictos": [],
+  "notas": "Ingresos máximos: 4,5 general; 5 veces solo para personas con discapacidad (excepción, no se considera contradicción). Edad: máximo 35 (no haber cumplido 36); sin mínimo porque admite menores emancipados. iprem_pagas 14 no se dice con esas palabras: se deduce de la cifra anual de 8.400 EUR (600 x 14). iprem_ejercicio 2025 es el del IPREM citado; la renta a aportar es la de 2024. El empadronamiento admite como alternativa el trabajo en el municipio. Tipologías tomadas del texto (no hay tabla): superficie null en los dos grupos con horquilla (55-56 y 59-65). El anexo de precios citado no está en el PDF. Fechas del plazo sin año; 2025 por la fecha de las bases (7 de mayo de 2025)."
+}

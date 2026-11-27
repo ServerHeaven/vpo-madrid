@@ -1,0 +1,21 @@
+{
+  "fixture": "bocm_planvive_arganda.pdf",
+  "fuente_id": "plan-vive-cam",
+  "municipio_ine": "28014",
+  "fecha_ref": "2026-03-03",
+  "necesita_ocr": false,
+  "esperado": [
+    {"campo": "/requisitos/ingresos_min_iprem", "valor": 1.5, "pagina": 2, "cita": "Ingresos mínimos: 1,5 veces IPREM."},
+    {"campo": "/requisitos/tasa_esfuerzo_max", "valor": 0.35, "pagina": 2, "cita": "la renta anual a abonar no deberá superar el 35 por 100 de los ingresos netos anuales de la unidad de convivencia."},
+    {"campo": "/tipologias", "valor": [
+      {"dormitorios": 2, "superficie_util_m2": null, "renta_mensual_eur": 735.92, "renta_mensual_max_eur": null, "num_viviendas": 188, "garaje": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "adaptada_pmr": null},
+      {"dormitorios": 3, "superficie_util_m2": null, "renta_mensual_eur": 985.25, "renta_mensual_max_eur": null, "num_viviendas": 22, "garaje": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "adaptada_pmr": null}
+    ], "pagina": 1, "cita": "2 dormitorios 188 Desde 735,92€ Desde 56,20 m2"},
+    {"campo": "/tipologias/*/garaje", "valor": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "pagina": 1, "cita": "La renta mensual indicada incluye 1 o 2 plazas de garaje y 1 trastero."},
+    {"campo": "/tipologias/*/trastero", "valor": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "pagina": 1, "cita": "La renta mensual indicada incluye 1 o 2 plazas de garaje y 1 trastero."},
+    {"campo": "/fechas/inscripcion_inicio", "valor": "2026-04-06", "pagina": 2, "cita": "La apertura de las inscripciones para los interesados se producirá el día 6 de abril de 2026."},
+    {"campo": "/requisitos/otros", "valor": "Aparte de la renta: gastos comunitarios (máximo 18 %), IBI y tasas municipales.", "pagina": 1, "cita": "hasta un máximo del 18 por 100 de la renta mensual del inmueble y su/s plaza/s de garaje y trastero."}
+  ],
+  "conflictos": ["/requisitos/ingresos_max_iprem"],
+  "notas": "Ingresos máximos: el resumen de requisitos da 5,5 (VPPB) y 7,5 (VPPL) en la misma frase; la promoción se declara VPPB, así que un humano aplicaría 5,5, pero el texto contiene dos cifras. La antigüedad de 3 años es solo prioridad (ADR-002): no hay requisito de empadronamiento. Superficies 'Desde': mínimo de una horquilla, se dejan en null. Rentas 'Desde': se recoge el mínimo. Sin fecha de fin de inscripción ni de sorteo."
+}

@@ -1,0 +1,25 @@
+{
+  "fixture": "planvive_lote5_navalcarnero.pdf",
+  "fuente_id": "plan-vive-cam",
+  "municipio_ine": "28096",
+  "fecha_ref": "2025-07-23",
+  "necesita_ocr": false,
+  "esperado": [
+    {"campo": "/requisitos/ingresos_min_iprem", "valor": 1.5, "pagina": 3, "cita": "alcancen en su conjunto un mínimo de 1,5 veces el Indicador Público de Renta de Efectos Múltiples (IPREM)"},
+    {"campo": "/requisitos/ingresos_max_iprem", "valor": 5.5, "pagina": 3, "cita": "y no sobrepasen el límite de 5,5 veces el IPREM, si se trata de viviendas con protección pública para arrendamiento de precio básico (VPPB)."},
+    {"campo": "/requisitos/iprem_pagas", "valor": 14, "pagina": 4, "cita": "referido a 14 pagas, en vigor durante el período al que se refieran los ingresos evaluados."},
+    {"campo": "/requisitos/iprem_ejercicio", "valor": 2023, "pagina": 4, "cita": "Se aplica el IPREM anual del año 2023 de referencia a 14 pagas."},
+    {"campo": "/requisitos/tasa_esfuerzo_max", "valor": 0.35, "pagina": 4, "cita": "Que el importe de la renta anual a abonar no exceda del 35% de los ingresos netos anuales de la unidad de convivencia (tasa de esfuerzo)."},
+    {"campo": "/requisitos/empadronamiento", "valor": {"ambito": "comunidad", "municipio_ine": null, "anios_min": null, "ininterrumpido": null, "alternativa_trabajo": true}, "pagina": 5, "cita": "o secundariamente, empadronamiento o localización de su centro de trabajo sin mínimo de antigüedad en la Comunidad de Madrid. Los interesados que no puedan acreditar ninguno de los niveles de cumplimiento [...] no les será asignada ninguna vivienda"},
+    {"campo": "/tipologias", "valor": [
+      {"dormitorios": 2, "superficie_util_m2": null, "renta_mensual_eur": null, "renta_mensual_max_eur": null, "num_viviendas": null, "garaje": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "adaptada_pmr": true},
+      {"dormitorios": 2, "superficie_util_m2": null, "renta_mensual_eur": null, "renta_mensual_max_eur": null, "num_viviendas": null, "garaje": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "adaptada_pmr": null},
+      {"dormitorios": 3, "superficie_util_m2": null, "renta_mensual_eur": null, "renta_mensual_max_eur": null, "num_viviendas": null, "garaje": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "trastero": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "adaptada_pmr": null}
+    ], "pagina": 10, "cita": "Adaptada de 2 dormitorios"},
+    {"campo": "/tipologias/*/garaje", "valor": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "pagina": 11, "cita": "Todas las viviendas contarán con dos plazas de garaje y un trastero como anejos, estando [p. 12] vinculados a la vivienda de manera inseparable"},
+    {"campo": "/tipologias/*/trastero", "valor": {"disponibilidad": "incluido", "precio_mensual_eur": null}, "pagina": 11, "cita": "Todas las viviendas contarán con dos plazas de garaje y un trastero como anejos, estando [p. 12] vinculados a la vivienda de manera inseparable"},
+    {"campo": "/requisitos/otros", "valor": "Gastos de comunidad repercutibles, limitados al 18 % de la renta mensual; además IBI y tasas municipales.", "pagina": 17, "cita": "El importe total de los gastos de comunidad estará limitado al 18% de la renta mensual."}
+  ],
+  "conflictos": [],
+  "notas": "Empadronamiento: los 3 años en el municipio y 5 en la Comunidad son niveles de prioridad escalonados; el único requisito excluyente es estar empadronado o trabajar en la Comunidad de Madrid, sin antigüedad (ADR-002). El cuadro 3 (p. 4) da límites en euros por número de miembros, pero el múltiplo es el mismo (1,5 y 5,5) en todas las filas: se recogen min y max planos, sin ingresos_por_miembros. iprem_ejercicio 2023 es el IPREM que aplica el cuadro (la renta a aportar es la de 2024). La tabla de tipologías (p. 10) solo indica dormitorios y no ofrece rentas ni número de viviendas. Las fechas del documento (23/07/2025, 30/07/2025, 29/04/2024) no son plazos de inscripción."
+}

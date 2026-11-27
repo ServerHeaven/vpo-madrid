@@ -1,0 +1,136 @@
+{
+  "fixture": "bocm_planvive_moralzarzal.pdf",
+  "fuente_id": "plan-vive-cam",
+  "municipio_ine": "28090",
+  "fecha_ref": "2026-05-27",
+  "necesita_ocr": false,
+  "esperado": [
+    {
+      "campo": "/requisitos/ingresos_min_iprem",
+      "valor": 1.5,
+      "pagina": 2,
+      "cita": "que alcancen en su conjunto un mínimo de: 1,5 veces el IPREM."
+    },
+    {
+      "campo": "/requisitos/ingresos_max_iprem",
+      "valor": 7.5,
+      "pagina": 2,
+      "cita": "Ingresos máximos: 7,5 veces el IPREM, al tratarse de viviendas con protección pública para arrendamiento de precio limitado (VPPL)."
+    },
+    {
+      "campo": "/requisitos/tasa_esfuerzo_max",
+      "valor": 0.35,
+      "pagina": 2,
+      "cita": "la renta anual a abonar no deberá superar el 35 por 100 de los ingresos netos anuales de la unidad de convivencia."
+    },
+    {
+      "campo": "/requisitos/empadronamiento",
+      "valor": {
+        "ambito": "comunidad",
+        "municipio_ine": null,
+        "anios_min": null,
+        "ininterrumpido": null,
+        "alternativa_trabajo": true
+      },
+      "pagina": 2,
+      "cita": "será un requisito de obligado cumplimiento el empadronamiento y/o localización de centro de trabajo en la Comunidad de Madrid."
+    },
+    {
+      "campo": "/tipologias",
+      "valor": [
+        {
+          "dormitorios": 2,
+          "superficie_util_m2": null,
+          "renta_mensual_eur": 783,
+          "renta_mensual_max_eur": 820,
+          "num_viviendas": 10,
+          "garaje": {
+            "disponibilidad": "incluido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "incluido",
+            "precio_mensual_eur": null
+          },
+          "adaptada_pmr": null
+        },
+        {
+          "dormitorios": 2,
+          "superficie_util_m2": null,
+          "renta_mensual_eur": 783,
+          "renta_mensual_max_eur": 827,
+          "num_viviendas": 16,
+          "garaje": {
+            "disponibilidad": "incluido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "incluido",
+            "precio_mensual_eur": null
+          },
+          "adaptada_pmr": null
+        },
+        {
+          "dormitorios": 3,
+          "superficie_util_m2": null,
+          "renta_mensual_eur": 1114,
+          "renta_mensual_max_eur": 1152,
+          "num_viviendas": 10,
+          "garaje": {
+            "disponibilidad": "incluido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "incluido",
+            "precio_mensual_eur": null
+          },
+          "adaptada_pmr": null
+        },
+        {
+          "dormitorios": 3,
+          "superficie_util_m2": null,
+          "renta_mensual_eur": 1052,
+          "renta_mensual_max_eur": 1169,
+          "num_viviendas": 44,
+          "garaje": {
+            "disponibilidad": "incluido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "incluido",
+            "precio_mensual_eur": null
+          },
+          "adaptada_pmr": null
+        }
+      ],
+      "pagina": 1,
+      "cita": "2 10 783 € 820 € 56,84 59,53"
+    },
+    {
+      "campo": "/tipologias/*/garaje",
+      "valor": {
+        "disponibilidad": "incluido",
+        "precio_mensual_eur": null
+      },
+      "pagina": 1,
+      "cita": "Todas las viviendas tienen una o dos plazas de aparcamiento y un trastero vinculados como anejos inseparables. En la renta mensual de la vivienda se incluye el precio de estos elementos"
+    },
+    {
+      "campo": "/tipologias/*/trastero",
+      "valor": {
+        "disponibilidad": "incluido",
+        "precio_mensual_eur": null
+      },
+      "pagina": 1,
+      "cita": "una o dos plazas de aparcamiento y un trastero vinculados como anejos inseparables. En la renta mensual de la vivienda se incluye el precio de estos elementos"
+    },
+    {
+      "campo": "/requisitos/otros",
+      "valor": "Gastos comunitarios aparte, hasta un máximo del 18 % de la renta mensual; IBI y tasas municipales se repercuten.",
+      "pagina": 2,
+      "cita": "hasta un máximo del 18 por 100 de la renta mensual del inmueble."
+    }
+  ],
+  "conflictos": [],
+  "notas": "Dos promociones del mismo municipio, una fila de tabla por tipología y promoción (4 filas); superficie null porque cada fila da mínimo y máximo distintos. Fila TOTAL excluida. La antigüedad de 5 años es solo prioridad (ADR-002); el requisito excluyente es empadronamiento o centro de trabajo en la Comunidad. Inscripciones 'noviembre de 2026' (solo mes): sin fecha. 'Mayor de edad o menor emancipado' no da cifra de edad. Los porcentajes 50 y 40 por 100 son topes de precio de anejos, no importes."
+}
