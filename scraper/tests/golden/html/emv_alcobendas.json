@@ -1,0 +1,306 @@
+{
+  "https://emvialsa.org/promocion/en-obra/marques-de-la-valdavia-47": {
+    "datos": {
+      "nombre": "Marqués de la Valdavia, 47",
+      "operador": {
+        "id": "emvialsa",
+        "nombre": "EMVIALSA",
+        "tipo": "publico_municipal"
+      },
+      "fuente_id": "emvialsa-alcobendas",
+      "regimen": "DESCONOCIDO",
+      "programa": "EMV_MUNICIPAL",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28006",
+        "municipio": "Alcobendas",
+        "distrito": null,
+        "direccion": "Marqués de la Valdavia, 47",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 41,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": 21,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": 16,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": 4,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": null,
+        "no_exigidos": [],
+        "otros": []
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://emvialsa.org/promocion/en-obra/marques-de-la-valdavia-47",
+        "solicitud": null,
+        "bases": []
+      }
+    },
+    "procedencia": {
+      "/modalidad": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/acceso-a-la-vivienda/promociones",
+        "pagina": null,
+        "evidencia": "Marqués de la Valdavia, 47: 41 VPPB, ALQUILER",
+        "regla": null
+      },
+      "/viviendas_total": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/acceso-a-la-vivienda/promociones",
+        "pagina": null,
+        "evidencia": "Marqués de la Valdavia, 47: 41 VPPB, ALQUILER",
+        "regla": null
+      },
+      "/tipologias": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/promocion/en-obra/marques-de-la-valdavia-47",
+        "pagina": null,
+        "evidencia": "Programa de Viviendas: 1D, 2D y 3D",
+        "regla": null
+      },
+      "/estado": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/acceso-a-la-vivienda/promociones",
+        "pagina": null,
+        "evidencia": "En Obra: Marqués de la Valdavia, 47",
+        "regla": null
+      },
+      "/ubicacion/direccion": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/promocion/en-obra/marques-de-la-valdavia-47",
+        "pagina": null,
+        "evidencia": "Marqués de la Valdavia, 47",
+        "regla": null
+      }
+    }
+  },
+  "https://emvialsa.org/promocion/en-obra/diego-salmeron-4": {
+    "datos": {
+      "nombre": "Diego Salmerón, 4",
+      "operador": {
+        "id": "emvialsa",
+        "nombre": "EMVIALSA",
+        "tipo": "publico_municipal"
+      },
+      "fuente_id": "emvialsa-alcobendas",
+      "regimen": "VPPL",
+      "programa": "EMV_MUNICIPAL",
+      "modalidad": "alquiler",
+      "estado": "proxima",
+      "ubicacion": {
+        "municipio_ine": "28006",
+        "municipio": "Alcobendas",
+        "distrito": null,
+        "direccion": "Diego Salmerón, 4",
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": 39,
+      "tipologias": [
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": 8,
+          "adaptada_pmr": null,
+          "dormitorios": 1,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": 24,
+          "adaptada_pmr": null,
+          "dormitorios": 2,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": 5,
+          "adaptada_pmr": null,
+          "dormitorios": 3,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        },
+        {
+          "superficie_util_m2": null,
+          "renta_mensual_eur": null,
+          "renta_mensual_max_eur": null,
+          "num_viviendas": 2,
+          "adaptada_pmr": null,
+          "dormitorios": 4,
+          "garaje": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          },
+          "trastero": {
+            "disponibilidad": "desconocido",
+            "precio_mensual_eur": null
+          }
+        }
+      ],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": null,
+        "edad": null,
+        "no_titular_vivienda": null,
+        "no_exigidos": [],
+        "otros": []
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": null,
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://emvialsa.org/promocion/en-obra/diego-salmeron-4",
+        "solicitud": null,
+        "bases": []
+      }
+    },
+    "procedencia": {
+      "/modalidad": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/acceso-a-la-vivienda/promociones",
+        "pagina": null,
+        "evidencia": "Diego Salmerón, 4: 39 VPPL, ALQUILER",
+        "regla": null
+      },
+      "/regimen": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/acceso-a-la-vivienda/promociones",
+        "pagina": null,
+        "evidencia": "Diego Salmerón, 4: 39 VPPL, ALQUILER",
+        "regla": null
+      },
+      "/viviendas_total": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/acceso-a-la-vivienda/promociones",
+        "pagina": null,
+        "evidencia": "Diego Salmerón, 4: 39 VPPL, ALQUILER",
+        "regla": null
+      },
+      "/tipologias": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/promocion/en-obra/diego-salmeron-4",
+        "pagina": null,
+        "evidencia": "Programa de Viviendas: 1D, 2D, 3D, 4D",
+        "regla": null
+      },
+      "/estado": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/acceso-a-la-vivienda/promociones",
+        "pagina": null,
+        "evidencia": "En Obra: Diego Salmerón, 4",
+        "regla": null
+      },
+      "/ubicacion/direccion": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emvialsa.org/promocion/en-obra/diego-salmeron-4",
+        "pagina": null,
+        "evidencia": "Diego Salmerón, 4",
+        "regla": null
+      }
+    }
+  }
+}

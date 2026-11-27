@@ -2,7 +2,7 @@
 
 Buscador de promociones de alquiler protegido (VPPB, VPPL, Plan Vive, promociones municipales) en la Comunidad de Madrid.
 
-**Estado:** en construcción. Se leen las páginas HTML de EMSV Getafe, EMVS Madrid y del Plan Vive y se extraen requisitos y rentas de las bases en PDF. La web (buscador, fichas y calculadora orientativa) está en [web/](web/) y se publica en <https://serverheaven.github.io/vpo-madrid/>. La actualización diaria está preparada, pero [todavía no activada](#actualización-diaria).
+**Estado:** en construcción. Se leen las páginas HTML de EMVIALSA (Alcobendas), EMSV Getafe, EMVS Madrid y del Plan Vive y se extraen requisitos y rentas de las bases en PDF. La web (buscador, fichas y calculadora orientativa) está en [web/](web/) y se publica en <https://serverheaven.github.io/vpo-madrid/>. La actualización diaria está preparada, pero [todavía no activada](#actualización-diaria).
 
 La información es orientativa. No tenemos relación con las administraciones ni con las operadoras: la convocatoria oficial prevalece siempre.
 

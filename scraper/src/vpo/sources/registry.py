@@ -7,11 +7,13 @@ from typing import Any
 from ..core.normalize import Municipios
 from .base import SourceAdapter
 from .emsv_getafe import EmsvGetafeAdapter
+from .emv_alcobendas import EmvAlcobendasAdapter
 from .emvs_madrid import EmvsMadridAdapter
 from .plan_vive_cam import PlanViveCamAdapter
 
 ADAPTERS: dict[str, type[SourceAdapter]] = {
-    adapter.id: adapter for adapter in (EmvsMadridAdapter, PlanViveCamAdapter, EmsvGetafeAdapter)
+    adapter.id: adapter
+    for adapter in (EmvsMadridAdapter, PlanViveCamAdapter, EmsvGetafeAdapter, EmvAlcobendasAdapter)
 }
 
 

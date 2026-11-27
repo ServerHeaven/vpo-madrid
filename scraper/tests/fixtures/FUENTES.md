@@ -50,3 +50,15 @@ Recorte: solo el contenido de la página, dentro de un esqueleto mínimo, sin sc
 |---|---|
 | `emsv_getafe_listado.html` | https://emsvgetafe.org/promociones/ |
 | `emsv_getafe_ficha_arrendamiento_511.html` | https://emsvgetafe.org/promocion/promocionarrendamiento-511/ |
+
+## EMVIALSA (Alcobendas)
+
+Recorte: solo el contenido de la página, dentro de un esqueleto mínimo, sin scripts, estilos ni imágenes. Los nombres de proyectistas y constructoras se sustituyen por «(omitido)».
+
+| Fichero (`html/`) | URL de origen |
+|---|---|
+| `emv_alcobendas_listado.html` | https://emvialsa.org/acceso-a-la-vivienda/promociones |
+| `emv_alcobendas_inscripciones.html` | https://emvialsa.org/acceso-a-la-vivienda/inscripciones |
+| `emv_alcobendas_ficha_salmeron.html` | https://emvialsa.org/promocion/en-obra/diego-salmeron-4 |
+| `emv_alcobendas_ficha_valdavia.html` | https://emvialsa.org/promocion/en-obra/marques-de-la-valdavia-47 |
+| `emv_alcobendas_ficha_velarde.html` | https://emvialsa.org/promocion/en-alquiler-y-cesion-de-uso/velarde-19-av-espana-8 |
