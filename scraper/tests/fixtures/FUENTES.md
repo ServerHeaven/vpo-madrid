@@ -41,3 +41,12 @@ Algunos identifican a quien firma el documento por razón de su cargo, sin DNI (
 | `bocm_majadahonda_ro8.pdf` | https://www.bocm.es/boletin/CM_Orden_BOCM/2025/10/22/BOCM-20251022-15.PDF | directora general de la Comunidad de Madrid |
 | `bocm_pozuelo_humera.pdf` | https://www.bocm.es/boletin/CM_Orden_BOCM/2022/10/18/BOCM-20221018-72.PDF | concejal secretario de la Junta de Gobierno |
 | `bocm_morata_tajuna.pdf` | https://www.bocm.es/boletin/CM_Orden_BOCM/2016/08/01/BOCM-20160801-41.PDF | alcalde |
+
+## EMSV Getafe
+
+Recorte: solo el contenido de la página, dentro de un esqueleto mínimo, sin scripts, estilos ni imágenes. Los enlaces a listados de admitidos y al resultado del sorteo se sustituyen por `no-index/omitido.pdf`.
+
+| Fichero (`html/`) | URL de origen |
+|---|---|
+| `emsv_getafe_listado.html` | https://emsvgetafe.org/promociones/ |
+| `emsv_getafe_ficha_arrendamiento_511.html` | https://emsvgetafe.org/promocion/promocionarrendamiento-511/ |

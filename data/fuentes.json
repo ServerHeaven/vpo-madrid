@@ -79,6 +79,19 @@
       "intervalo_s": 3,
       "timeout_s": 300,
       "notas": "Fase 5. Solo es la portada; falta localizar la sección de alquiler asequible."
+    },
+    {
+      "id": "emsv-getafe",
+      "nombre": "EMSV Getafe",
+      "operador": { "id": "emsv-getafe", "nombre": "EMSV Getafe", "tipo": "publico_municipal" },
+      "url": "https://emsvgetafe.org/promociones/",
+      "url_verificada": true,
+      "metodo": "httpx",
+      "prioridad": 3,
+      "activa": true,
+      "intervalo_s": 3,
+      "timeout_s": 300,
+      "notas": "Solo el bloque «Alquiler de viviendas». Los listados de admitidos y adjudicatarios no se descargan."
     }
   ]
 }

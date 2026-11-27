@@ -1,0 +1,109 @@
+{
+  "https://emsvgetafe.org/promocion/promocionarrendamiento-511/": {
+    "datos": {
+      "nombre": "Promoción Arrendamiento 5.1.1",
+      "operador": {
+        "id": "emsv-getafe",
+        "nombre": "EMSV Getafe",
+        "tipo": "publico_municipal"
+      },
+      "fuente_id": "emsv-getafe",
+      "regimen": "DESCONOCIDO",
+      "programa": "EMV_MUNICIPAL",
+      "modalidad": "alquiler",
+      "estado": "sorteo_adjudicacion",
+      "ubicacion": {
+        "municipio_ine": "28065",
+        "municipio": "Getafe",
+        "distrito": null,
+        "direccion": null,
+        "lat": null,
+        "lon": null
+      },
+      "viviendas_total": null,
+      "tipologias": [],
+      "requisitos": {
+        "ingresos_min_iprem": null,
+        "ingresos_max_iprem": null,
+        "ingresos_por_miembros": null,
+        "iprem_pagas": null,
+        "iprem_ejercicio": null,
+        "tasa_esfuerzo_max": null,
+        "empadronamiento": {
+          "ambito": "municipio",
+          "municipio_ine": "28065",
+          "anios_min": null,
+          "ininterrumpido": true,
+          "alternativa_trabajo": false
+        },
+        "edad": null,
+        "no_titular_vivienda": null,
+        "no_exigidos": [],
+        "otros": [
+          "Grupo 1: 1 VIVIENDA PARA DISCAPACITADOS",
+          "Grupo 2: 22 VIVIENDAS DE 18 A 35 AÑOS",
+          "Se ha establecido como requisito necesario estar empadronado de manera ininterrumpida en el municipio al menos desde el 15 de septiembre de 2020, no permitiéndose otras opciones.",
+          "Se ha establecido como requisito necesario ser mayor de edad y tener plena capacidad de obrar ya en el momento de presentación de la solicitud.",
+          "Para optar a una vivienda del Grupo 1, el solicitante o solicitantes deberán cumplir el requisito de mayoría de edad (18 años) en el momento de inicio de plazo de presentación de solicitudes.",
+          "Para optar a una vivienda del Grupo 2 bastará que uno de los solicitantes cumpla el requisito de tener entre 18 y 35 años en el momento de inicio de plazo de presentación de solicitudes. A efectos aclaratorios, al menos uno de los solicitantes deberá haber nacido entre el 14 de septiembre de 1990 y…",
+          "No se admitirán solicitudes de unidades de convivencia solicitantes superiores a cuatro miembros",
+          "Será suficiente que al menos uno de los solicitantes cumpla el requisito de empadronamiento.",
+          "Junto con la renta, se repercutirá a los inquilinos los gastos ordinarios de comunidad, previa presentación de presupuesto de los mismos."
+        ]
+      },
+      "fechas": {
+        "inscripcion_inicio": null,
+        "inscripcion_fin": null,
+        "sorteo": "2026-01-19",
+        "entrega_prevista": null
+      },
+      "enlaces": {
+        "oficial": "https://emsvgetafe.org/promocion/promocionarrendamiento-511/",
+        "solicitud": null,
+        "bases": []
+      }
+    },
+    "procedencia": {
+      "/modalidad": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emsvgetafe.org/promociones/",
+        "pagina": null,
+        "evidencia": "Alquiler de viviendas: Promoción Arrendamiento 5.1.1",
+        "regla": null
+      },
+      "/estado": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emsvgetafe.org/promocion/promocionarrendamiento-511/",
+        "pagina": null,
+        "evidencia": "RESULTADO DEL SORTEO 19/01/2026",
+        "regla": null
+      },
+      "/fechas/sorteo": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emsvgetafe.org/promocion/promocionarrendamiento-511/",
+        "pagina": null,
+        "evidencia": "RESULTADO DEL SORTEO 19/01/2026",
+        "regla": null
+      },
+      "/requisitos/empadronamiento": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emsvgetafe.org/promocion/promocionarrendamiento-511/",
+        "pagina": null,
+        "evidencia": "Se ha establecido como requisito necesario estar empadronado de manera ininterrumpida en el municipio al menos desde el 15 de septiembre de 2020, no permitiéndose otras opciones.",
+        "regla": null
+      },
+      "/requisitos/otros": {
+        "metodo": "html",
+        "confianza": 0.9,
+        "documento": "https://emsvgetafe.org/promocion/promocionarrendamiento-511/",
+        "pagina": null,
+        "evidencia": "Grupo 1: 1 VIVIENDA PARA DISCAPACITADOS | Grupo 2: 22 VIVIENDAS DE 18 A 35 AÑOS | Se ha establecido como requisito necesario estar empadronado de manera ininterrumpida en el municipio al menos desde el 15 de septiembre de 2020, no permitiéndose otras opciones. | Se ha establecido como requisito necesario ser mayor de edad y tener plena capacidad de obrar ya en el momento de presentación de la soli",
+        "regla": null
+      }
+    }
+  }
+}
