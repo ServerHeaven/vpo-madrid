@@ -1,0 +1,50 @@
+name: Corregir un dato
+description: Avisa de un dato erróneo o que falta en una promoción
+title: "Corrección de datos: "
+labels: ["correccion-dato"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **No incluyas datos personales.** Las issues son públicas y se quedan en el historial.
+        No escribas nombres, DNI, teléfonos, correos, ingresos propios ni números de expediente,
+        y no adjuntes listados de solicitantes, admitidos, excluidos o adjudicatarios.
+
+        Solo podemos corregir un dato con una fuente oficial que lo respalde.
+  - type: input
+    id: id
+    attributes:
+      label: Identificador de la promoción
+      description: Se rellena solo si llegas desde la ficha de la web. Si no, copia el enlace de la ficha.
+      placeholder: emvs-madrid-madrid-nombre-de-la-promocion
+    validations:
+      required: true
+  - type: input
+    id: campo
+    attributes:
+      label: Dato erróneo o que falta
+      placeholder: Renta de la vivienda de 2 dormitorios
+    validations:
+      required: true
+  - type: textarea
+    id: valor_correcto
+    attributes:
+      label: Valor correcto
+      description: Qué dice la fuente oficial.
+    validations:
+      required: true
+  - type: input
+    id: fuente
+    attributes:
+      label: Fuente oficial
+      description: Enlace a la página o al documento oficial. Indica la página o el apartado.
+      placeholder: https://... (página 4)
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacidad
+    attributes:
+      label: Datos personales
+      options:
+        - label: He comprobado que no incluyo datos personales míos ni de otras personas.
+          required: true

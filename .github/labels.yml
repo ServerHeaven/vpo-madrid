@@ -1,0 +1,17 @@
+# Etiquetas del repositorio. `vpo review sync-issues` las crea o actualiza con `gh label create --force`
+# a partir de ETIQUETAS (scraper/src/vpo/review/issues.py); un test comprueba que coinciden.
+- name: needs-review
+  color: "FBCA04"
+  description: "Datos de una promoción pendientes de revisión manual"
+- name: override-stale
+  color: "D93F0B"
+  description: "La fuente cambió después de una corrección manual"
+- name: scraper-broken
+  color: "B60205"
+  description: "Una fuente del scraper lleva varios días fallando"
+- name: correccion-dato
+  color: "0E8A16"
+  description: "Aviso de un dato erróneo enviado por una persona"
+- name: nueva-fuente
+  color: "1D76DB"
+  description: "Propuesta de una nueva fuente de promociones"
