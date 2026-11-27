@@ -121,6 +121,49 @@ def record_html_document(
     return True
 
 
+def record_pdf_document(
+    state: State,
+    *,
+    url: str,
+    fuente_id: str,
+    promo_ids: list[str],
+    etag: str | None,
+    last_modified: str | None,
+    sha256_bytes: str,
+    sha256_texto: str,
+    extractor_version: str,
+    ocr_necesario: bool,
+    today: date,
+) -> bool:
+    """Insert or update a PDF in state['documentos']. Return True if new or its text changed.
+
+    A regenerated file (same text, other bytes) is not a change: ``ultimo_cambio`` is kept.
+    """
+    key = document_key(url)
+    day = today.isoformat()
+    previous = state["documentos"].get(key)
+    if previous is not None and previous["tipo"] != "pdf":
+        previous = None
+    changed = previous is None or previous["sha256_texto"] != sha256_texto
+
+    state["documentos"][key] = {
+        "url": canonical_url(url),
+        "tipo": "pdf",
+        "fuente_id": fuente_id,
+        "promo_ids": sorted(set(promo_ids)),
+        "etag": etag,
+        "last_modified": last_modified,
+        "sha256_bytes": sha256_bytes,
+        "sha256_texto": sha256_texto,
+        "primera_vez": previous["primera_vez"] if previous else day,
+        "ultimo_cambio": day if changed else previous["ultimo_cambio"],
+        "ultima_comprobacion": day,
+        "extractor_version": extractor_version,
+        "ocr_necesario": ocr_necesario,
+    }
+    return changed
+
+
 def _utc_timestamp(moment: datetime) -> str:
     if moment.utcoffset() is None:
         raise ValueError("la fecha y hora debe incluir zona horaria")

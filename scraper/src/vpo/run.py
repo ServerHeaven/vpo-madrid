@@ -28,10 +28,13 @@ from .core.state import (
     canonical_url,
     load_state,
     record_html_document,
+    record_pdf_document,
     record_source_run,
     save_state,
 )
 from .core.validate import schema_errors
+from .documentos import DocumentoLeido, procesar_bases
+from .review.report import campos_pendientes
 from .sources.base import DeadlineExceeded, Fetcher, Ficha, ListingError, Response, SourceAdapter
 from .sources.registry import build_adapter
 
@@ -70,6 +73,8 @@ class _Context:
     municipios: Municipios
     codigos_ine: frozenset[str]
     today: date
+    extraction_cache: Path
+    force_reparse: bool
     adapter_factory: AdapterFactory
     http_factory: HttpFactory
     clock: Callable[[], float]
@@ -103,7 +108,8 @@ def _parse_ficha(
     previous: dict[str, Promo],
     context: _Context,
     source_id: str,
-) -> Promo:
+) -> tuple[Promo, tuple[DocumentoLeido, ...], tuple[str, ...]]:
+    """Return the promotion, the bases PDFs read for it and any warnings."""
     parsed = adapter.parsear_ficha(ficha, http)
     datos = parsed.datos
     # The id is frozen on a scratch copy, adopted only if the promotion turns out to be valid.
@@ -115,13 +121,25 @@ def _parse_ficha(
         municipio=datos["ubicacion"]["municipio"],
         nombre=datos["nombre"],
     )
-    promo = build_promo(
+    bases = procesar_bases(
         parsed,
+        adapter.documentos(ficha, http),
+        http,
+        previous=previous.get(promo_id),
+        known_documents=state["documentos"],
+        municipios=context.municipios,
+        today=context.today,
+        cache_dir=context.extraction_cache,
+        force=context.force_reparse,
+    )
+    promo = build_promo(
+        bases.parsed,
         promo_id=promo_id,
         previous=previous.get(promo_id),
         today=context.today,
         extractor_version=__version__,
     )
+    promo["meta"]["campos_pendientes"] = campos_pendientes(promo, bases.descartes)
     if errors := schema_errors(promo, "promocion", context.schema_dir):
         raise ValueError(f"la promoción no cumple el schema: {errors[0]}")
     if promo["fuente_id"] != source_id:
@@ -129,7 +147,37 @@ def _parse_ficha(
     if promo["ubicacion"]["municipio_ine"] not in context.codigos_ine:
         raise ValueError(f"municipio_ine inexistente: {promo['ubicacion']['municipio_ine']}")
     state["promo_ids"] = trial["promo_ids"]
-    return promo
+    return promo, bases.documentos, bases.avisos
+
+
+def _record_documents(
+    state: State,
+    read: list[tuple[DocumentoLeido, str]],  # (document, promo id)
+    promos: dict[str, Promo],
+    *,
+    source_id: str,
+    today: date,
+) -> None:
+    """Record every PDF read, with every promotion of this source that links it."""
+    owners: defaultdict[str, set[str]] = defaultdict(set)
+    for promo_id, promo in promos.items():
+        for doc in promo["enlaces"]["bases"]:
+            owners[canonical_url(doc["url"])].add(promo_id)
+    latest = {document.url: (document, promo_id) for document, promo_id in read}
+    for url, (document, promo_id) in latest.items():
+        record_pdf_document(
+            state,
+            url=url,
+            fuente_id=source_id,
+            promo_ids=sorted(owners.get(url, set()) | {promo_id}),
+            etag=document.etag,
+            last_modified=document.last_modified,
+            sha256_bytes=document.sha256_bytes,
+            sha256_texto=document.sha256_texto,
+            extractor_version=document.extractor_version,
+            ocr_necesario=document.ocr_necesario,
+            today=today,
+        )
 
 
 def _record_pages(
@@ -192,11 +240,15 @@ def _scrape_source(
         promos: dict[str, Promo] = {}
         listed: list[tuple[str, str]] = []  # (ficha url, promo id) of every promotion still published
         failures: list[str] = []
+        read: list[tuple[DocumentoLeido, str]] = []
+        notices: list[str] = []
         for ficha in fichas:
             if context.clock() > deadline:
                 raise DeadlineExceeded(f"superado el tiempo máximo de {source['timeout_s']} s")
             try:
-                promo = _parse_ficha(adapter, ficha, http, state, previous, context, source_id)
+                promo, documents, found = _parse_ficha(adapter, ficha, http, state, previous, context, source_id)
+                read += [(document, promo["id"]) for document in documents]
+                notices += found
             except DeadlineExceeded:
                 raise
             except Exception as error:
@@ -218,14 +270,22 @@ def _scrape_source(
                 promos[promo_id] = mark_missing(promo, today=context.today)
 
         links = listed + [(promo["enlaces"]["oficial"], promo_id) for promo_id, promo in promos.items()]
-        warnings = _record_pages(
+        # PDFs go through the same client but are recorded apart from the HTML pages.
+        pdf_urls = {canonical_url(doc["url"]) for promo in promos.values() for doc in promo["enlaces"]["bases"]}
+        pages = [
+            response
+            for response in http.log
+            if canonical_url(response.requested_url) not in pdf_urls and not response.content.startswith(b"%PDF")
+        ]
+        warnings = notices + _record_pages(
             state,
-            http.log,
+            pages,
             source_id=source_id,
             selector=adapter.selector_hash(),
             links=links,
             today=context.today,
         )
+        _record_documents(state, read, promos, source_id=source_id, today=context.today)
         # Checked here so that bad page data fails this source instead of the final save.
         if errors := schema_errors(state, "state", context.schema_dir):
             raise ValueError(f"el estado resultante no cumple el schema: {errors[0]}")
@@ -247,6 +307,7 @@ def run(
     today: date,
     now: datetime,
     only: set[str] | None = None,
+    force_reparse: bool = False,
     adapter_factory: AdapterFactory = build_adapter,
     http_factory: HttpFactory | None = None,
     clock: Callable[[], float] = time.monotonic,
@@ -275,6 +336,8 @@ def run(
         municipios=Municipios.load(data_dir),
         codigos_ine=frozenset(m["ine"] for m in read_json(data_dir / "municipios.json")["municipios"]),
         today=today,
+        extraction_cache=data_dir.resolve().parent / ".cache",
+        force_reparse=force_reparse,
         adapter_factory=adapter_factory,
         http_factory=http_factory or default_http_factory,
         clock=clock,

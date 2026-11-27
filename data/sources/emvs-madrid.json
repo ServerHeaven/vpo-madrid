@@ -162,7 +162,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -293,7 +293,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -456,7 +456,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -619,7 +619,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -782,7 +782,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -945,7 +945,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -1108,7 +1108,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -1203,13 +1203,23 @@
       "enlaces": {
         "oficial": "https://www.emvs.es/Vivienda/SorteoPromocion",
         "solicitud": null,
-        "bases": []
+        "bases": [
+          {
+            "url": "https://www.emvs.es/Vivienda/SorteoPromocion/Documents/Bases%20reguladoras%20del%20Programa%20Iberia%20Loreto.pdf",
+            "titulo": "Bases reguladoras del Programa Iberia Loreto",
+            "sha256": "3c19e79327e70fb98056759821680a0fd4a82b8a2d0fa5b9880d8a2ec7a16e2b",
+            "detectado_en": "2026-11-27",
+            "es_principal": true
+          }
+        ]
       },
       "meta": {
         "primera_deteccion": "2026-11-27",
         "ultima_modificacion": "2026-11-27",
         "activa_en_fuente": true,
-        "campos_pendientes": [],
+        "campos_pendientes": [
+          "/tipologias"
+        ],
         "campos_override": [],
         "procedencia": {
           "/ubicacion/distrito": {
@@ -1333,7 +1343,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -1496,7 +1506,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -1643,7 +1653,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -1790,7 +1800,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -1905,7 +1915,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -2068,7 +2078,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -2215,7 +2225,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -2362,7 +2372,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -2485,7 +2495,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -2624,7 +2634,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     },
     {
@@ -2787,7 +2797,7 @@
             "regla": null
           }
         },
-        "extractor_version": "0.1.0"
+        "extractor_version": "0.3.0"
       }
     }
   ]

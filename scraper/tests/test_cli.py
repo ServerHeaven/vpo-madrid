@@ -47,9 +47,26 @@ def deactivate_every_source(data_dir):
     write_json(data_dir / "fuentes.json", catalogue)
 
 
-@pytest.mark.parametrize("command", ["review", "reparse"])
-def test_later_phase_commands_do_not_pretend_to_work(data_dir, command):
-    assert cli(command, data_dir) == 2
+@pytest.mark.parametrize("args", [["review"], ["merge", "health"]])
+def test_review_needs_an_action_and_the_other_commands_take_none(data_dir, args):
+    with pytest.raises(SystemExit) as error:
+        main([*args, "--data-dir", str(data_dir)])
+    assert error.value.code == 2
+
+
+def test_review_report_writes_the_ephemeral_file(data_dir):
+    assert main(["review", "report", "--data-dir", str(data_dir), "--hoy", "2026-11-27"]) == 0
+    assert read_json(data_dir / "review-report.json")
+
+
+@pytest.mark.parametrize(
+    ("args", "forced"), [(["run"], False), (["run", "--forzar-reparse"], True), (["reparse"], True)]
+)
+def test_run_and_reparse_pass_the_force_flag(data_dir, monkeypatch, args, forced):
+    calls = []
+    monkeypatch.setattr(cli_module, "run", lambda folder, **kwargs: calls.append(kwargs) or RunReport())
+    assert main([*args, "--data-dir", str(data_dir)]) == 0
+    assert calls[0]["force_reparse"] is forced
 
 
 def test_run_without_active_sources_says_so_and_writes_nothing(data_dir, capsys):

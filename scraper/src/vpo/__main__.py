@@ -1,19 +1,25 @@
-"""CLI: python -m vpo run|merge|validate|review|reparse"""
+"""CLI: python -m vpo run|reparse|merge|validate|review [report|sync-issues|health]"""
 
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from datetime import UTC, date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from . import __version__
 from .core.jsonio import read_json, write_json
 from .core.merge import MergeResult, merge
+from .core.normalize import Municipios
 from .core.validate import schema_errors, source_files, validate_data_dir
+from .review.issues import GhClient, sync_health, sync_issues
+from .review.report import construir_informe, escribir_informe
 from .run import SourceReport, UnknownSourceError, run
 
-NOT_YET = {"review": 3, "reparse": 3}  # command -> phase that implements it
+REPOSITORY = "ServerHeaven/vpo-madrid"
+REPORT_NAME = "review-report.json"  # ephemeral, ignored by git
 SHOWN_ERRORS = 3  # per source in the run summary
 
 
@@ -102,10 +108,12 @@ def _summary(report: SourceReport) -> list[str]:
     return lines
 
 
-def cmd_run(data_dir: Path, today: date, only: set[str] | None) -> int:
+def cmd_run(data_dir: Path, today: date, only: set[str] | None, force_reparse: bool = False) -> int:
     """Exit 0 even if sources fail: only a global problem makes the command fail."""
     try:
-        result = run(data_dir, today=today, now=datetime.now(UTC), only=only)
+        result = run(
+            data_dir, today=today, now=datetime.now(UTC), only=only, force_reparse=force_reparse
+        )
     except UnknownSourceError as error:
         print(f"ERROR {error}", file=sys.stderr)
         return 2
@@ -116,6 +124,37 @@ def cmd_run(data_dir: Path, today: date, only: set[str] | None) -> int:
     return 0
 
 
+def build_report(data_dir: Path, today: date) -> dict:
+    result = run_merge(data_dir, today)
+    report = construir_informe(
+        result.promociones,
+        result.avisos,
+        overrides=read_json(data_dir / "overrides.json"),
+        cache_dir=data_dir.resolve().parent / ".cache",
+        municipios=Municipios.load(data_dir),
+        today=today,
+        version=__version__,
+    )
+    escribir_informe(data_dir / REPORT_NAME, report)
+    return report
+
+
+def cmd_review(data_dir: Path, today: date, action: str) -> int:
+    """report only writes the file; sync-issues and health talk to GitHub through `gh`."""
+    if action == "report":
+        build_report(data_dir, today)
+        print(f"Informe escrito en {data_dir / REPORT_NAME}")
+        return 0
+
+    gh = GhClient(os.environ.get("GITHUB_REPOSITORY") or REPOSITORY)
+    if action == "sync-issues":
+        summary = sync_issues(build_report(data_dir, today), gh)
+    else:
+        summary = sync_health(read_json(data_dir / "state.json"), gh, now=datetime.now(UTC))
+    print(summary)
+    return 1 if summary.errores else 0
+
+
 def _source_ids(value: str) -> set[str] | None:
     # An empty value means "all", so a workflow can always pass the option.
     return {part.strip() for part in value.split(",") if part.strip()} or None
@@ -124,19 +163,25 @@ def _source_ids(value: str) -> set[str] | None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="vpo")
     parser.add_argument("command", choices=["run", "merge", "validate", "review", "reparse"])
+    parser.add_argument(
+        "action", nargs="?", choices=["report", "sync-issues", "health"], help="review: qué hacer"
+    )
     parser.add_argument("--data-dir", type=Path)
     parser.add_argument("--hoy", type=date.fromisoformat, help="fecha de referencia (AAAA-MM-DD)")
     parser.add_argument("--fuentes", type=_source_ids, help="run: ids separados por coma (vacío = todas)")
+    parser.add_argument("--forzar-reparse", action="store_true", help="run: vuelve a extraer todos los PDF")
     args = parser.parse_args(argv)
 
-    if args.command in NOT_YET:
-        print(f"'{args.command}' se implementa en la Fase {NOT_YET[args.command]}", file=sys.stderr)
-        return 2
+    if (args.command == "review") != (args.action is not None):
+        parser.error("'review' necesita una acción (report, sync-issues o health) y las demás órdenes ninguna")
 
     data_dir = args.data_dir or find_data_dir(Path.cwd())
     today = args.hoy or datetime.now(ZoneInfo("Europe/Madrid")).date()
-    if args.command == "run":
-        return cmd_run(data_dir, today, args.fuentes)
+    if args.command in ("run", "reparse"):
+        # reparse is a run that extracts every PDF again, whatever the cache says.
+        return cmd_run(data_dir, today, args.fuentes, args.forzar_reparse or args.command == "reparse")
+    if args.command == "review":
+        return cmd_review(data_dir, today, args.action)
     handler = cmd_merge if args.command == "merge" else cmd_validate
     return handler(data_dir, today)
 

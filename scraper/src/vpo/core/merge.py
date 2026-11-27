@@ -12,6 +12,8 @@ from dataclasses import dataclass
 from datetime import date, timedelta
 from typing import Any
 
+from ..review.report import sin_resolver
+
 Promo = dict[str, Any]
 Validator = Callable[[Promo], list[str]]
 
@@ -129,6 +131,23 @@ def _derive_state(promo: Promo, today: date) -> None:
     _touch(promo["meta"], (date.fromisoformat(deadline) + timedelta(days=1)).isoformat())
 
 
+def contradicciones_no_exigidos(promo: Promo) -> list[str]:
+    """Requisitos declared as not demanded that nevertheless carry a value."""
+    requisitos = promo["requisitos"]
+    return [name for name in requisitos["no_exigidos"] if requisitos[name] is not None]
+
+
+def _settle_review(promo: Promo, avisos: list[Aviso]) -> None:
+    """After the corrections: drop impossible declarations and fields no longer pending."""
+    if wrong := contradicciones_no_exigidos(promo):
+        detail = f"/requisitos/no_exigidos: {', '.join(wrong)} tiene valor; pon null o quítalo de la lista"
+        avisos.append(Aviso("override_invalido", promo["id"], detail))
+        requisitos = promo["requisitos"]
+        requisitos["no_exigidos"] = [name for name in requisitos["no_exigidos"] if name not in wrong]
+    meta = promo["meta"]
+    meta["campos_pendientes"] = [p for p in meta["campos_pendientes"] if sin_resolver(promo, p)]
+
+
 def merge(
     scraped: Iterable[Promo],
     overrides: dict[str, Any],
@@ -161,6 +180,7 @@ def merge(
         if override is not None:
             promo = _apply_override(promo, override["campos"], validate, avisos)
         _derive_state(promo, today)
+        _settle_review(promo, avisos)
         if override is None or not override["ocultar"]:
             result.append(promo)
     return MergeResult(result, avisos)

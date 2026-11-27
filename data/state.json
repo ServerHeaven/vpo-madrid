@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "ultima_ejecucion": "2026-11-27T12:41:53Z",
+  "ultima_ejecucion": "2026-11-27T14:14:30Z",
   "fuentes": {
     "emvs-madrid": {
       "estado": "ok",
-      "ultima_ejecucion": "2026-11-27T12:41:53Z",
-      "ultimo_exito": "2026-11-27T12:41:53Z",
+      "ultima_ejecucion": "2026-11-27T14:14:30Z",
+      "ultimo_exito": "2026-11-27T14:14:30Z",
       "fallos_consecutivos": 0,
       "ultimo_error": null,
       "promociones_vistas": 18,
-      "duracion_s": 67.8
+      "duracion_s": 124.3
     },
     "plan-vive-cam": {
       "estado": "ok",
-      "ultima_ejecucion": "2026-11-27T12:41:53Z",
-      "ultimo_exito": "2026-11-27T12:41:53Z",
+      "ultima_ejecucion": "2026-11-27T14:14:30Z",
+      "ultimo_exito": "2026-11-27T14:14:30Z",
       "fallos_consecutivos": 0,
       "ultimo_error": null,
       "promociones_vistas": 26,
@@ -105,6 +105,23 @@
       "ultimo_cambio": "2026-11-27",
       "ultima_comprobacion": "2026-11-27",
       "extractor_version": null,
+      "ocr_necesario": false
+    },
+    "3bf0b42934ba5e69634a8d16c9e9c740c4c95b41": {
+      "url": "https://www.emvs.es/Vivienda/SorteoPromocion/Documents/Bases%20reguladoras%20del%20Programa%20Iberia%20Loreto.pdf",
+      "tipo": "pdf",
+      "fuente_id": "emvs-madrid",
+      "promo_ids": [
+        "emvs-madrid-madrid-iberia-loreto-1"
+      ],
+      "etag": "\"{DD339C02-61ED-4603-9AB2-75680D3E0C31},3\"",
+      "last_modified": "Fri, 08 May 2026 09:37:12 GMT",
+      "sha256_bytes": "3c19e79327e70fb98056759821680a0fd4a82b8a2d0fa5b9880d8a2ec7a16e2b",
+      "sha256_texto": "f71ac11545cbf5712540be195f079fd618eee3c3fec236c3d9581a4b2c5afd0f",
+      "primera_vez": "2026-11-27",
+      "ultimo_cambio": "2026-11-27",
+      "ultima_comprobacion": "2026-11-27",
+      "extractor_version": "0.3.0",
       "ocr_necesario": false
     },
     "4541479dbcbf2fa25ff8bb9acd5c9eb5ccc10cff": {
